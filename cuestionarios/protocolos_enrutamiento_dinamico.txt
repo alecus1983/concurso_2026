@@ -1,0 +1,29 @@
+Este es un mapa conceptual de enrutamiento estático desglosado en formato de valores separados por punto y coma (CSV) para la importación a Anki.
+
+| Front | Back | Fuente(s) |
+| :--- | :--- | :--- |
+| ¿Cuál es el comando principal para configurar una ruta estática? | `ip route [IP Red destino] [Mask red destino] [IP Interfaz siguiente router | Interfaz de salida]` | |
+| ¿Qué comando se utiliza para establecer una Ruta por defecto (Default Route)? | `ip route 0.0.0.0 0.0.0.0 [exit-interface | ip-address ]` | |
+| ¿Cómo se verifica la configuración y la gestión de la información de enrutamiento estático? | Se utiliza el comando `show ip route`, además de `debug ip routing`, `show ip route [Dirección IP de la red]`, `show run` y `ping [Ruta de destino]`. | |
+| ¿Cómo se elimina una ruta estática configurada? | Se utiliza el comando `no ip route [IP Red destino] [Mask red destino] [IP Interfaz siguiente router | Interfaz de salida]` | |
+| ¿Cuál es el código que identifica las rutas estáticas en la tabla de enrutamiento (`show ip route`)? | La letra **S**. | |
+| ¿Qué se considera una "Ruta conectada" (`Routeconectad`) cuando se configura una ruta estática? | Una Static ruta configurada con **solamente una interfaz saliente**, sin una IP de siguiente salto (Next-Hop IP). | |
+| ¿Cuál es la **Distancia Administrativa (AD)** de una ruta estática? | La distancia administrativa es **1**. | |
+| ¿Cuál es el comando utilizado bajo un proceso de enrutamiento dinámico (ej. RIP, EIGRP) para anunciar rutas estáticas? | `redistribute static`. | |
+| ¿Por qué una ruta estática toma precedencia sobre una ruta de resumen de EIGRP? | Porque la ruta estática tiene una Distancia Administrativa (AD) de **1**, mientras que la ruta de resumen de EIGRP tiene una AD de **5**. | |
+| ¿Cómo se redistribuye una única ruta estática en un protocolo de enrutamiento? | Se utiliza un `route-map` para seleccionar la Static ruta deseada, combinado con una lista de acceso (`access-list`). | |
+
+***
+
+### Formato CSV para Anki (Separado por `;`)
+
+¿Cuál es el comando principal para configurar una ruta estática?;`ip route [IP Red destino] [Mask red destino] [IP Interfaz siguiente router | Interfaz de salida]`
+¿Qué comando se utiliza para establecer una Ruta por defecto (Default Route) en un router Cisco?;`ip route 0.0.0.0 0.0.0.0 [exit-interface | ip-address ]`
+¿Qué comandos se utilizan para la verificación de las rutas estáticas configuradas?;`show ip route`, `debug ip routing`, `show ip route [Dirección IP de la red]`, `show run`, y `ping [Ruta de destino]`.
+¿Cómo se elimina una ruta estática configurada?;Utilizando el comando `no` antes de la configuración exacta de la ruta: `no ip route [IP Red destino] [Mask red destino] [IP Interfaz siguiente router | Interfaz de salida]`.
+¿Cuál es el código que identifica las rutas estáticas en la tabla de enrutamiento (`show ip route`)?;La letra **S**.
+¿Qué se considera una "Ruta conectada" (`Routeconectad`) cuando se configura una ruta estática?;Una Static ruta configurada **solamente con una interfaz saliente**, sin una IP de siguiente salto (Next-Hop IP).
+¿Cuál es la Distancia Administrativa (AD) de una ruta estática?;La distancia administrativa es **1**.
+¿Cuál es el comando utilizado bajo un proceso de enrutamiento dinámico (ej. RIP, EIGRP) para anunciar rutas estáticas?;`redistribute static`.
+¿Por qué una ruta estática toma precedencia sobre una ruta de resumen de EIGRP?;Porque la ruta estática tiene una Distancia Administrativa (AD) de **1**, mientras que la ruta de resumen de EIGRP tiene una AD de **5**.
+¿Cómo se redistribuye una única ruta estática en un protocolo de enrutamiento?;Se utiliza un `route-map` para seleccionar la Static ruta deseada, combinado con una lista de acceso (`access-list`).

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjetas Didácticas: AOM en la Resolución CREG 015</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- KaTeX for LaTeX Math Rendering -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" xintegrity="sha384-n8MVd4RsNIU0KOVEMcApliTMkCoaMvrIeUoQG00cAl8JKDnhTLg72EnVGPVbeBad" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" xintegrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" xintegrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        /* Custom styles for the flashcard */
+        .flashcard-container {
+            perspective: 1000px;
+        }
+        .flashcard {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        .flashcard.is-flipped {
+            transform: rotateY(180deg);
+        }
+        .flashcard-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            text-align: center;
+        }
+        .flashcard-back {
+            transform: rotateY(180deg);
+        }
+        /* Style for KaTeX formulas to ensure visibility */
+        .katex { 
+            font-size: 1.1em; 
+            text-align: center;
+            margin: 1rem 0;
+        }
+    </style>
+</head>
+<body class="bg-slate-100 min-h-screen flex flex-col items-center justify-center p-4">
+
+    <div class="w-full max-w-2xl mx-auto">
+        <header class="text-center mb-8">
+            <h1 class="text-3xl md:text-4xl font-bold text-slate-800">AOM en la Distribución de Energía</h1>
+            <p class="text-slate-600 mt-2">Tarjetas didácticas basadas en la Resolución CREG 015 de 2018</p>
+        </header>
+
+        <!-- Flashcard Component -->
+        <div id="flashcard-container" class="flashcard-container w-full h-80 md:h-96 rounded-2xl shadow-lg cursor-pointer bg-white">
+            <div id="flashcard" class="flashcard rounded-2xl">
+                <!-- Front of the card -->
+                <div id="flashcard-front" class="flashcard-face bg-white text-slate-800 rounded-2xl border-2 border-slate-200">
+                    <!-- Content will be injected by JS -->
+                </div>
+                <!-- Back of the card -->
+                <div id="flashcard-back" class="flashcard-face bg-slate-800 text-white rounded-2xl">
+                    <!-- Content will be injected by JS -->
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="flex items-center justify-between mt-8 w-full">
+            <button id="prev-btn" class="bg-white text-slate-700 font-semibold py-2 px-5 rounded-lg shadow-md hover:bg-slate-200 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+                Anterior
+            </button>
+            <div id="card-counter" class="text-slate-600 font-medium">1 / 9</div>
+            <button id="next-btn" class="bg-white text-slate-700 font-semibold py-2 px-5 rounded-lg shadow-md hover:bg-slate-200 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+                Siguiente
+            </button>
+        </div>
+        
+        <footer class="text-center mt-8 text-sm text-slate-500">
+            <p>Haz clic en la tarjeta para voltearla. Usa los botones para navegar.</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const flashcardsData = [
+                {
+                    front: '<h2 class="text-2xl font-semibold">¿Qué significa AOM y cuál es su propósito?</h2>',
+                    back: `<p class="text-lg"><strong>AOM</strong> son los gastos de <strong>Administración, Operación y Mantenimiento</strong> de la distribución de energía eléctrica.</p><p class="mt-4 text-slate-300">Su propósito es remunerar estos costos operativos para garantizar el servicio, promoviendo la eficiencia. Se basa en la Resolución CREG 015 de 2018.</p>`
+                },
+                {
+                    front: '<h2 class="text-2xl font-semibold">¿Cuál es la fórmula principal del Ingreso Anual por AOM?</h2>',
+                    back: `<p class="text-lg">El Ingreso Anual por Gastos de AOM ($IAAOM_{j,n,t}$) se calcula así:</p> <div class="my-4">$$IAAOM_{j,n,t} = AOMbase_{j,n} + AOMNI_{j,n,t}$$</div> <p class="text-left text-slate-300 w-full max-w-sm"><strong class="text-white">AOMbase:</strong> Valor base de AOM.<br><strong class="text-white">AOMNI:</strong> Valor de AOM para nuevas inversiones.</p>`
+                },
+                {
+                    front: '<h2 class="text-xl font-semibold">¿Qué es el AOM Base ($AOMbase_{j,n}$)?</h2>',
+                    back: `<p class="text-lg">Es el <strong>valor base del AOM</strong> que se reconoce a un Operador de Red (OR) en un nivel de tensión específico.</p><p class="mt-4 text-slate-300">Se calcula considerando valores históricos, un valor objetivo de eficiencia y otros ajustes.</p>`
+                },
+                {
+                    front: '<h2 class="text-xl font-semibold">¿Qué es el AOM para Nuevas Inversiones ($AOMNI_{j,n,t}$)?</h2>',
+                    back: `<p class="text-lg">Es el valor del AOM que se reconoce por las <strong>nuevas inversiones</strong> (que no son de reposición) realizadas por el Operador de Red (OR).</p><p class="mt-4 text-slate-300">Su objetivo es cubrir los gastos de AOM asociados a la expansión o mejora del sistema.</p>`
+                },
+                {
+                    front: '<h2 class="text-2xl font-semibold">¿Qué gastos NO se incluyen en el AOM?</h2>',
+                    back: `<p class="text-lg">Se excluyen gastos de:</p><ul class="list-disc list-inside text-left mt-2 text-slate-300 max-w-md"><li>Otras actividades (ej. generación).</li><li>Servicios a otros operadores de red.</li><li>Activos de conexión de usuarios.</li><li>Activos de convocatorias públicas.</li><li>Servicios prestados a terceros.</li><li>Inversiones de reposición.</li></ul>`
+                },
+                {
+                    front: '<h2 class="text-2xl font-semibold">¿Cómo se determina el AOM Base?</h2>',
+                    back: `<p class="text-lg">Se calcula usando un valor inicial ($AOMINI$) y un <strong>valor objetivo ($AOMOB$)</strong>.</p><p class="mt-4 text-slate-300">El AOM objetivo se determina con un <strong>factor de eficiencia</strong> ($fe_j$) derivado de un modelo econométrico que compara al operador con el resto del sector.</p>`
+                },
+                {
+                    front: '<h2 class="text-xl font-semibold">¿Cómo se distribuye el AOM Base por Nivel de Tensión?</h2>',
+                    back: `<p class="text-lg">Se distribuye proporcionalmente según la Base Regulatoria de Activos Eléctricos ($BRAE_{j,n,0}$) de cada nivel.</p><div>$$AOMbase_{j,n} = AOMbase_{j} \\cdot \\frac{BRAE_{j,n,0}}{\\sum_{n=1}^{4} BRAE_{j,n,0}}$$</div>`
+                },
+                {
+                    front: '<h2 class="text-xl font-semibold">¿Cómo impacta el AOM en los cargos de distribución (Nivel 1)?</h2>',
+                    back: `<p class="text-base">El AOM es un componente directo del cargo por uso. Para el Nivel de Tensión 1, el cargo de AOM ($CDA_{1,j,m,t}$) se calcula con el ingreso anual por AOM ($IAAOM_{1,j,t}$):</p><div>$$CDA_{1,j,m,t} = \\frac{IAAOM_{1,j,t}}{(1-P_{1,t}) \\cdot \\sum_{ma} EE_{j,1,ma}} \\cdot \\frac{IPP_{m-1}}{IPP_0}$$</div>`
+                },
+                {
+                    front: '<h2 class="text-2xl font-semibold">En resumen, ¿qué es el AOM?</h2>',
+                    back: `<p class="text-lg">Es un <strong>componente tarifario clave</strong> para pagar los costos de administración, operación y mantenimiento de la red eléctrica.</p><p class="mt-4 text-slate-300">Su metodología, definida por la CREG, busca que las empresas sean eficientes al comparar sus gastos con un modelo de referencia del sector.</p>`
+                }
+            ];
+
+            const flashcardContainer = document.getElementById('flashcard-container');
+            const flashcard = document.getElementById('flashcard');
+            const front = document.getElementById('flashcard-front');
+            const back = document.getElementById('flashcard-back');
+            const prevBtn = document.getElementById('prev-btn');
+            const nextBtn = document.getElementById('next-btn');
+            const cardCounter = document.getElementById('card-counter');
+
+            let currentCard = 0;
+
+            function updateCard() {
+                const data = flashcardsData[currentCard];
+                front.innerHTML = data.front;
+                back.innerHTML = data.back;
+                
+                // Render math formulas on the new content
+                renderMathInElement(document.body, {
+                    delimiters: [
+                        {left: '$$', right: '$$', display: true},
+                        {left: '$', right: '$', display: false}
+                    ]
+                });
+
+                cardCounter.textContent = `${currentCard + 1} / ${flashcardsData.length}`;
+                flashcard.classList.remove('is-flipped');
+                updateNavButtons();
+            }
+
+            function updateNavButtons() {
+                prevBtn.disabled = currentCard === 0;
+                nextBtn.disabled = currentCard === flashcardsData.length - 1;
+            }
+
+            flashcardContainer.addEventListener('click', () => {
+                flashcard.classList.toggle('is-flipped');
+            });
+
+            prevBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (currentCard > 0) {
+                    currentCard--;
+                    updateCard();
+                }
+            });
+
+            nextBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (currentCard < flashcardsData.length - 1) {
+                    currentCard++;
+                    updateCard();
+                }
+            });
+
+            // Initial load
+            updateCard();
+        });
+    </script>
+
+</body>
+</html>

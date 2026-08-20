@@ -1,0 +1,1295 @@
+Manual de automatización de distribución
+Manual de automatización de la distribución (prototipo)
+Protección del sistema de energía, 8.7 Protección de transformadores de alta tensión
+1MRS757288
+2
+Contenido
+8.7
+Protección de Transformadores AT/MT ................................................................................................. 4
+8.7.1
+Fallos y condiciones anormales ................................................................................................ 4
+8.7.1.1
+CONDICIONES ANORMALES ................................................................................................................................................................ 4
+8.7.1.1.1
+Sobretensión ................................................................................................................................................................ 4
+8.7.1.1.2
+Sobrecarga ................................................................................................................................................................ 5
+8.7.1.1.3
+Sobreexcitación ........................................................................................................................................................................ 5
+8.7.1.2
+FALLAS EXTERNAS ................................................................................................................................................................ 5
+8.7.1.2.1
+Fallas de derivación................................................................................................................................................ 5
+8.7.1.3
+FALLAS INTERNAS ................................................................................................................................................................ 6
+8.7.1.3.1
+Fallas a tierra ................................................................................................................................................................ 6
+8.7.1.3.2
+Cortocircuitos ........................................................................................................................................................ 6
+8.7.1.3.3
+Fallas entre vueltas ........................................................................................................................................................ 6
+8.7.1.3.4
+Fallos principales ................................................................................................................................................................ 7
+8.7.1.3.5
+Fallas del tanque ................................................................................................................................................................ 7
+8.7.1.3.6
+Enfriamiento reducido ................................................................................................................................................ 8
+8.7.2
+Consecuencias de las fallas del transformador ................................................................................. 8
+8.7.3
+Estadísticas de fallas ................................................................................................................ 9
+8.7.3.1
+ENCUESTA CIGRE ................................................................................................................................................................ 9
+8.7.3.2
+GUÍA IEEE ................................................................................................................................................................................ 13
+8.7.3.3
+ESTADÍSTICAS DE FALLAS DE NORDEL ................................................................................................................................. 13
+8.7.3.4
+COMENTARIOS FINALES ................................................................................................................................................. 15
+8.7.4
+Corrientes de falla ........................................................................................................................ 15
+8.7.4.1
+UN BOBINADO CONECTADO A TIERRA EFECTIVAMENTE Y CONECTADO A TIERRA ................................................................................. 15
+8.7.4.2
+UN BOBINADO CONECTADO A TIERRA DE ALTA IMPEDANCIA ......................................................................................... 17
+8.7.4.3
+FALLAS A TIERRA EN UN DEVANADO CONECTADO EN D ................................................................................................................. 18
+8.7.4.4
+FALLAS ENTRE VUELTAS................................................................................................................................................................ 18
+8.7.5
+Protección diferencial ................................................................................................................ 19
+8.7.5.1
+CONEXIÓN DE TRANSFORMADORES DE CORRIENTE ........................................................................................................................ 20
+8.7.5.2
+LA CORRIENTE DIFERENCIAL ................................................................................................................................................. 20
+8.7.5.3
+PROTECCIONES DIFERENCIALES CON RESTRICCIÓN DE ARMÓNICOS ......................................................................................... 20
+8.7.5.4
+COMENTARIOS FINALES ................................................................................................................................................. 21
+8.7.6
+Protección de impedancia ................................................................................................................ 21
+8.7.6.1
+PROTECCIÓN BAJO IMPEDANCIA ........................................................................................................................................ 21
+8.7.6.2
+PROTECCIÓN A DISTANCIA ................................................................................................................................................ 21
+8.7.6.3
+COMENTARIOS FINALES ................................................................................................................................................. 22
+8.7.7
+Protección contra sobrecorriente ........................................................................................................ 22
+8.7.7.1
+PROTECCIÓN CONTRA CORTOCIRCUITO ................................................................................................................................................ 22
+8.7.7.2
+COMENTARIOS FINALES ................................................................................................................................................. 24
+8.7.8
+Protección de falla a tierra ................................................................................................................ 24
+8.7.8.1
+PROTECCIÓN RESTRINGIDA DE FALLA A TIERRA ................................................................................................................ 24
+8.7.8.1.1
+Protección de falla a tierra restringida de alta impedancia ................................................................................ 25
+8.7.8.1.2
+Protección de falla a tierra restringida de baja impedancia................................................................... 25
+8.7.8.2
+PROTECCIÓN RESIDUAL SOBRECORRIENTE ................................................................................................................................ 25
+8.7.8.3
+PROTECCIÓN DE SOBREINTENSIDAD DE PUNTO NEUTRO ................................................................................................................ 25
+8.7.8.4
+PROTECCIÓN DE FALLA A TIERRA DEL TANQUE ................................................................................................................................ 26
+8.7.8.5
+PROTECCIÓN CONTRA DESPLAZAMIENTO DEL PUNTO NEUTRO ................................................................................................................ 27
+Manual de automatización de la distribución (prototipo)
+Protección del sistema de energía, 8.7 Protección de transformadores de alta tensión
+1MRS757288
+3
+8.7.9
+Protección contra descargas eléctricas ................................................................................................ 27
+8.7.10 Protección contra sobrecarga ................................................................................................................ 28
+8.7.11 Protección contra sobreexcitación ................................................................................................ 28
+8.7.12 Detectores de fallas mecánicas ................................................................................................ 30
+Manual de automatización de la distribución (prototipo)
+Protección del sistema de energía, 8.7 Protección de transformadores de alta tensión
+1MRS757288
+4
+8.7
+Protección de transformadores de alta tensión
+Las subestaciones transformadoras son partes importantes de un sistema eléctrico. Muchas empresas de servicios públicos diseñan sus sistemas de energía
+tems para que resistan la pérdida de un solo transformador. En caso de una falla interna del transformador, el re-
+El tiempo de pareja es largo. La parada de un autotransformador EHV provocará un aumento sustancial de las pérdidas de la red.
+La avería del transformador elevador del generador obligará al propietario a utilizar sistemas de generación de energía más caros.
+unidades para comprar energía de reemplazo. Los tiempos cortos de resolución de fallos contribuyen a la reducción de daños y reparaciones.
+tiempo.
+La protección del transformador está diseñada para limitar los daños y las perturbaciones del sistema causados ​​por fallas que ocurren
+en transformadores de potencia. Muy a menudo, el sistema de protección del transformador debe proporcionar protección de respaldo para
+barras conectadas al transformador. A veces el sistema de protección del transformador es la protección principal.
+para barras conectadas al transformador. En muchos casos, el sistema de protección del transformador proporciona respaldo.
+protección de las líneas eléctricas conectadas a estas barras.
+Los sistemas de protección de transformadores se pueden diseñar de muchas maneras. Transformadores elevadores de generador y EHV
+Los autotransformadores suelen tener un sofisticado sistema de protección. Generalmente pequeños transformadores de distribución.
+solo tiene fusibles.
+8.7.1
+Fallos y condiciones anormales
+La protección del transformador tiene que detectar y determinar si operará en condiciones anormales y externas.
+fallas finales. En caso de fallas internas, la protección del transformador tiene que detectar fallas e iniciar el disparo del
+los disyuntores asociados. En tales casos, el transformador desconectado no se debe volver a energizar sin
+realizar una inspección manual.
+8.7.1.1
+Condiciones anormales
+La protección del transformador debe limitar los daños al transformador en caso de sobrecarga y baja frecuencia. El
+La protección tiene que desconectar a los consumidores si el voltaje sube demasiado.
+8.7.1.1.1
+Sobretensión
+Las sobretensiones transitorias, las sobretensiones de conmutación y las sobretensiones temporales son las sobretensiones más importantes.
+peligros que puedan dañar los componentes del sistema de energía. Las sobretensiones transitorias surgen de la caída de rayos.
+bances. Tales sobretensiones pueden causar fallas entre espiras. Descargadores de sobretensiones conectados cerca de los pasatapas de
+el transformador puede reducir las sobretensiones. Las sobretensiones de frecuencia industrial y las condiciones de resonancia causan
+sobretensiones temporales. Pueden provocar un aumento de la tensión dieléctrica en el aislamiento y un aumento de
+la densidad de flujo de trabajo.
+Manual de automatización de la distribución (prototipo)
+Protección del sistema de energía, 8.7 Protección de transformadores de alta tensión
+1MRS757288
+5
+8.7.1.1.2
+Sobrecarga
+La sobrecarga provoca mayores pérdidas de cobre y el consiguiente aumento de temperatura. Los transformadores de potencia pueden ser
+sobrecargado temporalmente. La duración del período de sobrecarga aceptable depende de la temperatura inicial y
+las condiciones de enfriamiento.
+La constante de tiempo térmica de un transformador ONAN (aceite natural, aire natural) es del orden de 2-5 horas.
+Los transformadores con refrigeración forzada tienen constantes de tiempo más cortas.
+8.7.1.1.3
+sobreexcitación
+El núcleo del transformador se sobreexcita cuando el voltaje aplicado es demasiado alto o la frecuencia aplicada es demasiado alta.
+demasiado bajo. La sobreexcitación provoca un aumento en la pérdida de hierro y un aumento sustancial en la corriente de magnetización.
+alquilar. Además, el flujo se desvía del núcleo laminado. Se fuerza a través de las piezas de acero circundantes, como
+como el metal del tanque y otras partes no laminadas del transformador. En particular, los pernos centrales, que
+normalmente transportan poco flujo, pueden estar sujetos a un gran componente de flujo. En tales condiciones, los pernos
+pueden calentarse rápidamente a una temperatura que destruya su propio aislamiento y dañará el aislamiento de la bobina.
+ción si la condición continúa. De ello se deduce que un transformador puede funcionar con cierto grado de sobretensión.
+con un correspondiente aumento en la frecuencia. La operación no debe continuar si el voltaje aplicado es alto y
+la frecuencia es baja.
+8.7.1.2
+Fallos externos
+La protección del transformador a veces servirá como protección principal para la barra colectora alimentada desde la red eléctrica.
+transformador. La protección del transformador a menudo servirá como protección de respaldo local de la estación para la barra colectora.
+y las líneas eléctricas de salida alimentadas desde el transformador de potencia.
+8.7.1.2.1
+Fallas de derivación
+Los cortocircuitos del sistema pueden producir un ritmo de calentamiento relativamente intenso de los transformadores de alimentación. El poli-
+por pérdidas aumentan en proporción al cuadrado de la corriente de falla por unidad. La Tabla 8.7.1 muestra la duración típica.
+ción de cortocircuitos externos que un transformador puede soportar sin sufrir daños si la corriente se limita únicamente
+por la reactancia del transformador.
+Tabla 8.7.1: Niveles de resistencia a fallas
+Reactancias del transformador
+Corriente de falla
+Duración de fallo permitida
+%
+múltiplo de la corriente nominal
+artículos de segunda clase
+4
+25
+2
+5
+20
+3
+6
+16.6
+4
+7
+14.2
+5
+Las grandes corrientes de falla producen tensiones mecánicas severas en los transformadores. El estrés máximo ocurre durante
+el primer ciclo de corrientes de falla asimétricas. El disparo automático de los disyuntores no puede reducir tales
+Manual de automatización de la distribución (prototipo)
+Protección del sistema de energía, 8.7 Protección de transformadores de alta tensión
+1MRS757288
+6
+tensiones. Por tanto, el control de tales tensiones es una cuestión de diseño del transformador. Sin embargo, los fusibles pueden volver a funcionar.
+producir tensiones mecánicas.
+8.7.1.3
+Fallas internas
+Una rotura del aislamiento provoca un fallo a tierra o un cortocircuito. Estas fallas pueden causar daños graves.
+envejecimiento de los devanados y del núcleo del transformador. Además, una falla con corrientes de falla altas puede causar una
+alta presión de gases. Si la presión sube demasiado, dañará el tanque del transformador.
+Los siguientes factores pueden provocar la rotura del aislamiento entre los devanados o entre los devanados y
+el núcleo:
+•
+Envejecimiento del aislamiento debido a sobretemperatura.
+•
+aceite contaminado
+•
+descargas parciales en el aislamiento
+•
+sobretensiones transitorias
+•
+fuerzas actuales en los devanados
+El envejecimiento o deterioro del aislamiento es función de la temperatura y el tiempo. La parte del devanado que tiene
+la temperatura más alta (el punto caliente) normalmente sufrirá el mayor deterioro y tendrá el período más corto.
+duración de la vida. Sin embargo, no es posible predecir con precisión la duración de la vida en función de la temperatura.
+y tiempo bajo condiciones constantes y controladas, y mucho menos bajo condiciones de servicio muy variables.
+Una descarga disruptiva entre el devanado de alta tensión y el devanado de baja tensión suele provocar una avería.
+del aislamiento entre el devanado de baja tensión y tierra. Las fallas de los transformadores rara vez son transitorias.
+8.7.1.3.1
+Fallas terrestres
+Un contacto metálico directo o descarga disruptiva entre un devanado y una parte conectada a tierra, como el núcleo o el tanque.
+provoca una falla a tierra.
+8.7.1.3.2
+Cortocircuitos
+Un cortocircuito entre las fases provocará una corriente de falla sustancial. La magnitud de la corriente de falla.
+Depende principalmente de la impedancia de la fuente y de la impedancia de fuga del transformador.
+8.7.1.3.3
+Fallos giro a giro
+Un contacto metálico directo o una descarga disruptiva entre conductores dentro del mismo devanado físico provoca un giro.
+Falla entre vueltas (entre vueltas).
+Las corrientes de falla fluirán a través de un transformador cuando ocurre una falla en derivación externa. las fuerzas mecanicas
+causado por altas corrientes de falla puede dañar el aislamiento. Los daños graves al aislamiento pueden causar giros.
+fallas de giro. Este es un riesgo para transformadores relativamente pequeños y antiguos conectados a redes con alta
+potencia de cortocircuito.
+Manual de automatización de la distribución (prototipo)
+Protección del sistema de energía, 8.7 Protección de transformadores de alta tensión
+1MRS757288
+7
+Las sobretensiones de línea se concentrarán en las espiras finales del devanado debido a la alta frecuencia equivalente del
+frente de oleada. El aislamiento entre espiras de las espiras de los extremos está reforzado pero no puede aumentarse proporcionalmente.
+al aislamiento a tierra, que debe soportar altas tensiones fase-tierra.
+Por lo tanto, el riesgo de descarga disruptiva parcial del devanado es mayor que el riesgo de avería a tierra. Hay
+afirma que entre el 70 y el 80% de todas las fallas de los transformadores se deben a fallas entre espiras. El progreso posterior
+de la culpa bien puede destruir la evidencia de la verdadera causa.
+El calor generado por la corriente de falla provocará la descomposición del petróleo y la liberación de gas. Un profesional de Buchholz
+Por lo tanto, la protección puede detectar fallas entre espiras. Una protección de presión de tasa de aumento también puede detectar
+girar fallas. Las fallas entre espiras son muy difíciles de detectar mediante equipos de protección que utilizan entrada eléctrica.
+cantidades únicamente.
+Una falla entre espiras puede causar daños sustanciales no sólo en el lugar de la falla. El calor generado por el
+La corriente de falla derretirá parte del devanado. El cobre fundido del lugar de la falla se solidificará en pequeñas
+partículas de cobre. El aceite que circula en el transformador puede transportar estas partículas de cobre desde el lugar de falla.
+ubicación. A menudo es necesario transportar el transformador dañado a un taller de reparación. es necesario limpiar
+Limpie minuciosamente el transformador para eliminar todas las partículas de cobre y hollín. El tiempo de interrupción será largo.
+8.7.1.3.4
+Fallas centrales
+Un puente conductor a través de la estructura laminada del núcleo permite que fluyan corrientes parásitas. ellos pueden
+provocar un sobrecalentamiento grave. Los pernos que sujetan el núcleo siempre están aislados para evitar este problema.
+Si alguna parte del aislamiento del núcleo se vuelve defectuosa, el calentamiento resultante puede alcanzar una magnitud suficiente.
+ciente para dañar el devanado.
+Las pérdidas adicionales en el núcleo, aunque causan un calentamiento local severo, no producirán un cambio notable en
+la corriente de entrada. Los equipos de protección con cantidades de entrada eléctrica no pueden detectar fallas centrales. Nunca es-
+Sin embargo, es muy deseable que el sistema de protección detecte la condición antes de que ocurra una falla importante. Fortu-
+Por ejemplo, si en un transformador sumergido en aceite el calentamiento de cualquier parte del núcleo es suficiente para causar
+dañar el aislamiento del devanado, también provocará la descomposición de parte del aceite con el consiguiente
+evolución de gas.
+8.7.1.3.5
+Fallas del tanque
+El aceite de un transformador constituye un medio eléctricamente aislante. También constituye un medio refrigerante.
+Por lo tanto, la confiabilidad del servicio de un transformador sumergido en aceite depende en gran medida de la calidad del
+el aceite. La rigidez dieléctrica del aceite es la propiedad más importante del aceite. Una avería del seguro
+La rotura puede ocurrir si el agua y las impurezas han reducido la rigidez dieléctrica del aceite.
+La pérdida de petróleo a través de fugas en los tanques producirá en última instancia una condición peligrosa. Reducción del aislamiento del devanado.
+La ción es una de esas condiciones. El sobrecalentamiento bajo carga debido a la pérdida de enfriamiento efectivo es otra de esas condiciones.
+ción. Se debe controlar el nivel de aceite. Por lo tanto, los transformadores sumergidos en aceite con un conservador de aceite deben
+estar provisto de un monitor de nivel de aceite.
+Manual de automatización de la distribución (prototipo)
+Protección del sistema de energía, 8.7 Protección de transformadores de alta tensión
+1MRS757288
+8
+8.7.1.3.6
+Enfriamiento reducido
+Los lodos de aceite pueden bloquear los conductos y tuberías de refrigeración. Esto puede resultar en un sobrecalentamiento cuando el transformador está
+cargado. La falla de un sistema de enfriamiento forzado también puede causar sobrecalentamiento. Es necesario supervisar a los forzados.
+sistemas de enfriamiento. Se debe emitir una alarma si el sistema de enfriamiento se detiene. La temperatura del aceite se puede controlar
+Debe guardarse y tomarse las medidas adecuadas antes de que el transformador se sobrecaliente.
+8.7.2
+Consecuencias de las fallas del transformador
+El aumento de la tensión nominal y de la capacidad nominal de los transformadores ha ido acompañado de diversos problemas.
+[8.7.1]. La Figura 8.7.1 muestra los resultados de una encuesta realizada en los EE. UU. por el Edison Electric Institute (EEI) que concluía
+sobre problemas del transformador [8.7.7].
+Consecuencias de las fallas del transformador
+91,6
+4.4
+2.2
+1.8
+0
+20
+40
+60
+80
+100
+sin fuego
+explotado
+quemado
+explotó y
+quemado
+Por ciento
+Figura 8.7.1:
+Consecuencias de las fallas del transformador.
+La buena noticia es que no hubo incendio en más del 90% de los casos. La mala noticia es que el transformador
+explotó o el transformador comenzó a arder o ambas cosas en más del 8% de los casos.
+La Figura 8.7.2 muestra las distintas etapas de un incendio de transformador en Kangasala, Finlandia.
+Manual de automatización de la distribución (prototipo)
+Protección del sistema de energía, 8.7 Protección de transformadores de alta tensión
+1MRS757288
+9
+Figura 8.7.2:
+Incendio de transformador en Kangasala
+8.7.3
+Estadísticas de fallas
+Esta sección contiene una recopilación de tasas de fallas internas de transformadores. La tasa de fallas externas.
+y las anomalías del sistema dependen de la red.
+8.7.3.1
+Encuesta CIGRE
+En 1975, el Comité de Estudio 12 de CIGRE estableció el WG12.05 "Confiabilidad del transformador", al que se le asignó
+la tarea de estudiar los problemas relacionados con la confiabilidad de grandes transformadores de potencia en servicio. A
+La segunda tarea fue determinar valores realistas de la tasa de falla de los transformadores de potencia. La encuesta implicó
+transformadores de potencia y reactores en derivación con una tensión nominal no inferior a 72 kV y no mayor a 20 años.
+El análisis comprende más de 1.000 fallos ocurridos entre 1968 y 1978. A finales de 1978, el
+La población comprendía más de 7 000 transformadores de potencia y representaba más de 47 000 transformadores.
+años. El grupo de trabajo publicó [8.7.3] los resultados del cuestionario internacional sobre tasas de fracaso para
+transformadores de potencia en 1983. El material se divide en transformadores elevadores de generador, transformadores de subestación
+formadores y autotransformadores. La Figura 8.7.3, la Figura 8.7.4 y la Figura 8.7.5 muestran la tasa de falla del generador.
+transformadores elevadores, transformadores de subestaciones y autotransformadores.
+Manual de automatización de la distribución (prototipo)
+Protección del sistema de energía, 8.7 Protección de transformadores de alta tensión
+1MRS757288
+10
+Transformadores Elevadores (CIGRE 1968-1978)
+0
+1
+2
+3
+4
+5
+60-99
+100-299
+300-699
+Voltaje del sistema [kV]
+Tasa de fracaso [%/año]
+Con OLTC
+Sin OLTC
+Figura 8.7.3:
+Tasa de falla del transformador elevador del generador
+Transformadores de Subestaciones (CIGRE 1968-1978)
+0
+1
+2
+3
+4
+5
+60-99
+100-299
+300-699
+Voltaje del sistema [kV]
+Tasa de fracaso [%/año]
+Con OLTC
+Sin OLTC
+Figura 8.7.4:
+Tasa de falla del transformador de subestación
+Manual de automatización de la distribución (prototipo)
+Protección del sistema de energía, 8.7 Protección de transformadores de alta tensión
+1MRS757288
+11
+Autotransformadores (CIGRE 1968-1978)
+0
+5
+10
+15
+20
+60-99
+100-299
+300-699
+Voltaje del sistema [kV]
+Tasa de fracaso [%/año]
+Con OLTC
+Sin OLTC
+Figura 8.7.5:
+Tasa de falla del autotransformador
+Las barras en la Figura 8.7.3 representan la tasa de falla en porcentaje por año o fallas por 100 transformadores y
+año. La Figura 8.7.3 muestra que la tasa de falla aumenta al aumentar la tensión nominal. Se puede estimar que
+Entre el 2 y el 3% de los transformadores elevadores con una tensión nominal de 220 o 400 kV sufren una avería cada año. para un determinado
+transformador elevador, el tiempo medio entre fallas se puede estimar entre 30 y 50 años. Esto corresponde
+estanques aproximadamente a una falla durante la vida de la planta.
+La Figura 8.7.6 ilustra el componente del transformador defectuoso.
+Transformador Elevador (CIGRE 1968-1978)
+0
+10
+20
+30
+40
+Devanados
+Circuito magnético
+Terminales
+Tanque y fluido dieléctrico
+Otros accesorios
+Cambiador de tomas
+Por ciento
+Con OLTC
+Sin OLTC
+Figura 8.7.6:
+Componente defectuoso en transformadores.
+La Figura 8.7.6 muestra que los terminales son los más propensos a fallar. Los terminales y los devanados representan
+más el 50% de todos los fracasos.
+La Figura 8.7.7 muestra el porcentaje de origen de falla.
+Manual de automatización de la distribución (prototipo)
+Protección del sistema de energía, 8.7 Protección de transformadores de alta tensión
+1MRS757288
+12
+Transformador Elevador (CIGRE 1968-1978)
+0
+10
+20
+30
+40
+Mecánico
+Dieléctrico
+Térmico
+Químico
+Desconocido
+Por ciento
+Con OLTC
+Sin OLTC
+Figura 8.7.7:
+Origen de las fallas en los transformadores.
+La Figura 8.7.7 muestra que la mayoría de las fallas tienen origen mecánico. Representan más de 1/3 de la transformación.
+fracasos más.
+La Figura 8.7.8 muestra el porcentaje de causas de falla.
+Transformador Elevador (CIGRE 1968-1978)
+0
+10
+20
+30
+40
+Diseño
+Fabricar
+Material
+Transporte o almacenamiento
+Erección incorrecta en el sitio
+Mantenimiento incorrecto
+Sobrecarga anormal
+desbordante
+Iluminación
+Cortocircuito externo
+Pérdida de enfriamiento
+Desconocido
+Por ciento
+Con OLTC
+Sin OLTC
+Figura 8.7.8:
+Causa de falla en transformadores.
+En la Figura 8.7.8 podemos ver que la mayoría de las fallas del transformador elevador del generador están asociadas con actividades entre
+antes de la puesta en servicio del transformador. Una variedad de causas de falla se incluyen en la gran cantidad de
+causas de falla desconocidas.
+Manual de automatización de la distribución (prototipo)
+Protección del sistema de energía, 8.7 Protección de transformadores de alta tensión
+1MRS757288
+13
+8.7.3.2
+Guía IEEE
+La Guía IEEE para aplicaciones de relés de protección en transformadores de potencia [8.7.5] y [8.7.4] ha agrupado
+Fallas del transformador en seis categorías principales:
+•
+Fallos de bobinado
+•
+Fallos del cambiador de tomas
+•
+Fallas de bujes
+•
+Fallas en el tablero de terminales
+•
+Fallos centrales
+•
+Fallos varios
+La Figura 8.7.9 muestra resúmenes de fallas en esas categorías reportadas por grupos de empresas de servicios públicos en EE. UU.
+Las fallas de devanados, fallas de cambiadores de tomas y fallas de bushings representan más del 85% de las pérdidas del transformador.
+fracasos. Las fallas de los devanados todavía representan la mayoría de las fallas de los transformadores, siendo los cambiadores de tomas un
+segundo distante. Dos características del transformador que causan problemas en los esquemas de protección son la baja
+fallas de magnitud entre espiras y la corriente de entrada magnetizante de alta magnitud durante la energización. Mini-
+Las fallas internas mínimas pueden resultar en menos del 10% de la corriente nominal de un transformador. Por otra parte, máxima
+La corriente de falla puede fluir por una falla en el buje del transformador del lado alto.
+Causas de fallas en los transformadores
+0
+10
+20
+30
+40
+50
+60
+Fallo del devanado
+Fallas en el cambiador de tomas.
+Fallas de bujes
+tablero de terminales
+fracasos
+Fallos centrales
+Fallos varios
+1955-1965
+1975-1982
+1983-1988
+Figura 8.7.9:
+Estadísticas de fallas IEEE
+8.7.3.3
+Estadísticas de falla de Nordel
+Nordel presenta periódicamente estadísticas agregadas de fallos de Dinamarca, Finlandia, Islandia, Noruega y Suecia.
+A continuación se presenta material de la referencia [8.7.6]. Las estadísticas de fallas comprenden transformadores de potencia con
+voltajes del sistema de 110 a 400 kV como se muestra en la Tabla 8.7.2.
+Manual de automatización de la distribución (prototipo)
+Protección del sistema de energía, 8.7 Protección de transformadores de alta tensión
+1MRS757288
+14
+Tabla 8.7.2: Transformadores de potencia en las estadísticas de Nordel 1990-1999
+Voltaje
+110-150 kilovoltios
+220-300 kilovoltios
+400 kilovoltios
+Todo
+Toma de tierra
+P o E
+mi
+mi
+P o E
+Dinamarca
+523
+2
+18
+543
+Finlandia
+7
+24
+42
+73
+Noruega
+726
+269
+61
+1056
+Suecia
+591
+207
+132
+930
+Islandia
+45
+25
+0
+70
+Nordel
+1892
+527
+253
+2672
+Aquí
+PAG
+Designa sistemas puestos a tierra por bobina Petersen (sistemas puestos a tierra resonantes)
+mi
+Designa sistemas efectivamente puestos a tierra.
+A finales de 1999, el número total de transformadores de potencia cubiertos por las estadísticas de fallos era 2.672.
+La tasa de expansión del sistema eléctrico ha sido baja durante la última década. Se ha estimado que la culpa
+Las estadísticas correspondientes al período 1990-99 comprenden más de 25.000 años-transformador.
+La Figura 8.7.10 muestra la tasa de falla del transformador de potencia como se indica en [8.7.6].
+Tasa de fallas de transformadores (Nordel 1990-1999)
+0
+1
+2
+3
+110-150 kilovoltios
+220-300 kilovoltios
+400 kilovoltios
+Voltaje del sistema
+Tasa de fracaso [%/año]
+Figura 8.7.10: Tasa de fallas para transformadores de potencia
+La Figura 8.7.11 muestra las causas de falla de los transformadores de potencia en el sistema Nordel durante el período comprendido entre
+1990 a 1999,
+Manual de automatización de la distribución (prototipo)
+Protección del sistema de energía, 8.7 Protección de transformadores de alta tensión
+1MRS757288
+15
+Causas de fallas en los transformadores
+Nordel 1990-1999
+0
+10
+20
+30
+40
+50
+Iluminación
+Otra naturaleza
+Tercero
+Personal
+Equipo
+Otro
+Por ciento
+Figura 8.7.11: Desglose de causas de fallas en transformadores
+8.7.3.4
+Comentarios finales
+La probabilidad de que un transformador individual sufra una falla durante el próximo año es baja. La tasa de fracaso
+para un transformador de potencia puede estar relacionado con la tasa de falla de una línea aérea. La tasa promedio de fracaso para
+Las líneas aéreas de 400 kV en Suecia tienen aproximadamente 0,4 fallos cada 100 kilómetros y año. Es razonable esperar
+que la tasa de fallas de un transformador de 400 kV es de 4 fallas por 100 transformadores y año. Esto significa que el
+La probabilidad de que una falla afecte a un transformador de 400 kV es del mismo orden de magnitud que la probabilidad.
+que una falla afectará a una línea aérea de 400 kV de 10 kilómetros de longitud. Si la línea eléctrica tiene dos protecciones principales,
+Es razonable exigir que el transformador tenga una protección de respaldo similar.
+8.7.4
+Corrientes de falla
+La magnitud de la corriente de falla depende de:
+•
+la potencia de cortocircuito de las redes eléctricas
+•
+el sistema de puesta a tierra de las redes conectadas
+•
+la reactancia de fuga del transformador
+•
+la posición de la falla a lo largo del devanado
+8.7.4.1
+Un devanado conectado en Y efectivamente puesto a tierra
+La reactancia de fuga es el parámetro más importante que controla la corriente de falla a tierra en este caso. El
+La reactancia de fuga varía de manera compleja con la posición de la falla. El voltaje en la falla variable.
+La ubicación también es un factor importante.
+En la Figura 8.7.12 se muestra un transformador conectado D/Y. En el ejemplo, un generador o una fuente fuerte.
+energiza el devanado conectado en D y el devanado conectado en Y está en circuito abierto.
+Manual de automatización de la distribución (prototipo)
+Protección del sistema de energía, 8.7 Protección de transformadores de alta tensión
+1MRS757288
+16
+RF
+IP
+SI
+Figura 8.7.12: Falla interna en un devanado conectado en Y
+Aquí, se produce una falla monofásica a tierra a una distancia relativa α del neutro. La resistencia a fallas es
+independiente de la ubicación de la falla y consta de la resistencia del arco y la resistencia local de la subestación.
+La Figura 8.7.13 muestra un equivalente Thévenin simplificado del transformador de potencia con falla. El volumen sin carga
+etiqueta es igual a
+sn
+Ud.
+×
+a
+, dónde
+sn
+Ud.
+es el valor nominal de la tensión fase-tierra secundaria.
+∼
+XS
+arte
+⋅
+a
+2XT
+⋅
+RF
+ARRIBA
+A NOSOTROS
+ES
+1: un
+IP
+ES
+Figura 8.7.13: Fallo en un devanado conectado en Y efectivamente puesto a tierra
+Aquí, la reactancia de cortocircuito varía con el cuadrado del número de vueltas desde el neutro hasta la falla.
+ubicación. Esta es una aproximación burda, pero se supone que la reactancia interna es igual a
+t
+incógnita
+×
+2
+a
+, dónde
+t
+X es la reactancia de cortocircuito del transformador de potencia. La resistencia de cortocircuito varía linealmente con
+el número de vueltas y es igual a
+t
+R
+×
+a
+, dónde
+t
+R es la resistencia de cortocircuito del transformador de potencia.
+mer. La Figura 8.7.14 muestra la corriente de falla estimada en función de la distancia al neutro.
+Manual de automatización de la distribución (prototipo)
+Protección del sistema de energía, 8.7 Protección de transformadores de alta tensión
+1MRS757288
+17
+Fallo interno fase-tierra
+Neutro del transformador conectado directamente a tierra
+0
+10
+20
+30
+40
+50
+0.0
+0,2
+0,4
+0,6
+0,8
+1.0
+Distancia desde el punto muerto
+Corriente de falla [p.u.]
+Corriente de falla
+Corriente primaria
+Figura 8.7.14: Corriente de falla en un devanado conectado en Y con neutro directamente conectado a tierra
+La resistencia de falla tiene una influencia significativa en la magnitud de la corriente de falla y la forma de la
+curva.
+8.7.4.2
+Un devanado conectado en Y puesto a tierra de alta impedancia
+Una falla a tierra en dicho devanado causará una corriente de falla a tierra que depende de la impedancia del neutro.
+Equipo de punto central. La corriente de falla también depende de la distancia de la falla desde el punto neutro. El
+El voltaje de falla es directamente proporcional a esta distancia. Esto significa que la corriente de falla es aproximadamente
+proporcional a la distancia desde el neutro.
+La relación de transformación entre el devanado primario y las espiras en cortocircuito también varía con la
+posición de la falla. Esto significa que la corriente que fluye hacia los terminales primarios del transformador estará en
+proporción al cuadrado de la fracción del devanado en cortocircuito.
+RF
+IP
+SI
+enfermera registrada
+Figura 8.7.15: Fallo en un devanado puesto a tierra con resistencia conectada en Y
+Manual de automatización de la distribución (prototipo)
+Protección del sistema de energía, 8.7 Protección de transformadores de alta tensión
+1MRS757288
+18
+Falla interna de fase a tierra
+Transformador Neutro Alta resistencia puesto a tierra
+0.00
+0,02
+0,04
+0,06
+0,08
+0,10
+0.0
+0,2
+0,4
+0,6
+0,8
+1.0
+Distancia desde el punto muerto
+Corriente de falla [p.u.]
+Corriente de falla
+Corriente primaria
+s
+Figura 8.7.16: Corriente de falla en un devanado conectado en Y con neutro puesto a tierra de alta resistencia
+8.7.4.3
+Fallas a tierra en un devanado conectado en D
+La tensión conductor-tierra de un devanado conectado en D es siempre superior al 50% de la tensión de fase aplicada.
+tensión a tierra. Por lo tanto, el rango de magnitud de la corriente de falla a tierra para dicho devanado es menor que para un
+Bobinado conectado en Y. El valor real de la corriente de falla a tierra seguirá dependiendo de la forma en que esté
+conectado a tierra. La impedancia de un devanado conectado en D es particularmente alta para las corrientes de falla que fluyen hacia una central.
+Falla ly colocada en una pierna. La impedancia puede ser del 25 al 50% según la clasificación del transformador, independientemente del
+impedancia normal equilibrada de corriente pasante. Como la tensión a tierra previa a la falla en este punto es la mitad de la normal
+voltaje de fase a neutro, la corriente de falla a tierra no puede ser mayor que la corriente nominal.
+La corriente de falla a tierra es incluso menor que este valor si la impedancia de la fuente es apreciable. La corriente
+fluirá hacia la falla desde cada lado a través de los dos medios devanados, y se dividirá entre los dos
+fases del sistema. Por lo tanto, las corrientes de fase individuales pueden ser relativamente bajas, un hecho que debe recordarse.
+miembros al considerar el desempeño de un esquema de protección.
+8.7.4.4
+Fallos giro a giro
+Una falla entre espiras (una falla entre espiras) provoca un cortocircuito en una parte del devanado. El devanado defectuoso se comporta como
+un devanado de autotransformador. El autotransformador correspondiente tiene una relación de vueltas muy grande. La corriente en
+las vueltas en cortocircuito serán muy altas. La corriente de falla de la red aumenta cuando la falla
+se extiende y se cortocircuitan más vueltas. La corriente de falla se vuelve igual a la corriente nominal del transformador.
+primero cuando el 2-4% de las vueltas del devanado están en cortocircuito. La corriente en las espiras en cortocircuito.
+puede ser 50-100 veces la corriente nominal del devanado. Estas altas corrientes de falla causarán daños mecánicos y
+Esfuerzos térmicos en el lugar de la falla.
+Manual de automatización de la distribución (prototipo)
+Protección del sistema de energía, 8.7 Protección de transformadores de alta tensión
+1MRS757288
+19
+RF
+IP
+SI
+Figura 8.7.17:
+Fallo entre espiras en un transformador.
+Falla entre espiras en un transformador
+0
+20
+40
+60
+80
+100
+0.0
+0.1
+0,2
+0.3
+0,4
+0,5
+Porcentaje de vueltas en cortocircuito
+Corriente de falla [p.u.]
+Corriente de falla
+Corriente primaria
+Figura 8.7.18: Corriente de falla en una falla entre espiras
+8.7.5
+Protección diferencial
+Una protección diferencial del transformador compara la corriente que fluye hacia el transformador con la corriente que sale.
+ing el transformador. Transformadores auxiliares para la corrección de desfasaje en el transformador de potencia y
+porque se necesitan correcciones de proporción. La protección diferencial es el tipo de protección más comúnmente utilizado para
+transformadores de gran tamaño. La protección diferencial es una protección unitaria.
+La zona protectora de una protección diferencial incluye el propio transformador y las barras o cables.
+entre el transformador de corriente y el transformador de potencia. Cuando se utilizan transformadores de corriente tipo bushing para
+el relé diferencial, la zona de protección no incluye el trabajo del bus o los cables entre el disyuntor
+er y el transformador de potencia. En algunas subestaciones existe una protección diferencial de corriente para el embarrado.
+Dicha protección de barra colectora incluirá la barra colectora o los cables entre el disyuntor y la fuente de alimentación.
+transformador
+Manual de automatización de la distribución (prototipo)
+Protección del sistema de energía, 8.7 Protección de transformadores de alta tensión
+1MRS757288
+20
+La protección diferencial está configurada para operar cuando la corriente diferencial excede del 20 al 25% de la corriente nominal.
+alquilar. El valor de operación de la protección diferencial del transformador debe ser lo suficientemente alto para evitar disparos
+sobretensiones temporales aceptables. Según Neugebauer [8.7.2], el valor operativo debería ser lo más bajo
+como sea posible pero no inferior al 30% de la corriente nominal del transformador de potencia.
+8.7.5.1
+Conexión de transformadores de corriente.
+Una regla general simple es que los transformadores de corriente en cualquier devanado conectado en Y del transformador de potencia.
+mer debe estar conectado en D. Los transformadores de corriente en cualquier devanado conectado en D del transformador de potencia
+mer debe estar conectado en Y.
+Para transformadores con cambiador de tomas en carga, la relación de los transformadores de corriente auxiliares debe calcularse
+calculado para corrientes equilibradas cuando el cambiador de tomas está en la posición media.
+8.7.5.2
+La corriente diferencial
+La corriente magnetizante aparece como una corriente diferencial para la protección diferencial y puede operar en
+correctamente si no se toman precauciones. Durante el servicio normal, la corriente magnetizante es muy baja en comparación.
+comparación con el valor operativo de la protección diferencial del transformador. Flujo de corrientes de irrupción magnetizantes
+cuando el transformador está energizado. Corrientes de irrupción similares fluyen cuando el voltaje vuelve a la normalidad después de la
+limpieza de fallas de derivación. La corriente magnetizante en estado estacionario y la corriente de irrupción magnetizante son ambas
+descrito en el Capítulo 3.
+La corriente de irrupción magnetizante tiene un componente CC grande y varios armónicos significativos. El fundamento
+Dominan la frecuencia mental y el segundo armónico (100 Hz en Europa y 120 Hz en EE. UU.). La corriente
+está presente en las tres fases y también en el neutro. La corriente de irrupción del neutro fluye hacia otro neutro conectado a tierra.
+agujas. Las impedancias de secuencia cero determinan la distribución de la corriente del punto neutro.
+Un transformador con un cambiador de tomas en línea en la posición final proporciona una corriente diferencial del 10 al 20% de
+la corriente de carga. La corriente diferencial causada por el cambiador de tomas determina el ajuste más sensible de
+la protección diferencial. El valor operativo debe establecerse al menos un 15% más alto que la diferencia de desajuste.
+Corriente inicial causada por el cambiador de tomas bajo carga.
+8.7.5.3
+Protecciones diferenciales restringidas por armónicos
+Muchas protecciones diferenciales de transformadores tienen restricción de armónicos para evitar disparos debido a interferencias magnetizantes.
+corriente rápida. La protección frena si el segundo o quinto armónico excede una fracción preestablecida de la base.
+componente mental o la corriente total.
+La protección diferencial es la protección más comúnmente aplicada para transformadores de transmisión. en un trabajo
+En la encuesta grupal, todas, excepto una de las empresas, utilizaban al menos un relé diferencial en todas las transmisiones.
+transformadores de sion. La Figura 8.7.19 muestra el esquema básico.
+Manual de automatización de la distribución (prototipo)
+Protección del sistema de energía, 8.7 Protección de transformadores de alta tensión
+1MRS757288
+21
+Figura 8.7.19: Diferencial del transformador
+Los esquemas diferenciales incluyen diferencial porcentual, diferencial porcentual con restricción armónica y para
+Autotransformadores diferenciales de alta impedancia. La simplicidad del relé diferencial al comparar corrientes con todos
+Los terminales del transformador le confieren una fiabilidad muy alta. Transformadores de corriente o TC auxiliares en delta.
+La conexión debe usarse en los devanados del transformador puestos a tierra para evitar una operación falsa en fallas externas.
+Sin embargo, el componente de secuencia cero eliminado hace que el relé diferencial del transformador sea menos sensible.
+8.7.5.4
+Comentarios finales
+La protección del relé diferencial hace un excelente trabajo al cumplir con una gran cantidad de requisitos de protección del relé.
+requisitos, pero debe combinarse con otros dispositivos de protección para proporcionar protección total al transformador.
+8.7.6
+Protección de impedancia
+Una protección de impedancia puede proporcionar protección de respaldo para cortocircuitos externos. Una protección de impedancia
+Esta protección puede reemplazar una protección diferencial de corriente como protección principal para cortocircuitos internos. Dos
+Los tipos de protecciones de impedancia son de ocurrencia general: protecciones de baja impedancia y protecciones de distancia.
+ciones.
+8.7.6.1
+Protección contra baja impedancia
+Es una práctica común instalar protecciones diferenciales de corriente como protección principal de barras en
+Redes de transmisión. Por lo general, no existe una protección de respaldo local completa de la estación para las barras colectoras. Pocos
+Las empresas de servicios públicos instalan dos juegos completos de protecciones diferenciales de corriente para la barra colectora. Líneas de transmisión, genes
+Los transformadores elevadores y los autotransformadores EHV pueden alimentar corriente de falla a la barra colectora. Protecciones de línea
+en centrales eléctricas y subestaciones remotas proporcionan protección de respaldo para la barra colectora real. las protecciones
+iniciar la interrupción de la corriente de falla de las líneas de transmisión. Protecciones de subimpedancia en la potencia.
+La estación o subestación también proporciona protección de respaldo para la barra colectora en la misma estación. Un segundo debilitamiento
+La protección de pedancia puede proporcionar protección de respaldo remota para las barras colectoras en estaciones adyacentes.
+8.7.6.2
+Protección de distancia
+Algunas empresas de servicios públicos utilizan protecciones de distancia en lugar de protecciones diferenciales como protección principal del transformador.
+Muchas empresas de servicios públicos utilizan protecciones de distancia en lugar de protecciones de baja impedancia no direccionales como respaldo.
+Protección para la protección diferencial del transformador. Al mismo tiempo, pueden actuar como principal o de respaldo.
+protección para las barras colectoras.
+Manual de automatización de la distribución (prototipo)
+Protección del sistema de energía, 8.7 Protección de transformadores de alta tensión
+1MRS757288
+22
+Los relés de distancia se pueden utilizar como protección primaria o como protección de respaldo para el transformador. Ellos
+Consisten en un relé de impedancia multizona en el lado alto del transformador mirando hacia el transformador como
+se muestra en la Figura 8.7.20.
+El relé de impedancia tiene algunas ventajas al proporcionar protección superpuesta con las zonas de protección del bus.
+pero los rasgos negativos de tener que coordinarse con la retransmisión de la línea de transmisión, lo que hace que sea más lento que el
+Relé diferencial. También debe configurarse para que no funcione con corrientes de irrupción durante la energización del transformador.
+Figura 8.7.20: Protección del relé de distancia
+Algunas aplicaciones utilizan dos relés de impedancia. El primero se establece como en la Figura 8.7.20. Un segundo lado bajo
+El relé de impedancia se configura mirando hacia el transformador desde el lado bajo. Esto proporciona protección de respaldo para
+Fallos de AT y BT no eliminados. En Alemania los relés de distancia se utilizan en comparación direccional.
+Esquema de protección de respaldo de transformadores.
+8.7.6.3
+Comentarios finales
+El área principal que incluye el relé de distancia es una protección de respaldo para fallas remotas y protección para
+resistencia a fallas. Tiene algunos problemas graves debido a los requisitos del temporizador de coordinación con la transmisión.
+relés de línea y la falta de protección contra fallas a tierra.
+8.7.7
+Protección contra sobrecorriente
+Los transformadores de potencia suelen tener una protección contra sobrecorriente como protección principal. Protecciones contra sobrecorriente
+tienen una sensibilidad inferior a la que tienen las protecciones diferenciales. Muchos transformadores grandes tienen una sobrecorriente.
+protección como protección de respaldo. Puede proporcionar protección principal o protección de respaldo de los asociados.
+barras colectoras. Las protecciones contra sobrecorriente también pueden proporcionar protección de respaldo de las líneas eléctricas salientes. Al menos
+Se deben proporcionar dos relés de fase de sobrecorriente a cada lado del transformador que estén conectados a un
+fuente de corriente de cortocircuito.
+8.7.7.1
+Protección contra cortocircuitos
+Si se produce un cortocircuito en el lado de bajo voltaje de un transformador de potencia conectado Y/D, solo uno de los
+Las fases en el lado de alto voltaje del transformador transportan toda la corriente de cortocircuito. Las otras dos fases
+el lado de alto voltaje transporta sólo el 50% de la corriente en la tercera fase. La sensibilidad de un pro-
+La protección con dos relés de sobrecorriente en el lado de alto voltaje puede ser solo el 50% de la sensibilidad de un relé de sobrecorriente.
+Manual de automatización de la distribución (prototipo)
+Protección del sistema de energía, 8.7 Protección de transformadores de alta tensión
+1MRS757288
+23
+corriente con tres relés de sobrecorriente en el lado de alta tensión. La protección contra sobrecorriente en el
+El lado de voltaje debe tener tres relés de sobrecorriente, excepto en los transformadores conectados Y/Y.
+Figura 8.7.21: Falla entre fases en un transformador conectado Y/D
+Los relés de sobrecorriente deben tener un elemento de tiempo inverso cuyo arranque pueda ajustarse a algo
+por encima de la corriente de carga nominal máxima, digamos alrededor del 150% del máximo, y con un retraso de tiempo suficiente para ser seleccionado.
+lectivo con las protecciones de los componentes adyacentes del sistema de energía durante fallas externas del transformador. El
+Los relés también deben tener un elemento instantáneo cuyo arranque puede ser ligeramente superior al máximo.
+corriente de cortocircuito mínima para una falla externa o la irrupción de corriente magnetizante.
+Cuando el transformador está conectado a más de una fuente de corrientes de cortocircuito, puede ser necesario
+al menos algunos de los relés de sobrecorriente deben ser direccionales para obtener una buena protección y selectividad para
+fallas externas.
+La protección contra sobrecorriente de fase es un esquema económico, simple y confiable para la detección de fallas y es
+Se utiliza para algunas aplicaciones de protección de transformadores. Sufre por tener que configurarse muy alto para el transformador.
+irrupción y para coordinación de relés de línea descendente y para permitir sobrecargas del transformador. Por lo tanto, es ineficaz
+tivo para fallas internas de transformadores de baja magnitud o fallas de fase a tierra en el lado de baja tensión del
+transformador.
+La protección contra sobrecorriente de fase proporciona protección contra fallas del transformador y algunas limitaciones.
+protección contra sobrecarga. Puede proporcionar protección de respaldo en caso de falla del dispositivo de conmutación, pero solo con
+retrasos muy largos. En algunas aplicaciones, los relés direccionales de sobrecorriente están ubicados tanto en el HV como en el
+Lados BT del transformador. Ambos relés están configurados para ver el interior del transformador. Esto permite una mejor coordinación.
+con relés de sobrecorriente externos debido a que solo es necesario ver parte de los devanados del transformador.
+Los relés numéricos de sobrecorriente también brindan un rendimiento mejorado para la protección de respaldo del transformador. El
+Los filtros digitales ahora eliminan el componente CC y los armónicos de la corriente de entrada. Copia de seguridad numérica
+Por lo tanto, los relés de sobrecorriente se pueden configurar de manera mucho más sensible que los tipos convencionales.
+Manual de automatización de la distribución (prototipo)
+Protección del sistema de energía, 8.7 Protección de transformadores de alta tensión
+1MRS757288
+24
+Figura 8.7.22: Protección de sobrecorriente de fase
+8.7.7.2
+Comentarios finales
+Generalmente, los relés de protección de fase contra sobrecorriente brindan cierta protección adicional para fallas directas.
+se mantienen firmes pero no proporcionan protección primaria adecuada en muchas aplicaciones.
+8.7.8
+Protección de falla a tierra
+En redes efectivamente puestas a tierra, las corrientes de falla a tierra y las corrientes de cortocircuito tienen el mismo orden de magnificación.
+actitud. En este tipo de redes, los fallos a tierra deben eliminarse instantáneamente. En redes sin conexión a tierra efectiva,
+la corriente de falla a tierra es mucho menor que la corriente de cortocircuito. Los requisitos legales en materia de automatización.
+La eliminación de fallos a tierra en dichas redes varía de un país a otro. En Dinamarca no es necesario
+Elimina las fallas a tierra automáticamente. En Suecia, es necesario eliminar automáticamente las fallas a tierra dentro de cinco
+artículos de segunda clase. Es necesario eliminar automáticamente las fallas a tierra con una resistencia de falla de 5 000 ohmios. No es sorprendente
+Cabe señalar que la política relativa a la eliminación de fallas a tierra varía de una empresa de servicios públicos a otra.
+Este tipo de protección es específica para transformadores con al menos un elemento directamente puesto a tierra o puesto a tierra por resistencia.
+devanado. La protección está especializada para proteger frente a fallas del devanado a tierra, como se muestra en la Figura 8.7.23. El
+Las conexiones de las unidades de sobreintensidad pueden ser sólo en el neutro o sólo en la fase residual o diferencial.
+conexión incluyendo todas las fases y la tierra. Estas unidades de sobrecorriente se pueden configurar mucho más bajas que la fase.
+unidades de sobrecorriente debido a la cancelación de la corriente de carga. Es posible que se requiera restricción armónica si el
+Se utilizan conexiones no diferenciales. Generalmente, darán una configuración más baja pero solo brindarán protección.
+para el devanado puesto a tierra.
+8.7.8.1
+Protección restringida contra fallas a tierra
+Una protección restringida contra falla a tierra proporciona una protección sensible y de alta velocidad de un devanado conectado en Y.
+La corriente residual de los transformadores de corriente trifásicos equilibra la corriente del punto neutro.
+Alquilo transformador. La protección restringida puede operar para fallas a tierra dentro de la región entre la corriente
+transformadores. La zona de protección es el devanado conectado en Y en cuestión. La protección debe permanecer
+estable para todas las fallas fuera de esta zona. Esta protección es una protección unitaria.
+La protección restringida contra falta a tierra se utiliza en redes efectivamente puestas a tierra. También se puede utilizar en
+Redes efectivamente puestas a tierra con una corriente de falla a tierra superior al valor operativo de la red restringida.
+protección de falla a tierra.
+Manual de automatización de la distribución (prototipo)
+Protección del sistema de energía, 8.7 Protección de transformadores de alta tensión
+1MRS757288
+25
+8.7.8.1.1
+Protección de falla a tierra restringida de alta impedancia
+La protección restringida contra fallas a tierra suele ser una protección de alta impedancia. Para una falla a tierra interna, el
+La corriente residual de los transformadores de corriente trifásicos equilibra la corriente del punto neutro.
+transformador. En caso de falla externa, la corriente circula entre los transformadores de corriente. La fase actual
+Los transformadores de corriente y los transformadores de corriente de punto neutro deben tener exactamente la misma relación de transformación. El
+La saturación de los transformadores de corriente debe ser al menos el doble de la tensión de funcionamiento del relé de sobretensión.
+La protección es entonces estable para todas las fallas externas, incluso si uno de los transformadores de corriente se satura.
+Una protección de falla a tierra restringida de alta impedancia es más sensible que la protección diferencial del transformador.
+ción. Sin embargo, no puede reemplazar la protección diferencial del transformador. Este último protege tanto a los
+Devanado de tensión y baja tensión.
+Cada devanado conectado en Y de un transformador de potencia se puede proteger con un dispositivo de falla a tierra restringido separado.
+protección. Los devanados conectados en D también se pueden proteger y el transformador de puesta a tierra se puede ubicar en el interior.
+la zona protegida.
+8.7.8.1.2
+Protección de falla a tierra restringida de baja impedancia
+A veces es posible utilizar un relé de corriente de baja impedancia en lugar de un relé de voltaje de alta impedancia.
+El transformador de corriente de punto neutro puede entonces tener una relación de espiras diferente a la del transformador de corriente de fase.
+mers. Se puede utilizar un transformador de corriente auxiliar para la corrección de la relación.
+Si un transformador de corriente de fase se satura durante un cortocircuito externo, la protección no debe funcionar.
+comió. En tales casos, un relé de tensión residual debe liberar la protección de falla a tierra restringida de baja impedancia.
+8.7.8.2
+Protección contra sobrecorriente residual
+Las protecciones de sobrecorriente residual pueden detectar fallas a tierra en devanados conectados a un sistema efectivamente puesto a tierra.
+tems. Los transformadores elevadores de generadores y los autotransformadores EHV en Suecia tienen una sobrecorriente residual
+Protección con dos relés de sobreintensidad. El primer paso tiene un relé de sobreintensidad de tiempo independiente. el principal
+La tarea del primer paso es proporcionar protección de respaldo para fallas a tierra en la barra colectora de alto voltaje en la estación.
+ción. También puede proporcionar protección de respaldo para fallas a tierra dentro del propio transformador. El segundo paso tiene
+un relé de sobrecorriente de tiempo dependiente con restricción de armónicos. La tarea principal es brindar protección a las series.
+fallas asociadas con el propio transformador de potencia. También puede proporcionar protección de respaldo para conexiones terrestres remotas.
+fallas. Algunas protecciones de sobrecorriente residual tienen un tercer relé de sobrecorriente. Tiene un valor operativo entre
+entre el primer paso y el paso sensible descrito anteriormente. La suma de las corrientes de tres fases.
+Los transformadores son la entrada a la protección de sobrecorriente residual.
+8.7.8.3
+Protección contra sobrecorriente de punto neutro
+Las protecciones contra sobrecorriente del punto neutro pueden detectar fallas a tierra en redes efectivamente conectadas a tierra. Ellos proporcionan
+Protección de respaldo para barras colectoras locales y remotas. Transformadores elevadores para generadores y autotransformadores EHV
+En Suecia tienen una protección contra sobrecorriente de punto neutro. Dispone de dos relés de sobrecorriente. El primer paso tiene un
+Relé de sobrecorriente de tiempo independiente. La tarea principal del primer paso es proporcionar protección de respaldo para la tierra.
+Fallos en las barras locales. También puede proporcionar protección de respaldo para fallas a tierra dentro del transformador.
+Manual de automatización de la distribución (prototipo)
+Protección del sistema de energía, 8.7 Protección de transformadores de alta tensión
+1MRS757288
+26
+ser. El segundo paso tiene un relé de sobrecorriente de tiempo dependiente con restricción de armónicos. La tarea principal es
+Proporciona protección para fallas en serie asociadas con el propio transformador de potencia. También puede proporcionar respaldo
+Protección contra faltas a tierra remotas. Algunas protecciones de sobrecorriente de punto neutro tienen un tercer relé de sobrecorriente.
+poner. Tiene un valor operativo entre el primer paso y el paso sensible descrito anteriormente.
+Figura 8.7.23: Protección neutral y diferencial
+8.7.8.4
+Protección de falla a tierra del tanque
+Este tipo de protección es específica de transformadores con al menos un devanado puesto a tierra o puesto a tierra por resistencia.
+La protección está especializada para proteger frente a fallas del devanado a tierra, como se muestra en la Figura 8.7.24.
+La protección de defecto a tierra del depósito merece una atención especial. Es un relé que está conectado en serie con el
+tierra del tanque principal. El tanque está aislado de tierra excepto por un camino, que tiene un transformador de corriente.
+alrededor conectado al relé de tierra del tanque. El relé detectará cualquier corriente que fluya desde el tanque a tierra.
+tales como fallas de bujes, fallas del devanado al tanque y fallas del núcleo al devanado. Dado que la corriente mínima fluye
+A través de este camino durante el funcionamiento normal, el relé puede configurarse como muy sensible. El problema con esta protección
+La ventaja es que requiere un único camino a tierra a través de una resistencia de 1,0 Ω como máximo. Esto crea un alto volumen.
+Conecte a tierra remota desde el tanque del transformador durante fallas a tierra, lo que puede causar problemas de seguridad. Inad-
+El control vertical o los caminos metálicos hacia la caja del transformador pueden acortar fácilmente el camino. También debe haber un mal funcionamiento.
+evitarse cuidadosamente de las corrientes de capacitancia del tanque del transformador.
+Figura 8.7.24: Protección de falla a tierra del tanque
+En general, esta protección está especializada en proporcionar un devanado puesto a tierra con una falla a tierra de baja sensibilidad.
+protección únicamente. No proporciona otros tipos de protección.
+Manual de automatización de la distribución (prototipo)
+Protección del sistema de energía, 8.7 Protección de transformadores de alta tensión
+1MRS757288
+27
+8.7.8.5
+Protección contra desplazamiento de punto neutro
+En este ejemplo, el devanado de un transformador alimenta un sistema no efectivamente puesto a tierra. El devanado es un desenterrado.
+Uno conectado en Y o uno conectado en D. Una protección contra sobretensión de secuencia cero puede proporcionar protección contra falla a tierra.
+protección de este devanado. También proporcionará protección contra fallas a tierra para los conductores entre el trans-
+ex y la barra colectora. Finalmente, proporcionará protección contra falla a tierra para la barra colectora conectada. El cero-
+La protección contra sobretensiones de secuencia también puede proporcionar protección de respaldo contra fallas a tierra. Alimentadores conectados al
+La barra colectora debe tener protección de falla a tierra principal y de respaldo. La protección del transformador proporciona estación
+protección de respaldo local para dichos alimentadores.
+Tradicionalmente, el valor de funcionamiento del relé de sobretensión ha sido del 36%. El valor de funcionamiento es 40 V y
+El voltaje nominal completo de fase a neutro da 110 V. Hoy en día, el valor operativo es tan bajo como de 15 a 25 voltios.
+Esta tendencia es consecuencia de los estrictos requisitos para la eliminación de fallas a tierra de alta resistividad en Suecia.
+guarida. La protección contra sobretensión de secuencia cero debe tener el retardo más largo entre las protecciones contra falla a tierra.
+ciones.
+Tres transformadores conectados de fase a tierra pueden proporcionar la cantidad de energía al relé de sobretensión.
+El transformador de tensión mide la tensión fase-tierra. Los devanados secundarios tienen un D- abierto
+conexión. En un primer paso, la protección debe disparar el disyuntor asociado al elemento protegido.
+devanado. El primer paso debería tener un retraso de tiempo. Este retraso debe ser mayor que el retraso de cualquier
+protección de falla a tierra para los objetos conectados a la barra colectora. El peor de los casos es la limpieza de un cruce.
+culpa del país. En un segundo paso, la protección debe disparar el/los otro(s) disyuntor(es) asociado(s) al
+transformador. El segundo paso tiene un retraso de tiempo mayor que el primer paso.
+Un transformador monofásico conectado a tierra también puede proporcionar la cantidad de energía a la sobretensión.
+relé. El transformador de tensión mide la tensión en el punto neutro. La protección no funcionará a una
+falla a tierra si hay una interrupción en el circuito primario o secundario. Es muy difícil detectar tal
+condición durante el funcionamiento normal. Este es un inconveniente de utilizar un transformador de tensión conectado al neutro.
+punto central.
+En algunas redes, algunos de los puntos neutros del transformador no están conectados a tierra para limitar la corriente de falla a tierra. En
+En este caso, puede suceder que un devanado del transformador quede conectado a un sistema sin toma de tierra. Cero-
+Por lo tanto, aquí se utilizan relés de detección de tensión de secuencia como protección contra fallos a tierra.
+8.7.9
+Protección contra descargas eléctricas
+Muchos transformadores de potencia tienen transformadores de corriente con casquillo. En tales casos, no es necesario instalar
+Transformadores de corriente independientes en el patio de distribución al aire libre. Los transformadores de corriente tipo bushing rara vez se utilizan.
+en los devanados del transformador conectados a la aparamenta interior. Protecciones diferenciales de transformadores, alimentados desde
+transformadores de corriente de bushings, no pueden detectar fallas de descarga disruptiva en la superficie de los bushings. estan afuera
+la zona de protección de la protección diferencial del transformador.
+Las estadísticas de fallas en la sección 8.7.3 muestran que las fallas de terminales y de casquillos ocurren con frecuencia. Varios
+Los transformadores viejos tienen una protección contra descargas eléctricas. Consiste en un anillo metálico alrededor de la raíz de cada casquillo.
+Los anillos están aislados del tanque del transformador y conectados entre sí. Hay un conductor de
+Manual de automatización de la distribución (prototipo)
+Protección del sistema de energía, 8.7 Protección de transformadores de alta tensión
+1MRS757288
+28
+los anillos a la alfombra de tierra de la subestación. Una descarga disruptiva en la superficie del buje debe terminar en
+el anillo de descarga disruptiva. En tales casos, comienza a circular corriente por el conductor de puesta a tierra. La corriente se alimenta
+a través de un transformador de corriente y una protección instantánea de sobrecorriente en el lado secundario. El exceso-
+La protección de corriente detectará muchas fallas de descarga disruptiva en la superficie de los bujes.
+Una protección diferencial de corriente para la barra conectada al transformador también detectará dicha descarga disruptiva.
+fallas. Hay muy poca necesidad de una protección especial contra descargas eléctricas cuando hay una protección de barra colectora.
+8.7.10
+Protección contra sobrecarga
+La clasificación de un transformador de potencia se basa en el aumento de temperatura por encima de una temperatura ambiente máxima supuesta.
+temperatura. En esta condición, normalmente no se permite una sobrecarga sostenida. A una temperatura ambiente más baja
+se puede aceptar con seguridad cierto grado de sobrecarga. También se permiten sobrecargas breves hasta cierto punto,
+dependiendo de las condiciones de carga previas.
+Es difícil formular reglas para sobrecargas breves. La única afirmación segura es que el devanado no debe
+sobrecalentar. Las normas internacionales no establecen límites idénticos e inequívocos para la temperatura del punto crítico.
+Se pueden utilizar protecciones eléctricas térmicas para proteger los transformadores de potencia contra sobrecargas. Tales protecciones
+son del modelo réplica térmica. La característica de protección está definida por la constante de tiempo de calentamiento.
+Un transformador de potencia puede soportar una sobrecarga sustancial durante una o dos horas. Muchas empresas de servicios públicos quieren utilizar esto.
+capacidad temporalmente. Una protección contra sobrecorriente también puede proporcionar protección contra sobrecarga de un transformador de potencia.
+anterior. Una protección de sobrecarga de este tipo debe tener una constante de tiempo más larga que una protección de sobrecorriente convencional.
+tección tiene.  Sin embargo, el cambiador de tomas en línea puede limitar la capacidad de sobrecarga. Su constante de tiempo térmica.
+puede ser más corto que la constante de tiempo térmica de la unidad del transformador principal. La mayoría de las protecciones contra sobrecargas
+hacen sonar una alarma, pero algunos disparan los disyuntores asociados.
+Debido a los requisitos de calefacción y refrigeración de un transformador de transmisión, algunas temperaturas especializadas
+Se requiere protección de estructura para brindar protección en todo el rango de límites operativos del transformador.
+La temperatura del transformador está limitada por la temperatura ambiente, la condición del sistema de enfriamiento, la excitación.
+voltaje de estación y la carga del transformador. La temperatura del aceite superior tiene un valor máximo aceptable de 100 a
+105°C. Un sensor de temperatura del aceite superior generalmente proporciona protección de temperatura.
+Para simular la temperatura del devanado, se utiliza una resistencia de tamaño aproximado al calentamiento en el devanado del transformador.
+a plena carga es suministrado por un transformador de corriente de una de las corrientes de fase. Se añade el calentamiento por resistencia.
+hasta la temperatura superior del aceite haciendo circular el aceite superior en un pozo con la resistencia. Esta temperatura de calentamiento combinada
+La temperatura se utiliza para simular la temperatura del devanado. La temperatura del devanado generalmente se limita a 140-
+180°C. Estos dos relés no cumplen ninguno de los demás requisitos, pero son nuevamente los únicos relés que cumplen
+los requisitos del límite de temperatura de sobrecarga.
+8.7.11
+Protección contra sobreexcitación
+Un transformador cargado con corriente nominal puede soportar sólo el 105% de la tensión nominal de forma continua. Sobreexcitación
+La tensión es una condición anormal que puede dañar el transformador. La ecuación (8.7.1) da el valor RMS
+i
+mi
+[V] de la FEM inducida en un transformador.
+Manual de automatización de la distribución (prototipo)
+Protección del sistema de energía, 8.7 Protección de transformadores de alta tensión
+1MRS757288
+29
+máximo
+44
+.4
+B
+A
+norte
+F
+⋅
+⋅
+⋅
+⋅
+(8.7.1)
+Aquí
+F
+es la frecuencia del sistema [Hz]
+norte
+es el número de vueltas en la pata central [1]
+A
+es el área del tramo central [m2]
+máximo
+B
+es el valor máximo de la densidad de flujo [T]
+La ecuación (8.7.2) da una buena medida de la excitación.
+norte
+norte
+norte
+F
+V
+F
+V
+B
+B
+=
+
+
+
+
+
+
+máximo
+(8.7.2)
+Aquí
+norte
+B
+es el valor máximo nominal de la densidad de flujo [T]
+V
+es el valor RMS del voltaje terminal [V]
+norte
+V
+es el valor RMS nominal de la tensión terminal [V]
+nf
+es la frecuencia nominal del sistema [Hz]
+La ecuación (8.7.2) motiva el nombre de protección voltio por hercio. El transformador debe desconectarse si el
+La relación entre el voltaje del terminal y la frecuencia del sistema se vuelve demasiado alta. La proporción no debe exceder el valor.
+1.1 continuamente. La relación puede asumir valores de hasta 1,4 durante 10 segundos.
+Los transformadores propensos a sobretensión, baja frecuencia o ambas deben tener una protección contra sobreexcitación. espe-
+Los transformadores elevadores del generador conectados especialmente a la unidad pueden estar expuestos a sobretensiones y subfrecuencias.
+condiciones. Durante el arranque y parada el transformador opera con una frecuencia reducida. La densidad de flujo
+ty será muy alta si se intenta magnetizar el generador cuando la velocidad de la turbina-generador es
+demasiado bajo. Existe el riesgo de que el personal deje en funcionamiento el regulador automático de voltaje (AVR) durante la
+procedimiento de apagado. Esto ha sucedido muchas veces y ha provocado incidentes de sobreexcitación.
+Es importante que la sobreexcitación obtenga una representación correcta de la densidad de flujo en el núcleo.  La protección
+La conexión debe conectarse a un transformador de tensión, midiendo la tensión de un devanado sin explotar.
+Este es otro tipo de aplicación de relés de protección especializada donde solo se cubre un nivel de protección.
+erizado. Ningún otro relé proporciona una protección adecuada contra la sobreexcitación del núcleo del transformador. Daño a la
+Pueden ocurrir laminaciones en el núcleo si se alcanza una excitación mayor que la clasificación de voltios/hercios del transformador.
+Este tipo de protección no cubre ningún otro requisito excepto éste.
+Manual de automatización de la distribución (prototipo)
+Protección del sistema de energía, 8.7 Protección de transformadores de alta tensión
+1MRS757288
+30
+8.7.12
+Detectores de fallas mecánicas
+Los equipos de protección que monitorean corrientes o voltajes pueden operar y disparar los disyuntores apropiados.
+cuando existen ciertas condiciones de operación. Desafortunadamente, algunas fallas del transformador no se detectan cuando se usa.
+utilizar relés de protección utilizando entradas eléctricas únicamente. Estos relés eléctricos rara vez pueden detectar fallas incipientes.
+y fallas entre giros. Una falla entre espiras puede causar que fluya una corriente considerable en la espira en cortocircuito.
+mientras que la corriente en el devanado restante permanece relativamente sin cambios. El transformador puede estar seriamente
+dañado antes de que los relés eléctricos detecten dichas fallas. La eliminación lenta de fallas internas puede requerir ex-
+reparaciones pensativas. Es claramente deseable utilizar otros métodos para detectar fallas internas que pueden no ser detectadas.
+tectado por relés eléctricos.
+La protección contra sobrepresión, la protección Buchholz y el control del nivel de aceite complementan la protección eléctrica.
+todos los relés y mejorar la confiabilidad de las protecciones del transformador. Se denominan fallos mecánicos.
+detectores, porque utilizan otras cantidades de entrada además de las eléctricas. Los detectores de fallas mecánicas son todos
+Diseñado para proporcionar protección especializada para fallas internas y condiciones anormales. Tal mecánica
+Los detectores de fallas se describen en el Capítulo 3.
+Manual de automatización de la distribución (prototipo)
+Protección del sistema de energía, 8.7 Protección de transformadores de alta tensión
+1MRS757288
+31
+Referencias
+[8.7.1]
+Kawashima, K.; Fukuda, T.; Kashima, Y. y Maruyama, K.
+[
+: "Mejora de la confiabilidad
+for 500 kV Transformers", Hitachi Review, vol. 24, no. 11, págs. 421-427, noviembre de 1975.
+8.7.2]
+Neugebauer, H.
+[
+: "Protección selectiva", Springer-Verlag, Berlín, 1955.
+8.7.3]
+"Una encuesta internacional sobre fallas en grandes transformadores de potencia en servicio", Electra, no.
+88, págs. 21-48, mayo de 1983.
+[8.7.4]
+"Guía para aplicaciones de relés de protección en transformadores de potencia", estándar IEEE C37.91-
+2000, Instituto de Ingenieros Eléctricos y Electrónicos, octubre de 2000.
+[8.7.5]
+"Guía IEEE para aplicaciones de relés de protección en transformadores de potencia", ANSI/IEEE
+C37.91-1985, IEEE, Nueva York, 1985.
+[8.7.6]
+"Nordel - Estadísticas de fallas", Nordel, 1999.
+[8.7.7]
+"Informe sobre problemas de transformadores de potencia", Edison Electric Institute, 1971.
+Historial de revisión de documentos
+Revisión/fecha del documento
+Historia
+A/07 Octubre 2010
+Primera revisión
+Descargo de responsabilidad y derechos de autor
+La información contenida en este documento está sujeta a cambios sin previo aviso y no debe interpretarse como un compromiso por parte de ABB.
+Oye. ABB Oy no asume ninguna responsabilidad por los errores que puedan aparecer en este documento.
+En ningún caso ABB Oy será responsable de los daños directos, indirectos, especiales, incidentales o consecuentes de cualquier naturaleza o tipo que surjan.
+derivados del uso de este documento, ni ABB Oy será responsable de los daños incidentales o consecuentes que surjan del uso de cualquier
+software o hardware descritos en este documento.
+Este documento y partes del mismo no deben reproducirse ni copiarse sin el permiso por escrito de ABB Oy, y el contenido
+del mismo no debe entregarse a terceros ni utilizarse para ningún fin no autorizado.
+El software o hardware descrito en este documento se proporciona bajo una licencia y puede usarse, copiarse o divulgarse únicamente en
+de acuerdo con los términos de dicha licencia.
+Copyright © 2010 ABB Oy
+Reservados todos los derechos.
+Marcas registradas
+ABB es una marca registrada del Grupo ABB. Todas las demás marcas o nombres de productos mencionados en este documento pueden ser marcas comerciales.
+marcas o marcas registradas de sus respectivos titulares.
+Esta página se deja en blanco intencionalmente.
+Esta página se deja en blanco intencionalmente.
+Esta página se deja en blanco intencionalmente.
+© Copyright 2011 ABB. Reservados todos los derechos. 1MRS757288A
+Información del contacto
+ABB Oy, Automatización de la distribución
+Apartado postal 699
+Dirección de visita: Muottitie 2A
+FI-65101 Vaasa, FINLANDIA
+Teléfono: +358 10 22 11
+Fax: +358 10 22 41094
+www.abb.com/substationautomation

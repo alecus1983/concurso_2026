@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuestionario de Contratación EMCALI (Alto Contraste)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos optimizados para alto contraste y E-Ink */
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .option-btn {
+            transition: background-color 0.2s, border-color 0.2s;
+        }
+        .option-btn:hover:not(:disabled) {
+           background-color: #f0f0f0; /* Un gris muy claro para el hover */
+        }
+    </style>
+</head>
+<body class="bg-white text-black flex items-center justify-center min-h-screen p-4">
+
+    <div class="bg-white border-2 border-black rounded-lg p-6 sm:p-8 w-full max-w-2xl">
+        <div class="text-center mb-6">
+            <h1 class="text-2xl sm:text-3xl font-bold text-black">Cuestionario de Contratación EMCALI</h1>
+            <p class="text-gray-600 mt-2">Pon a prueba tus conocimientos.</p>
+        </div>
+
+        <!-- Contenedor del Cuestionario -->
+        <div id="quiz-container" class="space-y-6">
+            <div id="question-card" class="bg-white p-6 rounded-lg border-2 border-gray-300 hidden">
+                <p id="question-text" class="text-lg font-semibold mb-5 text-center"></p>
+                <div id="options-container" class="grid grid-cols-1 gap-4">
+                    <!-- Las opciones se generarán aquí -->
+                </div>
+                <div id="feedback-container" class="mt-5 text-center font-bold text-lg"></div>
+                <!-- Contenedor para la explicación -->
+                <div id="explanation-container" class="mt-4 p-4 bg-white border border-gray-400 rounded-lg text-base hidden"></div>
+            </div>
+            <button id="next-question-btn" class="w-full bg-black text-white font-bold py-3 px-6 rounded-lg hover:bg-gray-800 focus:outline-none focus:ring-4 focus:ring-gray-400">
+                Mostrar Pregunta Aleatoria
+            </button>
+        </div>
+         <div id="completion-message" class="text-center p-8 bg-white rounded-lg hidden">
+            <h2 class="text-2xl font-bold text-green-700">¡Felicidades!</h2>
+            <p class="mt-2 text-black">Has completado todas las preguntas.</p>
+            <button id="restart-btn" class="mt-6 bg-black text-white font-bold py-3 px-8 rounded-lg hover:bg-gray-800 focus:outline-none focus:ring-4 focus:ring-gray-400">
+                Volver a Empezar
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // --- INICIO DEL CONTENIDO DEL CUESTIONARIO ---
+        // Reemplaza estas preguntas de ejemplo con tus 60 preguntas sobre EMCALI.
+      // Ahora cada pregunta incluye una "explicacion".
+
+
+
+
+      
+      const diccionario = {
+
+	{
+    "pregunta": "¿Cuál es el objetivo principal del \"Programa de Mitigación de Riesgos en la Contratación y Garantías de Seguros de EMCALI EICE ESP\"?",
+    "respuesta": "B",
+    "opciones": {
+      "A": "Establecer lineamientos para la selección de personal [1].",
+      "B": "Definir un modelo para cubrir las garantías requeridas en los procesos de adquisición de bienes, obras y servicios [1].",
+      "C": "Administrar los recursos financieros de la entidad [1].",
+      "D": "Determinar las tarifas de los servicios públicos [1].",
+      "E": "Promover la competencia entre los contratistas [1]."
+    }
+  },
+  {
+    "pregunta": "¿Cuáles son las etapas de la gestión contractual en EMCALI, según el Programa de Mitigación de Riesgos?",
+    "respuesta": "C",
+    "opciones": {
+      "A": "Pre-contractual, Financiera y Legal [2].",
+      "B": "Planeación, Ejecución y Cierre [2].",
+      "C": "Pre-contractual de Planeación, Pre-contractual de Selección del Contratista, Contractual y Post-contractual [2].",
+      "D": "Adquisición, Operación y Mantenimiento [2].",
+      "E": "Evaluación, Negociación y Aprobación [2]."
+    }
+  },
+  {
+    "pregunta": "¿Qué tipo de entidad es Empresas Municipales de Cali EMCALI E.I.C.E. E.S.P.?",
+    "respuesta": "B",
+    "opciones": {
+      "A": "Una empresa privada de servicios públicos [3, 4].",
+      "B": "Una empresa industrial y comercial del Estado prestadora de servicios públicos [3, 4].",
+      "C": "Una entidad sin ánimo de lucro [3, 4].",
+      "D": "Una sociedad de economía mixta [3, 4].",
+      "E": "Una institución académica [3, 4]."
+    }
+  },
+  {
+    "pregunta": "¿Cuál es la finalidad de la etapa Pre-contractual de Planeación en el proceso de contratación?",
+    "respuesta": "B",
+    "opciones": {
+      "A": "Realizar la liquidación del contrato [5, 6].",
+      "B": "Identificar las necesidades de abastecimiento de bienes, obras o servicios [5, 6].",
+      "C": "Evaluar el desempeño del contratista [5, 6].",
+      "D": "Emitir los pagos finales [5, 6].",
+      "E": "Suspender el proceso de contratación [5, 6]."
+    }
+  },
+  {
+    "pregunta": "Según el programa, ¿qué porcentaje del valor asegurado debe ser la Garantía de Seriedad de la Oferta para procesos con un presupuesto superior a 1000 SMMLV?",
+    "respuesta": "C",
+    "opciones": {
+      "A": "5% [7].",
+      "B": "10% [7].",
+      "C": "15% [7].",
+      "D": "20% [7].",
+      "E": "No aplica para estos casos [7]."
+    }
+  },
+  {
+    "pregunta": "¿Cuál es la duración mínima de la Garantía de Cumplimiento de Contrato, incluyendo sus prórrogas?",
+    "respuesta": "C",
+    "opciones": {
+      "A": "Tres (3) meses [7].",
+      "B": "Un (1) año [7].",
+      "C": "Seis (6) meses más seis (6) meses adicionales [7].",
+      "D": "Quince (15) días [7].",
+      "E": "El tiempo que dure la ejecución del contrato sin prórroga [7]."
+    }
+  },
+  {
+    "pregunta": "¿Quién es el responsable de la gestión de las pólizas expedidas por las compañías aseguradoras integrantes del PMRC?",
+    "respuesta": "B",
+    "opciones": {
+      "A": "El Gerente Financiero de EMCALI [8].",
+      "B": "El Corredor de Seguros de EMCALI EICE E.S.P. [8].",
+      "C": "El Gerente de Contratación [8].",
+      "D": "El supervisor o interventor del contrato [8].",
+      "E": "El proponente o contratista [8]."
+    }
+  },
+  {
+    "pregunta": "¿Qué documento debe elaborar el área usuaria para iniciar la etapa pre-contractual de planeación, según el Manual de Contratación?",
+    "respuesta": "C",
+    "opciones": {
+      "A": "Un acta de inicio [5, 6, 9].",
+      "B": "Un informe de gestión [5, 6, 9].",
+      "C": "Un formulario de planeación de abastecimiento (Ficha de Requerimiento) [5, 6, 9].",
+      "D": "Una propuesta económica [5, 6, 9].",
+      "E": "Una solicitud de garantías [5, 6, 9]."
+    }
+  },
+  {
+    "pregunta": "¿Cuál es una de las funciones principales de la supervisión o interventoría en la ejecución del contrato?",
+    "respuesta": "B",
+    "opciones": {
+      "A": "Negociar nuevos contratos con otros proveedores [10].",
+      "B": "Cooperar con EMCALI y con el contratista en el logro de los objetivos contractuales [10].",
+      "C": "Definir unilateralmente cambios en el alcance del contrato [10].",
+      "D": "Asumir la responsabilidad financiera total del contratista [10].",
+      "E": "Aprobar pagos sin verificación previa [10]."
+    }
+  },
+  {
+    "pregunta": "En la gestión contractual, ¿cuál de los siguientes NO es un factor de riesgo asociado a las garantías de seguros, según el Programa de Mitigación de Riesgos?",
+    "respuesta": "D",
+    "opciones": {
+      "A": "Factores asociados al cumplimiento de las obligaciones [11].",
+      "B": "Factores asociados a la originalidad, legalidad y completitud [11].",
+      "C": "Factores asociados al manejo y control de siniestros [11].",
+      "D": "Factores asociados a la antigüedad del contratista [11].",
+      "E": "Factores asociados a la suficiencia y legalidad de las garantías [11]."
+    }
+  },
+  {
+    "pregunta": "En la modalidad de Invitación Pública, ¿qué reglas se deben tener en cuenta, según las \"Etapas en la Contratación\"?",
+    "respuesta": "B",
+    "opciones": {
+      "A": "El contrato debe ser adjudicado al proponente con la oferta más alta [12, 13].",
+      "B": "La descripción técnica del bien, obra o servicio debe ser detallada y completa [12, 13].",
+      "C": "No se requieren garantías [12, 13].",
+      "D": "Los términos y condiciones de ejecución del contrato no son relevantes [12, 13].",
+      "E": "El cronograma de ejecución no es necesario [12, 13]."
+    }
+  },
+  {
+    "pregunta": "¿Cuándo se considera excepcional el pago en moneda extranjera, según las \"Etapas en la Contratación\"?",
+    "respuesta": "B",
+    "opciones": {
+      "A": "Siempre que el proveedor lo solicite [14, 15].",
+      "B": "En casos de emergencia o proveedor único exclusivo [14, 15].",
+      "C": "Cuando el contrato supera los 1000 SMMLV [14, 15].",
+      "D": "Si el contratista es extranjero [14, 15].",
+      "E": "Nunca está permitido el pago en moneda extranjera [14, 15]."
+    }
+  },
+  {
+    "pregunta": "¿Cuál es el número máximo de oferentes precalificados que se puede limitar en una Invitación Pública que derive en un Contrato Marco o Acuerdo Comercial?",
+    "respuesta": "B",
+    "opciones": {
+      "A": "Cinco (5) [16-18].",
+      "B": "Diez (10) [16-18].",
+      "C": "Quince (15) [16-18].",
+      "D": "Veinte (20) [16-18].",
+      "E": "No hay límite [16-18]."
+    }
+  },
+  {
+    "pregunta": "¿Qué ocurre si un supervisor o interventor incumple sus obligaciones contractuales, en relación con la Ley 1474 de 2011?",
+    "respuesta": "B",
+    "opciones": {
+      "A": "Recibe una felicitación por su trabajo [19].",
+      "B": "Puede ser sancionado disciplinaria y penalmente [19].",
+      "C": "Se le asigna un nuevo contrato [19].",
+      "D": "Se le otorga una bonificación [19].",
+      "E": "Se le exime de toda responsabilidad [19]."
+    }
+  },
+  {
+    "pregunta": "¿Qué tipo de garantía cubre los perjuicios causados por el contratista por daño emergente y lucro cesante?",
+    "respuesta": "D",
+    "opciones": {
+      "A": "Póliza de Seriedad de la Oferta [20].",
+      "B": "Póliza de Cumplimiento del Contrato [20].",
+      "C": "Póliza de Estabilidad y Calidad de la Obra [20].",
+      "D": "Póliza de Responsabilidad Civil Extracontractual [20].",
+      "E": "Póliza de Pago Anticipado [20]."
+    }
+  },
+  {
+    "pregunta": "¿Cuál es la capacidad mínima requerida para las compañías aseguradoras adscritas al PMRC para operar en Colombia?",
+    "respuesta": "C",
+    "opciones": {
+      "A": "Solo pueden ser personas jurídicas [8].",
+      "B": "Deben constituirse como sociedad anónima, colectiva o de responsabilidad limitada [8].",
+      "C": "Deben contar con un capital mínimo y un régimen de inversiones e inscripción para poder operar [8].",
+      "D": "No requieren el respaldo de ninguna aseguradora [8].",
+      "E": "Deben ser intermediarios directamente por la Superintendencia Financiera [8]."
+    }
+  },
+  {
+    "pregunta": "¿Qué sucede si el contratista no suministra la información necesaria para la evaluación de gestión por parte del supervisor o interventor?",
+    "respuesta": "C",
+    "opciones": {
+      "A": "Se le otorga una prórroga para presentar la información [21].",
+      "B": "Se aplica una penalidad económica sin más consecuencias [21].",
+      "C": "Se considerará una falta grave y se aplicará la legislación correspondiente [21].",
+      "D": "El supervisor o interventor completará la información faltante [21].",
+      "E": "Se anula el contrato automáticamente [21]."
+    }
+  },
+  {
+    "pregunta": "¿Cuál es el monto máximo de ofertas que se pueden limitar en las condiciones de contratación para la Lista de Precalificados?",
+    "respuesta": "C",
+    "opciones": {
+      "A": "Cinco (5) ofertas [22, 23].",
+      "B": "Siete (7) ofertas [22, 23].",
+      "C": "Diez (10) ofertas [22, 23].",
+      "D": "Quince (15) ofertas [22, 23].",
+      "E": "Veinte (20) ofertas [22, 23]."
+    }
+  },
+  {
+    "pregunta": "¿Qué Gerencia tiene la competencia para delegar y es responsable del Formulario de Planeación de Abastecimiento en la etapa precontractual?",
+    "respuesta": "C",
+    "opciones": {
+      "A": "Gerencia Financiera [24-26].",
+      "B": "Gerencia de Talento Humano [24-26].",
+      "C": "Gerencia de Área de Abastecimiento Empresarial [24-26].",
+      "D": "Gerencia Jurídica [24-26].",
+      "E": "Gerencia de Control Interno [24-26]."
+    }
+  },
+  {
+    "pregunta": "¿Qué tipo de contratos se rigen por el derecho privado, pero si se refieren a empresas de servicios públicos, se someterán al régimen de las pólizas a favor de Entidades Estatales?",
+    "respuesta": "C",
+    "opciones": {
+      "A": "Contratos de Concesión [27].",
+      "B": "Contratos de Suministro [27].",
+      "C": "Contratos de Crédito, Retención de Garantía, Garantías Bancarias, Patrimonio Autónomo [27].",
+      "D": "Contratos de Obra Pública [27].",
+      "E": "Contratos de Consultoría [27]."
+    }
+  },
+          "pregunta1": {
+            "pregunta": "¿Cuál es el principio fundamental que rige la contratación pública?",
+            "respuesta": "A",
+            "opciones": {
+              "A": "Transparencia y selección objetiva",
+              "B": "El menor costo posible",
+              "C": "La rapidez en la adjudicación",
+              "D": "Beneficio para la entidad contratante",
+              "E": "Complejidad del proceso"
+            },
+            "explicacion": "La contratación pública se basa en los principios de transparencia para garantizar la igualdad de oportunidades y la selección objetiva para escoger la oferta más favorable para la entidad."
+          },
+          "pregunta2": {
+            "pregunta": "En un proceso de licitación pública, ¿qué documento contiene las reglas y condiciones para los proponentes?",
+            "respuesta": "C",
+            "opciones": {
+              "A": "El contrato final",
+              "B": "El manual de funciones",
+              "C": "El pliego de condiciones",
+              "D": "El registro de proponentes",
+              "E": "La oferta económica"
+            },
+            "explicacion": "El pliego de condiciones es el documento maestro que establece todas las 'reglas del juego', desde los requisitos técnicos y legales hasta los criterios de evaluación y el cronograma del proceso."
+          },
+          "pregunta3": {
+            "pregunta": "¿Qué modalidad de selección se utiliza para bienes y servicios de características técnicas uniformes y de común utilización?",
+            "respuesta": "E",
+            "opciones": {
+              "A": "Licitación pública",
+              "B": "Concurso de méritos",
+              "C": "Contratación directa",
+              "D": "Selección abreviada por acuerdo marco",
+              "E": "Selección abreviada de menor cuantía"
+            },
+            "explicacion": "La selección abreviada de menor cuantía es un proceso simplificado diseñado para adquirir bienes y servicios comunes, donde el factor principal de selección suele ser el precio, agilizando la contratación."
+          }
+          // Agrega aquí las preguntas hasta "pregunta60"
+        };
+        // --- FIN DEL CONTENIDO DEL CUESTIONARIO ---
+
+
+        // --- Elementos del DOM ---
+        const questionCard = document.getElementById('question-card');
+        const questionText = document.getElementById('question-text');
+        const optionsContainer = document.getElementById('options-container');
+        const feedbackContainer = document.getElementById('feedback-container');
+        const explanationContainer = document.getElementById('explanation-container'); // Nuevo elemento
+        const nextQuestionBtn = document.getElementById('next-question-btn');
+        const completionMessage = document.getElementById('completion-message');
+        const quizContainer = document.getElementById('quiz-container');
+        const restartBtn = document.getElementById('restart-btn');
+
+        let allQuestions = [];
+        let availableQuestions = [];
+        let currentQuestionData = null; // Almacenará la pregunta actual completa
+
+        // --- Funciones del Cuestionario ---
+
+        function formatQuestions() {
+            return Object.values(diccionario);
+        }
+
+        function startQuiz() {
+            allQuestions = formatQuestions();
+            availableQuestions = [...allQuestions];
+            completionMessage.classList.add('hidden');
+            quizContainer.classList.remove('hidden');
+            questionCard.classList.add('hidden');
+            nextQuestionBtn.textContent = 'Mostrar Pregunta Aleatoria';
+            nextQuestionBtn.style.display = 'block';
+        }
+
+        function displayRandomQuestion() {
+            if (availableQuestions.length === 0) {
+                quizContainer.classList.add('hidden');
+                completionMessage.classList.remove('hidden');
+                return;
+            }
+
+            const questionIndex = Math.floor(Math.random() * availableQuestions.length);
+            currentQuestionData = availableQuestions.splice(questionIndex, 1)[0];
+            
+            questionText.textContent = currentQuestionData.pregunta;
+            optionsContainer.innerHTML = '';
+            feedbackContainer.innerHTML = '';
+            explanationContainer.classList.add('hidden'); // Oculta la explicación anterior
+
+            Object.entries(currentQuestionData.opciones).forEach(([key, value]) => {
+                const button = document.createElement('button');
+                button.classList.add('option-btn', 'w-full', 'text-left', 'p-4', 'rounded-lg', 'border-2', 'border-black', 'bg-white', 'text-black', 'focus:outline-none', 'focus:ring-2', 'focus:ring-black');
+                button.innerHTML = `<span class="font-bold mr-2">${key}.</span> ${value}`;
+                button.dataset.option = key;
+                button.addEventListener('click', checkAnswer);
+                optionsContainer.appendChild(button);
+            });
+
+            questionCard.classList.remove('hidden');
+            nextQuestionBtn.style.display = 'none';
+        }
+
+        function checkAnswer(event) {
+            const selectedOption = event.currentTarget.dataset.option;
+            const allOptionButtons = optionsContainer.querySelectorAll('.option-btn');
+            const correctAnswer = currentQuestionData.respuesta;
+
+            allOptionButtons.forEach(btn => {
+                btn.disabled = true;
+                // Resalta la respuesta correcta con un borde grueso y verde
+                if (btn.dataset.option === correctAnswer) {
+                    btn.classList.remove('border-black');
+                    btn.classList.add('border-green-700', 'border-4', 'font-bold');
+                }
+            });
+
+            if (selectedOption === correctAnswer) {
+                feedbackContainer.textContent = '¡Correcto!';
+                feedbackContainer.className = 'mt-5 text-center font-bold text-lg text-green-700';
+            } else {
+                feedbackContainer.textContent = `Incorrecto. La respuesta correcta era la ${correctAnswer}.`;
+                feedbackContainer.className = 'mt-5 text-center font-bold text-lg text-red-700';
+                // Marca la opción incorrecta seleccionada con un borde rojo
+                event.currentTarget.classList.remove('border-black');
+                event.currentTarget.classList.add('border-red-700', 'border-4');
+            }
+            
+            // Muestra la explicación
+            if (currentQuestionData.explicacion) {
+                explanationContainer.textContent = currentQuestionData.explicacion;
+                explanationContainer.classList.remove('hidden');
+            }
+
+            nextQuestionBtn.textContent = 'Siguiente Pregunta';
+            nextQuestionBtn.style.display = 'block';
+        }
+
+        // --- Event Listeners ---
+        nextQuestionBtn.addEventListener('click', displayRandomQuestion);
+        restartBtn.addEventListener('click', startQuiz);
+
+        // --- Inicio ---
+        startQuiz();
+    </script>
+</body>
+</html>

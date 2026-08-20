@@ -1,0 +1,39 @@
+Anverso;Reverso
+CREG 025 de 1995;Resolución que establece el <b>Código de Redes</b> como parte del Reglamento de Operación del Sistema Interconectado Nacional (SIN).
+CREG 080 de 1999;Resolución que define las funciones de planeación, coordinación, supervisión y control entre el <b>CND</b> y los agentes del <b>SIN</b>.
+CND (Centro Nacional de Despacho);Entidad responsable de la planeación, coordinación y supervisión de la operación del Sistema Interconectado Nacional (SIN) de Colombia.
+Meta de supervisión CREG vs CNO;La meta de cumplimiento de supervisión de enlaces es del <b>95%</b> para el CNO y del <b>97%</b> para la CREG.
+Protocolo ICCP;Acrónimo de <i>Inter-Control Center Communication Protocol</i>. Es un protocolo basado en arquitectura <b>cliente-servidor</b> que opera en la <b>capa 7</b> del modelo OSI, usado para la comunicación entre centros de control.
+Protocolo IEC 60870-5-104;Estándar de comunicación para telecontrol que adapta el protocolo serial IEC 101 para su uso sobre redes <b>TCP/IP</b>. Es ampliamente utilizado en sistemas SCADA.
+APDU (Application Protocol Data Unit);Es la estructura fundamental de una trama en IEC 104. Se compone del <b>APCI</b> (información de control) y opcionalmente de la <b>ASDU</b> (datos de usuario).
+APCI (Application Protocol Control Information);Campo de control de 4 bytes dentro de una APDU que define el <b>formato de la trama</b> (Tipo I, S o U).
+ASDU (Application Service Data Unit);Unidad de datos que transporta la <b>información del usuario</b> (medidas, estados, comandos) dentro de una trama de Tipo I en IEC 104.
+Trama de Formato I (IEC 104);Trama de <b>Información</b>. Es la única que transporta una <b>ASDU</b> (datos de usuario). Utiliza contadores N(S) y N(R) para el control de flujo y errores.
+Trama de Formato S (IEC 104);Trama de <b>Supervisión</b>. Su única función es <b>confirmar la recepción</b> de tramas de Formato I. No lleva datos de usuario.
+Trama de Formato U (IEC 104);Trama de <b>Control</b>. Se utiliza para gestionar el enlace de comunicación, con funciones como <b>STARTDT</b> (iniciar), <b>STOPDT</b> (detener) y <b>TESTFR</b> (probar).
+COT (Cause of Transmission);Campo en la ASDU del protocolo 104 que indica el <b>motivo del envío</b> de un mensaje (ej. espontáneo, respuesta a interrogación, activación de comando).
+IOA (Information Object Address);Campo en la ASDU del protocolo 104 que funciona como la <b>dirección única</b> de un punto de información (medida, estado) dentro de una estación remota.
+Temporizador T1 (IEC 104);<b>Timeout de espera de confirmación</b>. Es el tiempo máximo que se espera por una confirmación (trama S o I) después de enviar una trama I. Si expira, se asume un fallo de comunicación.
+Temporizador T3 (IEC 104);<b>Timeout de inactividad</b>. Si no hay tráfico en el canal durante este tiempo, se envía una trama de prueba (TESTFR) para verificar que la conexión sigue activa.
+Interrogación General (IG);Función de la capa de aplicación de IEC 104 donde el SCADA solicita a la RTU que envíe el <b>estado actual de todos sus puntos de datos</b> para sincronizar sus bases de datos.
+Select-Before-Operate;Mecanismo de seguridad para comandos en IEC 104. Requiere un paso de <b>selección</b> (armado) y confirmación antes de enviar el comando de <b>ejecución</b> final.
+Protocolo IEC 61850;Estándar internacional para la comunicación y automatización en <b>subestaciones eléctricas</b>. Define un modelo de datos orientado a objetos y utiliza redes Ethernet.
+Nivel de Estación (IEC 61850);Nivel jerárquico que incluye la HMI, el gateway de la estación y los sistemas de ingeniería y monitoreo. Se comunica a través del <b>Bus de Estación</b>.
+Nivel de Bahía (IEC 61850);Nivel jerárquico compuesto por los <b>IEDs</b> de protección y control asociados a cada bahía (línea, transformador, etc.).
+Bus de Proceso (IEC 61850);Red de alta velocidad que comunica los IEDs con equipos de campo como las <b>Merging Units</b>, transportando mediciones de corriente y tensión digitalizadas (Sampled Values).
+IED (Intelligent Electronic Device);Dispositivo electrónico inteligente, como un relé de protección o un controlador de bahía, que tiene capacidad de procesamiento y comunicación.
+Modelo de Datos IEC 61850;Representación <b>jerárquica</b> de la información en una subestación, estructurada en: <ul><li>Dispositivo Lógico (LD)</li><li>Nodo Lógico (LN)</li><li>Objeto de Datos (DO)</li><li>Atributo de Datos (DA)</li></ul>
+Dispositivo Lógico (LD);Nivel más alto del modelo de datos de IEC 61850. Es una agrupación de funcionalidades dentro de un <b>IED físico</b>.
+Nodo Lógico (LN);Bloque fundamental del modelo IEC 61850 que representa una <b>función específica</b> de protección o control. Su nomenclatura está estandarizada (ej. XCBR, PDIS).
+Objeto de Datos (DO);Componente de un Nodo Lógico que agrupa información relacionada. Su estructura está definida por una <b>Clase de Datos Común (CDC)</b>. Ejemplo: <b>Pos</b> (posición) en el LN XCBR.
+Atributo de Datos (DA);Es la unidad de información más pequeña en el modelo IEC 61850, donde se encuentra el <b>valor real</b>. Ejemplo: <b>stVal</b> (valor de estado) o <b>mag.f</b> (magnitud de flotante).
+Nodo Lógico XCBR;Nodo Lógico de IEC 61850 que representa un <b>interruptor de potencia</b> (Circuit Breaker).
+Nodo Lógico PDIS;Nodo Lógico de IEC 61850 que representa una función de <b>protección de distancia</b> (código ANSI 21).
+Nodo Lógico MMXU;Nodo Lógico de IEC 61850 que representa <b>medidas eléctricas</b> trifásicas (tensión, corriente, potencia, etc.).
+Nodo Lógico CSWI;Nodo Lógico de IEC 61850 que modela la función de <b>control de un interruptor</b> (operaciones de apertura/cierre).
+Clase de Datos Común (CDC);En IEC 61850, es una <b>plantilla</b> que define la estructura y los atributos de un Objeto de Datos (DO). Ejemplos: <b>SPS</b> (estado de un punto), <b>MV</b> (valor medido).
+Merging Unit (MU);Equipo del bus de proceso que <b>digitaliza las señales analógicas</b> de los transformadores de corriente y tensión y las transmite como <i>Sampled Values</i> (IEC 61850-9-2).
+SCL (Substation Configuration Language);Lenguaje basado en <b>XML</b> definido en la parte 6 de IEC 61850. Se utiliza para describir de forma estandarizada la <b>configuración completa</b> de la subestación.
+Atributo 'q' (Quality);Atributo de datos en IEC 61850 que acompaña a un valor para indicar su <b>calidad y validez</b> (ej. válido, inválido, cuestionable, bloqueado).
+Atributo 'stVal' (State Value);Atributo de datos común en IEC 61850 que contiene el <b>valor de un estado</b> (ej. encendido/apagado, abierto/cerrado).
+Atributo 'mag.f' (Magnitude float);Atributo de datos en IEC 61850 que contiene el valor de la <b>magnitud de una medida</b> en formato de punto flotante.

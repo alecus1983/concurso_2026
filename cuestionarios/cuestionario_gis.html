@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuestionario sobre Subestaciones GIS (Alto Contraste)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos optimizados para alto contraste y E-Ink */
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        .option-btn {
+            transition: background-color 0.2s, border-color 0.2s;
+        }
+        .option-btn:hover:not(:disabled) {
+           background-color: #f0f0f0; /* Un gris muy claro para el hover */
+        }
+    </style>
+</head>
+<body class="bg-white text-black flex items-center justify-center min-h-screen p-4">
+
+    <div class="bg-white border-2 border-black rounded-lg p-6 sm:p-8 w-full max-w-2xl">
+        <div class="text-center mb-6">
+            <h1 class="text-2xl sm:text-3xl font-bold text-black">Cuestionario sobre Subestaciones GIS</h1>
+            <p class="text-gray-600 mt-2">Pon a prueba tus conocimientos.</p>
+        </div>
+
+        <!-- Contenedor del Cuestionario -->
+        <div id="quiz-container" class="space-y-6">
+            <div id="question-card" class="bg-white p-6 rounded-lg border-2 border-gray-300 hidden">
+                <p id="question-text" class="text-lg font-semibold mb-5 text-center"></p>
+                <div id="options-container" class="grid grid-cols-1 gap-4">
+                    <!-- Las opciones se generarán aquí -->
+                </div>
+                <div id="feedback-container" class="mt-5 text-center font-bold text-lg"></div>
+            </div>
+            <button id="next-question-btn" class="w-full bg-black text-white font-bold py-3 px-6 rounded-lg hover:bg-gray-800 focus:outline-none focus:ring-4 focus:ring-gray-400">
+                Mostrar Pregunta Aleatoria
+            </button>
+        </div>
+         <div id="completion-message" class="text-center p-8 bg-white rounded-lg hidden">
+            <h2 class="text-2xl font-bold text-green-700">¡Felicidades!</h2>
+            <p class="mt-2 text-black">Has completado todas las preguntas.</p>
+            <button id="restart-btn" class="mt-6 bg-black text-white font-bold py-3 px-8 rounded-lg hover:bg-gray-800 focus:outline-none focus:ring-4 focus:ring-gray-400">
+                Volver a Empezar
+            </button>
+        </div>
+    </div>
+
+    <script>
+        const diccionario = {
+            "pregunta1": "¿Cuál es la clasificación principal de la tecnología GIS?", "respuesta1": "A", "opciones1": {"A": "Una tecnología de aparellaje (switchgear).", "B": "Un tipo de subestación de energía.", "C": "Un sistema de generación distribuida.", "D": "Un protocolo de comunicación de red.", "E": "Un equipo de protección contra sobretensiones."},
+            "pregunta2": "¿Qué gas se utiliza principalmente para el aislamiento eléctrico en las GIS?", "respuesta2": "B", "opciones2": {"A": "Nitrógeno (N2)", "B": "Hexafluoruro de azufre (SF6)", "C": "Aire comprimido", "D": "Dióxido de carbono (CO2)", "E": "Helio (He)"},
+            "pregunta3": "¿Qué medio proporciona aislamiento entre las fases de los componentes en una GIS?", "respuesta3": "D", "opciones3": {"A": "Aire ambiente", "B": "Aceite mineral", "C": "Materiales sólidos compuestos", "D": "Gas SF6", "E": "Vacío"},
+            "pregunta4": "Comparada con la tecnología AIS (Aislada en Aire), ¿cuál es una ventaja clave de la GIS en cuanto al espacio?", "respuesta4": "C", "opciones4": {"A": "Requiere mayor espacio debido a los compartimentos de gas.", "B": "El tamaño es comparable entre ambas tecnologías.", "C": "Permite un diseño mucho más compacto y reduce los requisitos de espacio.", "D": "Solo es más compacta para voltajes muy bajos.", "E": "La reducción de espacio se limita a los transformadores."},
+            "pregunta5": "¿Cuál es una desventaja importante de la tecnología GIS en comparación con la AIS?", "respuesta5": "A", "opciones5": {"A": "Mayor costo de inversión inicial.", "B": "Menor fiabilidad operativa.", "C": "Dificultad para operar en ambientes interiores.", "D": "Necesidad de mayor mantenimiento.", "E": "Mayor tiempo de instalación."},
+            "pregunta6": "¿Cómo difiere la GIS de la AIS en cuanto al aislamiento entre fases?", "respuesta6": "E", "opciones6": {"A": "Ambas usan aire para el aislamiento entre fases.", "B": "La GIS usa aceite, mientras que la AIS usa SF6.", "C": "La GIS usa aire, mientras que la AIS usa SF6.", "D": "La GIS usa vacío, mientras que la AIS usa aire.", "E": "La GIS usa gas SF6, mientras que la AIS usa aire."},
+            "pregunta7": "¿Qué componente es esencial en una GIS para llevar la energía desde los alimentadores entrantes a los diferentes alimentadores de distribución?", "respuesta7": "B", "opciones7": {"A": "El seccionador de puesta a tierra.", "B": "La barra colectora (busbar).", "C": "El transformador de corriente.", "D": "El disyuntor (circuit breaker).", "E": "El interruptor de carga."},
+            "pregunta8": "¿Cuál es la función principal de un seccionador (disconnector) en una GIS?", "respuesta8": "A", "opciones8": {"A": "Desconectar una parte de la red durante el mantenimiento y redirigir la energía.", "B": "Interrumpir corrientes de falla elevadas.", "C": "Regular el nivel de tensión del sistema.", "D": "Medir el flujo de corriente en tiempo real.", "E": "Almacenar energía para usos futuros."},
+            "pregunta9": "¿Cuántas posiciones suele tener un seccionador en una GIS, especialmente en el contexto de un seccionador con puesta a tierra?", "respuesta9": "D", "opciones9": {"A": "Una (Abierto/Cerrado).", "B": "Dos (Abierto, Cerrado).", "C": "Cuatro (Abierto, Cerrado, Puesta a Tierra, Bypass).", "D": "Tres (Abierto, Cerrado, Puesta a Tierra).", "E": "Cinco (Abierto, Cerrado, Puesta a Tierra, Prueba, Reserva)."},
+            "pregunta10": "¿Cuál es el papel principal de un disyuntor (circuit breaker) en una GIS?", "respuesta10": "B", "opciones10": {"A": "Proporcionar un aislamiento visual seguro durante el mantenimiento.", "B": "Conectar o desconectar el suministro en condiciones normales y anormales, y extinguir arcos.", "C": "Medir de forma precisa la corriente y la tensión del sistema.", "D": "Redirigir el flujo de potencia entre barras colectoras.", "E": "Gestionar el nivel de las sobretensiones temporales."},
+            "pregunta11": "¿Qué diferencia al disyuntor de un seccionador en términos de capacidad de extinción de arco?", "respuesta11": "A", "opciones11": {"A": "Los disyuntores pueden extinguir arcos, mientras que los seccionadores no.", "B": "Ambos pueden extinguir arcos con la misma eficacia.", "C": "Los seccionadores son más eficientes en la extinción de arcos grandes.", "D": "Solo los seccionadores operados por motor pueden extinguir arcos.", "E": "La extinción de arco no es una función relevante para ninguno de ellos."},
+            "pregunta12": "¿Cuáles son los dos tipos de núcleos que generalmente tiene un transformador de corriente (CT) en una GIS?", "respuesta12": "C", "opciones12": {"A": "Núcleo de aire y núcleo de hierro.", "B": "Núcleo de alta tensión y núcleo de baja tensión.", "C": "Núcleo de medición y núcleo de protección.", "D": "Núcleo primario y núcleo secundario.", "E": "Núcleo de fase y núcleo residual."},
+            "pregunta13": "¿A dónde se conecta la entrada del núcleo de medición de un transformador de corriente?", "respuesta13": "A", "opciones13": {"A": "Al medidor para propósitos de medición.", "B": "Al relé de protección para disparar el disyuntor.", "C": "Directamente a la barra colectora.", "D": "Al sistema de puesta a tierra.", "E": "A un compensador de Var estático."},
+            "pregunta14": "¿A dónde se conecta la entrada del núcleo de protección de un transformador de corriente?", "respuesta14": "D", "opciones14": {"A": "Al sistema de gestión de energía.", "B": "A un registrador de datos de eventos.", "C": "Directamente a un panel de control local.", "D": "Al relé, que envía una orden de disparo al disyuntor.", "E": "A un indicador visual de corriente."},
+            "pregunta15": "¿Cuál es el propósito de un transformador de tensión (VT) en una GIS?", "respuesta15": "B", "opciones15": {"A": "Suministrar potencia auxiliar al sistema.", "B": "Medir y monitorear los niveles de tensión en el sistema.", "C": "Limitar las corrientes de cortocircuito.", "D": "Proporcionar un aislamiento galvánico de alta resistencia.", "E": "Activar los seccionadores de puesta a tierra."},
+            "pregunta16": "¿Cuál es la función de un seccionador de puesta a tierra (earth switch) en una GIS?", "respuesta16": "A", "opciones16": {"A": "Conectar a tierra cualquier carga atrapada dentro de la GIS.", "B": "Proporcionar una conexión permanente al busbar principal.", "C": "Interrumpir la corriente de carga durante el mantenimiento.", "D": "Sincronizar la operación de los disyuntores.", "E": "Medir la resistencia del aislamiento de los componentes."},
+            "pregunta17": "¿Qué permite la 'terminación de cable' en una GIS?", "respuesta17": "D", "opciones17": {"A": "La conexión directa de líneas aéreas.", "B": "La interfaz con un sistema de almacenamiento de energía.", "C": "La descarga de sobretensiones transitorias.", "D": "La conexión de cables de alimentación, por ejemplo, a un transformador.", "E": "La conexión a sistemas de comunicación de fibra óptica."},
+            "pregunta18": "¿Cuál es la alternativa a una terminación de cable si se necesitan conectar líneas aéreas a una GIS?", "respuesta18": "C", "opciones18": {"A": "Un transformador de interconexión especial.", "B": "Un compensador estático de reactivos.", "C": "Una terminación SF6 a aire (bushing).", "D": "Un tipo de seccionador híbrido.", "E": "Un conector de tipo enchufe rápido."},
+            "pregunta19": "¿Qué componente en una GIS proporciona la facilidad para operar los disyuntores o seccionadores localmente y muestra el diagrama unifilar y la posición de los dispositivos de conmutación?", "respuesta19": "A", "opciones19": {"A": "La Unidad de Control Local (LCC - Local Control Cubical).", "B": "El Transformador de Corriente (CT).", "C": "El Disyuntor (Circuit Breaker).", "D": "El Relé de Protección.", "E": "El Sistema SCADA."},
+            "pregunta20": "¿Para qué se utilizan los bujes (bushings) o barreras de gas en una GIS?", "respuesta20": "C", "opciones20": {"A": "Para el monitoreo de la presión del gas SF6.", "B": "Para la extinción de arcos eléctricos.", "C": "Para crear diferentes compartimentos y soportar los conductores dentro de la GIS.", "D": "Para la disipación del calor generado internamente.", "E": "Para la recarga del gas SF6 cuando es necesario."},
+            "pregunta21": "¿Para qué se utilizan los bujes herméticos al gas (gas tight bushings) en una GIS?", "respuesta21": "B", "opciones21": {"A": "Para permitir el flujo de gas entre todos los compartimentos.", "B": "Para crear compartimentos dedicados y evitar el paso del gas SF6.", "C": "Para soportar únicamente los transformadores de tensión.", "D": "Para facilitar las conexiones de fibra óptica.", "E": "Para la inyección de potencia reactiva."},
+            "pregunta22": "¿Cuál es una diferencia clave entre los disyuntores MGO (operados mecánicamente en grupo) y EGO (operados eléctricamente en grupo) en una GIS?", "respuesta22": "A", "opciones22": {"A": "Los EGO son más caros pero capaces de realizar el reenganche monofásico automático.", "B": "Los MGO son capaces de realizar el reenganche monofásico automático a menor costo.", "C": "Los EGO son para aplicaciones de muy baja tensión, mientras que los MGO son para alta tensión.", "D": "Los MGO son más sofisticados y tienen mecanismos de resorte más complejos.", "E": "Los EGO no requieren mecanismos de resorte, a diferencia de los MGO."},
+            "pregunta23": "¿Cuál es el rango de tensión típico para el cual está disponible la tecnología GIS?", "respuesta23": "C", "opciones23": {"A": "Desde 1 kV hasta 33 kV.", "B": "Desde 38 kV hasta 66 kV.", "C": "Desde 72.5 kV hasta 800 kV.", "D": "Exclusivamente para tensiones por debajo de 1 kV.", "E": "Limitado a niveles de tensión de distribución secundaria (0.4 kV)."},
+            "pregunta24": "¿En qué escenarios se prefiere especialmente la tecnología GIS?", "respuesta24": "B", "opciones24": {"A": "En áreas rurales con vastos terrenos disponibles.", "B": "En ubicaciones con limitaciones de espacio, como ciudades densamente pobladas.", "C": "En instalaciones que operan exclusivamente con líneas aéreas.", "D": "Cuando el presupuesto de inversión es extremadamente bajo.", "E": "En subestaciones que requieren un aislamiento únicamente con aire."},
+            "pregunta25": "¿Qué estándar IEC es crucial para los modelos de comunicación comunes en subestaciones digitales, incluidas las que utilizan GIS?", "respuesta25": "A", "opciones25": {"A": "IEC 61850.", "B": "IEC 60870.", "C": "IEC 62351.", "D": "IEEE 1588.", "E": "NTC 5001."},
+            "pregunta26": "¿Cuál es un facilitador clave para la interoperabilidad en las subestaciones digitales, según las fuentes?", "respuesta26": "E", "opciones26": {"A": "El uso exclusivo de un único fabricante de equipos.", "B": "La estandarización de los medidores de energía solamente.", "C": "La eliminación de todos los protocolos de comunicación.", "D": "El aislamiento completo de los sistemas de control.", "E": "La especificación detallada con el uso de estándares como IEC 61850."},
+            "pregunta27": "¿Qué estándar IEC aborda la ciberseguridad en las redes inteligentes, incluyendo las subestaciones digitales?", "respuesta27": "B", "opciones27": {"A": "IEC 61850.", "B": "IEC 62351.", "C": "IEC 60870.", "D": "IEEE 1588.", "E": "NISTIR 7628."},
+            "pregunta28": "¿Cómo se implementa típicamente la redundancia de comunicaciones en las subestaciones digitales?", "respuesta28": "C", "opciones28": {"A": "Mediante la conexión en serie de todos los dispositivos.", "B": "Utilizando únicamente redes Wi-Fi.", "C": "Con estándares como IEC 62439-3 (HSR-PRP).", "D": "Duplicando físicamente cada cable de cobre.", "E": "A través de sistemas de radio de una sola vía."},
+            "pregunta29": "¿Qué tipo de mensajes se utilizan para la comunicación horizontal entre los IEDs (Dispositivos Electrónicos Inteligentes) en las subestaciones digitales?", "respuesta29": "B", "opciones29": {"A": "Mensajes MMS (Manufacturing Message Specification).", "B": "Mensajes GOOSE (Generic Object Oriented Substation Event).", "C": "Mensajes SNTP (Simple Network Time Protocol).", "D": "Mensajes SCADA (Supervisory Control And Data Acquisition).", "E": "Mensajes VPN (Virtual Private Network)."},
+            "pregunta30": "¿Cómo se digitalizan las magnitudes del sistema eléctrico en una subestación digital?", "respuesta30": "A", "opciones30": {"A": "A través de Valores Muestreados (Sampled Values).", "B": "Mediante señales analógicas directas.", "C": "Usando contactores electromecánicos.", "D": "Aplicando algoritmos de predicción estadística.", "E": "Con contadores de pulsos electromagnéticos."},
+            "pregunta31": "¿Cuál es el propósito del PTP (Precision Time Protocol) en las subestaciones digitales?", "respuesta31": "E", "opciones31": {"A": "Para la transmisión de grandes volúmenes de datos de protección.", "B": "Para la comunicación bidireccional entre la subestación y el centro de control.", "C": "Para el intercambio de mensajes de estado entre seccionadores.", "D": "Para la protección contra ciberataques externos.", "E": "Para la sincronización horaria precisa entre los dispositivos electrónicos inteligentes (IEDs)."},
+            "pregunta32": "¿Qué facilita MMS (Manufacturing Message Specification) en las subestaciones digitales?", "respuesta32": "C", "opciones32": {"A": "La comunicación entre el equipo primario de alta tensión.", "B": "La sincronización precisa de los relojes de los dispositivos.", "C": "El intercambio de datos entre los IEDs y el sistema de supervisión a través de comunicación vertical.", "D": "La detección de fallas en el aislamiento de gas SF6.", "E": "La transmisión de señales de video en tiempo real."},
+            "pregunta33": "¿Qué esquema de barra colectora es comúnmente mencionado como típico para una GIS de 145kV?", "respuesta33": "D", "opciones33": {"A": "Esquema de barra única.", "B": "Esquema en anillo.", "C": "Esquema H-bus.", "D": "Esquema de doble barra colectora.", "E": "Esquema de disyuntor y medio."},
+            "pregunta34": "¿Qué característica del gas SF6 contribuye al tamaño compacto de la GIS?", "respuesta34": "A", "opciones34": {"A": "Sus propiedades dieléctricas superiores en comparación con el aire.", "B": "Su peso molecular extremadamente bajo.", "C": "Su capacidad para expandirse a bajas temperaturas.", "D": "Su baja conductividad térmica.", "E": "Su coloración distintiva que facilita la inspección."},
+            "pregunta35": "¿Cuál es la función de un buje SF6 a aire en una instalación GIS?", "respuesta35": "B", "opciones35": {"A": "Proporcionar aislamiento para cables subterráneos.", "B": "Conectar la GIS con líneas aéreas.", "C": "Medir la presión del gas SF6.", "D": "Facilitar el mantenimiento de los disyuntores.", "E": "Amortiguar las vibraciones mecánicas."},
+            "pregunta36": "¿Cómo se monitorea la presión del gas SF6 dentro de los módulos individuales de una GIS?", "respuesta36": "C", "opciones36": {"A": "Mediante inspección visual a través de ventanas de observación.", "B": "Por sensores de temperatura integrados.", "C": "Utilizando monitores de densidad dedicados para cada módulo.", "D": "Calculando el volumen de gas inyectado inicialmente.", "E": "A través de un sistema centralizado que mide el peso total de la GIS."},
+            "pregunta37": "¿Qué tipo de compartimentos albergan los componentes de una GIS?", "respuesta37": "A", "opciones37": {"A": "Compartimentos metálicos encapsulados.", "B": "Compartimentos abiertos con ventilación natural.", "C": "Compartimentos de cerámica aislante.", "D": "Compartimentos de vidrio para visibilidad.", "E": "Compartimentos de madera ignífuga."},
+            "pregunta38": "¿Qué tipo de cableado se reduce significativamente en las subestaciones digitales que utilizan GIS?", "respuesta38": "D", "opciones38": {"A": "Cables de control de fibra óptica.", "B": "Cables de alimentación de baja tensión.", "C": "Cables de comunicación de red.", "D": "Conductores de cobre para conexiones punto a punto.", "E": "Cables de puesta a tierra de alta resistencia."},
+            "pregunta39": "¿Cómo afectan los transformadores de corriente ópticos en GIS los requisitos de transporte, en comparación con los CT convencionales?", "respuesta39": "B", "opciones39": {"A": "Aumentan el peso total en un 50%.", "B": "Reducen el peso en aproximadamente un 80%.", "C": "No tienen impacto significativo en el peso.", "D": "Requieren transporte especial debido a su fragilidad.", "E": "Solo son más ligeros para voltajes extremadamente altos."},
+            "pregunta40": "¿Qué porcentaje de reducción de espacio para paneles de control y protección se puede lograr con las subestaciones digitales que emplean GIS?", "respuesta40": "C", "opciones40": {"A": "Menos del 10%.", "B": "Entre 10% y 20%.", "C": "Entre 30% y 60%.", "D": "Más del 70%.", "E": "No hay reducción de espacio."},
+            "pregunta41": "¿Qué tipo de unidad de aparellaje se describe a menudo como una unidad compacta totalmente sellada y aislada en gas?", "respuesta41": "D", "opciones41": {"A": "Una celda de batería avanzada.", "B": "Un transformador de potencia de distribución.", "C": "Un seccionador de cuchillas abierto.", "D": "Una Unidad Principal de Anillo (RMU - Ring Main Unit).", "E": "Un compensador estático de Var (SVC)."},
+            "pregunta42": "¿Qué característica avanzada es común en los seccionadores de carga de tipo encapsulado y aislado en gas?", "respuesta42": "B", "opciones42": {"A": "Capacidad para interrumpir corrientes de cortocircuito muy altas.", "B": "Operación de tres posiciones (cerrado, abierto y puesto a tierra).", "C": "Necesidad de aislamiento con aceite mineral.", "D": "Sincronización automática con la frecuencia de la red.", "E": "Conexión directa a sistemas SCADA sin IEDs."},
+            "pregunta43": "¿Cómo contribuye la GIS a mejorar la seguridad eléctrica?", "respuesta43": "E", "opciones43": {"A": "Aumentando el uso de cables de cobre.", "B": "Requiriendo más personal para el mantenimiento en vivo.", "C": "Permitiendo un mayor espacio entre componentes energizados.", "D": "Utilizando voltajes de operación más bajos.", "E": "Reduciendo el riesgo de descargas eléctricas al usar fibra óptica en lugar de cobre y eliminando riesgos de cableado de CT."},
+            "pregunta44": "¿Qué tipo de mantenimiento se facilita mediante los sistemas inteligentes en subestaciones digitales con GIS?", "respuesta44": "A", "opciones44": {"A": "Mantenimiento predictivo.", "B": "Mantenimiento correctivo de emergencia.", "C": "Mantenimiento reactivo a fallas catastróficas.", "D": "Mantenimiento basado en ciclos fijos de tiempo.", "E": "Mantenimiento totalmente manual."},
+            "pregunta45": "¿Qué proceso clave en una subestación se digitaliza completamente en una subestación digital (a menudo utilizando GIS)?", "respuesta45": "B", "opciones45": {"A": "La generación de energía primaria.", "B": "La adquisición, transmisión, procesamiento y salida de información.", "C": "El almacenamiento físico de los componentes.", "D": "La conversión de corriente continua a alterna.", "E": "La construcción de la cimentación de la subestación."},
+            "pregunta46": "¿Cuál es una consecuencia de los transformadores de corriente tradicionales de circuito abierto en una subestación, que los sensores en GIS buscan evitar?", "respuesta46": "D", "opciones46": {"A": "Aumento de la eficiencia del transformador.", "B": "Disminución del factor de potencia del sistema.", "C": "Reducción del flujo magnético en el núcleo.", "D": "Sobrecarga y voltaje peligroso inducido en los terminales secundarios.", "E": "Mejora de la precisión en la medición de corriente."},
+            "pregunta47": "¿Qué combina típicamente una 'solución híbrida' para subestaciones?", "respuesta47": "E", "opciones47": {"A": "Exclusivamente GIS y AIS en el mismo compartimento de gas.", "B": "Transformadores de potencia de diferentes fabricantes.", "C": "Sistemas de control centralizados y descentralizados sin conexión.", "D": "Generación solar y eólica sin almacenamiento.", "E": "Unidades de bahía exteriores aisladas en gas altamente integradas con barras colectoras aisladas en aire."},
+            "pregunta48": "¿Qué factores determinan principalmente el factor de tensión nominal de un transformador de tensión (VT)?", "respuesta48": "A", "opciones48": {"A": "La tensión máxima de operación, las conexiones del devanado primario y las condiciones de puesta a tierra del sistema.", "B": "Únicamente la corriente de carga máxima y la frecuencia del sistema.", "C": "El tamaño físico del transformador y su peso.", "D": "La densidad del gas SF6 y la temperatura ambiente.", "E": "El número de relés de protección conectados al secundario."},
+            "pregunta49": "¿Cómo difieren los circuitos de protección y medición en sus demandas sobre el comportamiento de la señal secundaria de los transformadores de instrumento?", "respuesta49": "B", "opciones49": {"A": "Ambos requieren una precisión idéntica en todo el rango de operación.", "B": "La medición requiere seguimiento preciso en rango normal; la protección requiere seguimiento dinámico durante fallas.", "C": "La protección es indiferente a la precisión, mientras que la medición exige la máxima fidelidad.", "D": "La medición opera solo en condiciones de falla, y la protección en condiciones normales.", "E": "Los circuitos de medición son más complejos que los de protección."},
+            "pregunta50": "¿Cómo se refieren a veces a los bujes en la GIS, debido a su función en la compartimentación?", "respuesta50": "C", "opciones50": {"A": "Conductores de interconexión.", "B": "Amortiguadores de sobretensión.", "C": "Barreras de gas.", "D": "Disipadores de calor.", "E": "Sensores de temperatura."}
+        };
+
+        // --- Elementos del DOM ---
+        const questionCard = document.getElementById('question-card');
+        const questionText = document.getElementById('question-text');
+        const optionsContainer = document.getElementById('options-container');
+        const feedbackContainer = document.getElementById('feedback-container');
+        const nextQuestionBtn = document.getElementById('next-question-btn');
+        const completionMessage = document.getElementById('completion-message');
+        const quizContainer = document.getElementById('quiz-container');
+        const restartBtn = document.getElementById('restart-btn');
+
+        let allQuestions = [];
+        let availableQuestions = [];
+        let currentCorrectAnswer = '';
+
+        // --- Funciones del Cuestionario ---
+
+        function formatQuestions() {
+            const formatted = [];
+            for (let i = 1; i <= 50; i++) {
+                if (diccionario[`pregunta${i}`]) {
+                    formatted.push({
+                        question: diccionario[`pregunta${i}`],
+                        options: diccionario[`opciones${i}`],
+                        answer: diccionario[`respuesta${i}`]
+                    });
+                }
+            }
+            return formatted;
+        }
+
+        function startQuiz() {
+            allQuestions = formatQuestions();
+            availableQuestions = [...allQuestions];
+            completionMessage.classList.add('hidden');
+            quizContainer.classList.remove('hidden');
+            questionCard.classList.add('hidden');
+            nextQuestionBtn.textContent = 'Mostrar Pregunta Aleatoria';
+            nextQuestionBtn.style.display = 'block';
+        }
+
+        function displayRandomQuestion() {
+            if (availableQuestions.length === 0) {
+                quizContainer.classList.add('hidden');
+                completionMessage.classList.remove('hidden');
+                return;
+            }
+
+            const questionIndex = Math.floor(Math.random() * availableQuestions.length);
+            const questionData = availableQuestions.splice(questionIndex, 1)[0];
+            
+            currentCorrectAnswer = questionData.answer;
+
+            questionText.textContent = questionData.question;
+            optionsContainer.innerHTML = '';
+            feedbackContainer.innerHTML = '';
+
+            Object.entries(questionData.options).forEach(([key, value]) => {
+                const button = document.createElement('button');
+                button.classList.add('option-btn', 'w-full', 'text-left', 'p-4', 'rounded-lg', 'border-2', 'border-black', 'bg-white', 'text-black', 'focus:outline-none', 'focus:ring-2', 'focus:ring-black');
+                button.innerHTML = `<span class="font-bold mr-2">${key}.</span> ${value}`;
+                button.dataset.option = key;
+                button.addEventListener('click', checkAnswer);
+                optionsContainer.appendChild(button);
+            });
+
+            questionCard.classList.remove('hidden');
+            nextQuestionBtn.style.display = 'none';
+        }
+
+        function checkAnswer(event) {
+            const selectedOption = event.currentTarget.dataset.option;
+            const allOptionButtons = optionsContainer.querySelectorAll('.option-btn');
+
+            allOptionButtons.forEach(btn => {
+                btn.disabled = true;
+                // Resalta la respuesta correcta con un borde grueso y verde
+                if (btn.dataset.option === currentCorrectAnswer) {
+                    btn.classList.remove('border-black');
+                    btn.classList.add('border-green-700', 'border-4', 'font-bold');
+                }
+            });
+
+            if (selectedOption === currentCorrectAnswer) {
+                feedbackContainer.textContent = '¡Correcto!';
+                feedbackContainer.className = 'mt-5 text-center font-bold text-lg text-green-700';
+            } else {
+                feedbackContainer.textContent = `Incorrecto. La respuesta correcta era la ${currentCorrectAnswer}.`;
+                feedbackContainer.className = 'mt-5 text-center font-bold text-lg text-red-700';
+                // Marca la opción incorrecta seleccionada con un borde rojo
+                event.currentTarget.classList.remove('border-black');
+                event.currentTarget.classList.add('border-red-700', 'border-4');
+            }
+            
+            nextQuestionBtn.textContent = 'Siguiente Pregunta';
+            nextQuestionBtn.style.display = 'block';
+        }
+
+        // --- Event Listeners ---
+        nextQuestionBtn.addEventListener('click', displayRandomQuestion);
+        restartBtn.addEventListener('click', startQuiz);
+
+        // --- Inicio ---
+        startQuiz();
+    </script>
+</body>
+</html>

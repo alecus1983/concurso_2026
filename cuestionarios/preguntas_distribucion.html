@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuestionario de  distribucion</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f4f7f9;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        #quiz-container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 700px;
+            padding: 30px;
+            box-sizing: border-box;
+        }
+        h2 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        #question {
+            font-size: 1.1em;
+            font-weight: 600;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+        #options {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        #options li {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            padding: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s, border-color 0.3s;
+        }
+        #options li:hover {
+            background-color: #eef2f5;
+        }
+        #options li.selected {
+            background-color: #d1e7fd;
+            border-color: #0d6efd;
+        }
+        #options li.correct {
+            background-color: #d1e7dd;
+            border-color: #198754;
+            font-weight: bold;
+        }
+        #options li.incorrect {
+            background-color: #f8d7da;
+            border-color: #dc3545;
+        }
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 25px;
+        }
+        button {
+            background-color: #0d6efd;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0b5ed7;
+        }
+        button#next-btn {
+            background-color: #6c757d;
+        }
+        button#next-btn:hover {
+            background-color: #5a6268;
+        }
+        #result {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.1em;
+            font-weight: bold;
+            min-height: 25px;
+        }
+        /* Estilos para el nuevo contador de puntuación */
+        #score-container {
+            margin-top: 25px;
+            text-align: center;
+            font-size: 1.1em;
+            font-weight: 500;
+            display: flex;
+            justify-content: space-around;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        #score-container .score {
+            padding: 8px 18px;
+            border-radius: 8px;
+        }
+        #score-container .score.correct-score {
+            background-color: #d1e7dd;
+            color: #0f5132;
+        }
+        #score-container .score.incorrect-score {
+            background-color: #f8d7da;
+            color: #842029;
+        }
+    </style>
+</head>
+<body>
+
+<div id="quiz-container">
+    <h2>Cuestionario Interactivo Distribución</h2>
+    <p id="question"></p>
+    <ul id="options"></ul>
+    <div class="button-container">
+        <button id="check-btn">Revisar Respuesta</button>
+        <button id="next-btn">Siguiente Pregunta</button>
+    </div>
+    <p id="result"></p>
+
+    <div id="score-container">
+        <span class="score correct-score">✔️ Correctas: <b id="correct-count">0</b></span>
+        <span class="score incorrect-score">❌ Incorrectas: <b id="incorrect-count">0</b></span>
+    </div>
+</div>
+
+
+<script src="./preguntas_distribucion.js"></script>
+<script>
+ 
+const questionElement = document.getElementById('question');
+const optionsElement = document.getElementById('options');
+const checkBtn = document.getElementById('check-btn');
+const nextBtn = document.getElementById('next-btn');
+const resultElement = document.getElementById('result');
+// Referencias a los elementos del contador
+const correctCountElement = document.getElementById('correct-count');
+const incorrectCountElement = document.getElementById('incorrect-count');
+
+let currentQuestion = {};
+let selectedOption = null;
+let lastQuestionIndex = -1;
+let answered = false;
+
+// Variables para llevar la puntuación
+let correctAnswers = 0;
+let incorrectAnswers = 0;
+
+function selectRandomQuestion() {
+    let newIndex;
+    if (preguntas.length === 1) {
+        newIndex = 0;
+    } else {
+        do {
+            newIndex = Math.floor(Math.random() * preguntas.length);
+        } while (newIndex === lastQuestionIndex);
+    }
+    lastQuestionIndex = newIndex;
+    return preguntas[newIndex];
+}
+
+function displayQuestion() {
+    currentQuestion = selectRandomQuestion();
+    selectedOption = null;
+    answered = false;
+    
+    resultElement.textContent = '';
+    optionsElement.innerHTML = '';
+    
+    // Limpia las referencias numéricas de la pregunta para mejorar la legibilidad
+    const questionText = currentQuestion.pregunta.replace(/\[\d+-\d+\]|\[\d+\]/g, '').trim();
+    questionElement.textContent = questionText;
+    
+    for (const key in currentQuestion.opciones) {
+        const li = document.createElement('li');
+        li.dataset.key = key;
+         // Limpia las referencias numéricas de las opciones
+        const optionText = currentQuestion.opciones[key].replace(/\[\d+-\d+\]|\[\d+\]/g, '').trim();
+        li.textContent = `${key}. ${optionText}`;
+        
+        li.addEventListener('click', () => {
+            if (answered) return; // No permitir cambiar si ya se revisó
+            
+            const currentlySelected = optionsElement.querySelector('.selected');
+            if (currentlySelected) {
+                currentlySelected.classList.remove('selected');
+            }
+            li.classList.add('selected');
+            selectedOption = key;
+        });
+        optionsElement.appendChild(li);
+    }
+}
+
+function checkAnswer() {
+    if (selectedOption === null) {
+        alert("Por favor, selecciona una opción.");
+        return;
+    }
+    
+    if (answered) return; // Evitar revisar más de una vez
+    answered = true;
+
+    const optionsList = optionsElement.querySelectorAll('li');
+    const correctKey = currentQuestion.respuesta;
+
+    optionsList.forEach(li => {
+        const key = li.dataset.key;
+        if (key === correctKey) {
+            li.classList.add('correct');
+        } else if (key === selectedOption) {
+            li.classList.add('incorrect');
+        }
+    });
+    
+    if (selectedOption === correctKey) {
+        resultElement.textContent = "✔️ ¡Correcto!";
+        resultElement.style.color = '#198754';
+        correctAnswers++; // Incrementar contador de correctas
+    } else {
+        resultElement.textContent = "❌ Incorrecto.";
+        resultElement.style.color = '#dc3545';
+        incorrectAnswers++; // Incrementar contador de incorrectas
+    }
+    
+    // Actualizar el texto de los contadores en el HTML
+    correctCountElement.textContent = correctAnswers;
+    incorrectCountElement.textContent = incorrectAnswers;
+}
+
+checkBtn.addEventListener('click', checkAnswer);
+nextBtn.addEventListener('click', displayQuestion);
+
+// Cargar la primera pregunta al iniciar la página
+window.onload = displayQuestion;
+
+</script>
+</body>
+</html>

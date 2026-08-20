@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Cuestionario de Protecciones Eléctricas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <style>
+    body {
+      background-color: #f4f7f9;
+      font-family: 'Roboto', sans-serif;
+      color: #333;
+    }
+    .quiz-container {
+      max-width: 800px;
+      margin: 50px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    .header-title {
+      color: #0d6efd;
+      border-bottom: 2px solid #eef2f7;
+      padding-bottom: 15px;
+      margin-bottom: 25px;
+      font-weight: 700;
+      text-align: center;
+    }
+    #parrafo {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      background: #eef2f7;
+      padding: 20px;
+      border-left: 5px solid #0d6efd;
+      border-radius: 5px;
+      margin-bottom: 25px;
+    }
+    .option-card {
+      transition: all 0.2s ease;
+      border: 1px solid #dee2e6;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+    .option-card:hover {
+      background-color: #f8f9fa;
+      border-color: #0d6efd;
+    }
+    /* Estilo para el radio button oculto pero funcional */
+    .form-check-input:checked + .form-check-label {
+      font-weight: bold;
+      color: #0d6efd;
+    }
+    .btn-custom {
+      padding: 10px 25px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    #datos {
+      display: block;
+      margin-top: 20px;
+      padding: 10px;
+      border-radius: 5px;
+      text-align: center;
+      font-size: 1.2rem;
+    }
+    .correcto { background-color: #d1e7dd; color: #0f5132; }
+    .incorrecto { background-color: #f8d7da; color: #842029; }
+  </style>
+
+  <script type="text/javascript">
+    // --- TU LÓGICA DE JAVASCRIPT SE MANTIENE IGUAL ---
+    var definicion = {
+       "21" : "<b>Relé de distancia</b> : es el que funciona cuando la admitancia, impedancia o reactancia del circuito disminuyen a unos límites anteriormente fijados" ,  
+       "23" : "<b>Dispositivo de control de temperatura</b> : es el que funciona para mantener la temperatura de la máquina u otros aparatos dentro de ciertos límites..." ,  
+       "25" : "<b>Dispositivo de sincronización</b> : es el que funciona cuando dos circuitos de alterna están dentro de los límites deseados de tensión..." ,
+       "27" : "<b>Relé de mínima tensión</b> : es el que funciona al descender la tensión de un valor prerreglado." ,
+       "50" : "<b>Relé de sobrecorriente instantánea</b> : es el que funciona instantáneamente con un valor excesivo de la intensidad..." ,
+       "87" : "<b>Relé de protección diferencial</b> : es el que funciona sobre un porcentaje o ángulo de fase u otra diferencia cuantitativa..." 
+       // ... (puedes completar el resto de tus definiciones aquí)
+    };
+
+    function getRandomCircuit(){
+      var keys = Object.keys(definicion);
+      var key = keys[Math.floor(Math.random() * keys.length)];
+      return key;
+    }
+
+    function listado(){
+      var respuestas = [];
+      var datos = document.getElementById("datos");
+      datos.innerHTML = "";
+      datos.className = "";
+      
+      var key = getRandomCircuit();
+      respuestas.push(key);
+      while(respuestas.length < 4) {
+        var r = getRandomCircuit();
+        if(respuestas.indexOf(r) === -1) respuestas.push(r);
+      }
+
+      respuestas.sort(function() { return Math.random() - 0.5 });
+
+      document.getElementById("parrafo").innerHTML = "Seleccione el código ANSI correcto para:<br><br>" + definicion[key];
+      
+      var ids = ['a', 'b', 'c', 'd'];
+      var labels = ['ta', 'tb', 'tc', 'td'];
+      
+      for(var i=0; i<4; i++) {
+        document.getElementById(labels[i]).innerHTML = "Código ANSI: " + respuestas[i];
+        document.getElementById(ids[i]).value = respuestas[i];
+        document.getElementById(ids[i]).checked = false;
+      }
+      document.getElementById("pregunta").value = key;
+    }
+
+    function calificar(){
+      var itemValue = "";
+      var formulario = document.getElementById("protecciones");
+      var pregunta = document.getElementById("pregunta").value;
+      var datos = document.getElementById("datos");
+
+      var seleccionado = document.querySelector('input[name="opcion"]:checked');
+      
+      if (!seleccionado) {
+        datos.innerHTML = "⚠️ Por favor selecciona una opción";
+        datos.className = "incorrecto";
+        return;
+      }
+
+      if (seleccionado.value == pregunta) {
+        datos.innerHTML = "✅ ¡Correcto! Excelente conocimiento.";
+        datos.className = "correcto";
+      } else {
+        datos.innerHTML = "❌ Incorrecto. El código correcto era: " + pregunta;
+        datos.className = "incorrecto";
+      }
+    }
+    
+    // Iniciar el primer juego al cargar
+    window.onload = listado;
+  </script>
+</head>
+
+<body>
+
+<div class="container">
+  <div class="quiz-container">
+    <h2 class="header-title">⚡ Protecciones Eléctricas MT</h2>
+    
+    <p id="parrafo">Cargando pregunta...</p>
+
+    <form id="protecciones">
+      <div class="list-group">
+        <label class="list-group-item option-card">
+          <input class="form-check-input me-2" type="radio" name="opcion" id="a" value="">
+          <span id="ta"></span>
+        </label>
+        
+        <label class="list-group-item option-card">
+          <input class="form-check-input me-2" type="radio" name="opcion" id="b" value="">
+          <span id="tb"></span>
+        </label>
+        
+        <label class="list-group-item option-card">
+          <input class="form-check-input me-2" type="radio" name="opcion" id="c" value="">
+          <span id="tc"></span>
+        </label>
+        
+        <label class="list-group-item option-card">
+          <input class="form-check-input me-2" type="radio" name="opcion" id="d" value="">
+          <span id="td"></span>
+        </label>
+      </div>
+      <input type="hidden" id="pregunta" value="">
+    </form>
+
+    <div id="datos"></div>
+
+    <div class="d-flex justify-content-between mt-4">
+      <button type="button" onclick="calificar();" class="btn btn-success btn-custom">Calificar</button>
+      <button type="button" onclick="listado();" class="btn btn-primary btn-custom">Siguiente Pregunta</button>
+    </div>
+
+    <div class="text-center mt-4">
+      <hr>
+      <a href="index.html" class="text-decoration-none text-muted">← Volver al inicio</a>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

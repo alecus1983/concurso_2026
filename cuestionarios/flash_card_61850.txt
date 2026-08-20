@@ -1,0 +1,50 @@
+¿Cuál es el objetivo principal de la norma IEC 61850?;El objetivo principal es la **interoperabilidad** entre Dispositivos Electrónicos Inteligentes (IEDs) de diferentes fabricantes.
+¿Qué tres elementos principales tiene IEC 61850?;Capacidad de comunicaciones (ACSI y mapeos), **Modelo de datos semántico** (Nodos Lógicos y Objetos de Datos), y **Lenguaje de configuración del sistema (SCL)**.
+¿Qué es un Nodo Lógico (LN) en el modelo de datos?;Es el grupo de datos o funciones más pequeño posible que representa una **funcionalidad dedicada** para el intercambio de datos (comunicación).
+¿Cuál es el nombre del LN que representa un Interruptor de Circuito (Circuit Breaker)?;**XCBR**.
+¿Qué representa el LN **CSWI**?;El **Control de Switch** (Control de seccionador/interruptor).
+¿Qué LN se utiliza para la protección diferencial?;**PDIF** (Differential protection).
+¿Qué LN se utiliza para la falla de interruptor?;**RBRF** (Breaker failure).
+¿Qué LN se utiliza para la Unidad de Medición (Measurement unit)?;**MMXU**.
+¿Qué LN se utiliza para la protección de distancia?;**PDIS** (Protección de distancia).
+¿A qué categoría de LN (Grupo) pertenecen **TCTR** y **TVTR**?;Pertenecen al Grupo T, que son **Transformadores de medida** (instrumentación).
+¿A qué se refiere la interoperabilidad semántica en IEC 61850?;**Congruencia en términos y significado** de la información del sistema, identificada por nombres estandarizados.
+¿Cuál es el protocolo utilizado para la **Comunicación Vertical** (Nivel de Bahía a Nivel de Estación) en IEC 61850?;**MMS** (Manufacturing Message Specification) sobre TCP/IP y Ethernet.
+¿Qué significa la sigla GOOSE?;**G**eneric **O**bject **O**riented **S**ubstation **E**vent. Es un mecanismo de mensajería muy rápido para llevar **eventos y disparos**.
+¿Qué tipo de comunicación utilizan GOOSE y Sampled Values (SV)?;**Comunicación horizontal** (entre IEDs) basada en el **concepto publicador-suscriptor** (multicast).
+¿Cuál es el nombre del lenguaje estandarizado basado en XML para la configuración de subestaciones IEC 61850?;**SCL** (Substation Configuration Language), definido en la parte 6 de la norma.
+¿Qué es un **Dataset** en IEC 61850?;Una **selección ordenada de datos** (Objetos de Datos y/o Atributos) para su transmisión agrupada en un mensaje de comunicación determinado.
+¿Para qué se utiliza principalmente el MMS (IEC 61850-8-1)?;**Monitoreo y control**, y transferencia de archivos.
+¿Qué LN se refiere a la protección contra fallas de interruptor (Breaker Failure)?;**RBRF**.
+¿Cuáles son los tres niveles lógicos que define IEC 61850 en una subestación?;Nivel de **Estación**, Nivel de **Bahía/Posición** y Nivel de **Proceso**.
+¿Qué significa que IEC 61850 utilice un **modelo de datos orientado a objetos**?;Permite dividir la subestación en **funciones físicas** mediante Nodos Lógicos (LN), simplificando la base de datos.
+Mencione una de las ventajas de la comunicación horizontal GOOSE.;Permite la implementación de **enclavamientos** y esquemas de protección complejos, donde **todos los equipos pueden comunicarse independientemente de un maestro**.
+¿Cuál es la topología de red más común en una arquitectura IEC 61850?;Un **anillo Ethernet** con switches (Bus de subestación).
+¿Qué LN se utiliza para la interfaz Humano-Máquina (Human Machine Interface)?;**IHMI**.
+¿Qué LN se utiliza para los transformadores de potencia?;**YPTR** (Power transformer).
+¿Qué Common Data Class (CDC) se utiliza para un valor de estado de doble punto (controlable)?;**DPC** (Double Point Control).
+¿Qué Common Data Class (CDC) se utiliza para los valores muestreados (Sampled Values)?;**SAV** (Sampled Value).
+¿Qué tipo de comunicación utiliza Sampled Values (SV) y a qué nivel ocurre?;**Multicast** en el **Bus de Proceso**.
+¿Qué dispositivo recibe información analógica de CT/VT y la convierte en información digital (SV) en el Bus de Proceso?;La **Merging Unit** (MU).
+¿Cuál es el propósito del atributo **ConfRev** (Configuration Revision) en los mensajes GOOSE/SV?;Es un número que se **incrementa cada vez que la configuración del dataset cambia**. Permite al suscriptor verificar la consistencia de la configuración.
+¿Qué archivos SCL contienen la capacidad genérica de un IED?;El archivo **ICD** (IED Capability Description), donde el nombre del IED es típicamente **TEMPLATE**.
+¿Qué archivo SCL contiene la configuración completa del sistema (topología, IEDs instanciados, LN y comunicaciones)? ;El archivo **SCD** (Substation Configuration Description).
+¿Qué se recomienda incluir en un Dataset para valores de proceso (como en GOOSE y SV) para decisiones de automatización?;Es fuertemente recomendado incluir los **valores de calidad (quality values)**.
+¿Qué es la **libre asignación** de Nodos Lógicos (LN) a los equipos (IEDs)?;La posibilidad de asignar funciones (LNs) a los IEDs de manera flexible para **optimizar sistemas**, limitada por la capacidad del equipo y estrictas reglas IEC 61850.
+¿Cuál es el beneficio principal de IEC 61850 a nivel de sistema?;Los **menores costos de ingeniería y puesta en servicio** de la subestación.
+¿Qué protocolo de comunicación se utiliza para el intercambio de archivos grandes (BLOB) como registros de perturbación?;**Transferencia de Archivos (File Transfer)**.
+¿Qué es un **Logical Device (LD)**?;Un objeto abstracto que representa una **colección de funciones** (Nodos Lógicos).
+¿Qué son los **Buffered Report Control Blocks (BRCB)**?;Bloques de control de reporte que permiten **almacenar eventos en un buffer** mientras no hay un cliente conectado (para eventos digitales).
+¿Qué son los **Unbuffered Report Control Blocks (URCB)**?;Bloques de control de reporte que **no almacenan eventos** mientras están inhabilitados (usados para medidas).
+¿Cómo se logra la comunicación multicast (GOOSE/SV) en Ethernet a nivel de enlace?;Utilizando un **rango de direcciones MAC concreto** (direcciones MAC multicast).
+¿Cuál es la prioridad por defecto recomendada para los mensajes GOOSE (según la práctica mencionada)? ;La **prioridad 4**.
+¿Qué es el **Tiempo Máximo (Max Time)** en GOOSE?;El tiempo que un mensaje GOOSE se replica **constantemente** (incluso si los datos no han cambiado) para mantener activa la comunicación.
+¿Qué es el **Tiempo Mínimo (Min Time)** en GOOSE?;El espacio de tiempo más pequeño entre réplicas **después de que ocurre un nuevo evento**.
+¿Cómo se define el modelo de datos en IEC 61850?;Es **jerárquico** y consiste en Logical Devices, Logical Nodes, Data Objects y Data Attributes.
+¿Qué es un Common Data Class (CDC)?;Una **colección reutilizable y predefinida de atributos de datos** que define la estructura de un Objeto de Datos.
+Mencione un requisito de redundancia en las comunicaciones que ofrece la topología de Anillo Simple.;Si una conexión entre switches falla, la información de los IEDs se mantiene accesible por el **camino alternativo**.
+¿Qué mecanismo se utiliza para evitar que los valores analógicos (MV) disparen eventos (reports) constantemente con pequeños cambios?;El concepto de **banda muerta (Dead Banding)**.
+¿Qué LN se utiliza para el control de potencia activa (Active Power Control)?;**APAC** (Active power control).
+En el LN XCBR (Interruptor), ¿cuál es el Objeto de Datos que indica la posición y cuál es su CDC asociado?;El DO **Pos** (Position), asociado al CDC **DPC** (Double Point Control).
+¿Qué significa la "virtualización" en IEC 61850?;La creación de un **modelo de información orientado a objetos** (LNs) de la planta real, dotando al sistema de una **semántica detallada**.
+¿Qué LN se utiliza para la protección de sobrecorriente temporizada (Time Overcurrent)?;**PTOC** (AC Time Overcurrent).
