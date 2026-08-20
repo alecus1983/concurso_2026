@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><style type="text/css">.tippy-touch{cursor:pointer!important}.tippy-notransition{-webkit-transition:none!important;transition:none!important}.tippy-popper{max-width:350px;-webkit-perspective:700px;perspective:700px;z-index:9999;outline:0;-webkit-transition-timing-function:cubic-bezier(.165,.84,.44,1);transition-timing-function:cubic-bezier(.165,.84,.44,1);pointer-events:none}.tippy-popper[data-html]{max-width:96%;max-width:calc(100% - 20px)}.tippy-popper[x-placement^=top] .tippy-backdrop{border-radius:40% 40% 0 0}.tippy-popper[x-placement^=top] .tippy-roundarrow{bottom:-8px;margin:0 6px;-webkit-transform-origin:50% 0;transform-origin:50% 0}.tippy-popper[x-placement^=top] .tippy-roundarrow svg{position:absolute;left:0;-webkit-transform:rotate(180deg);transform:rotate(180deg)}.tippy-popper[x-placement^=top] .tippy-arrow{border-top:7px solid #333;border-right:7px solid transparent;border-left:7px solid transparent;bottom:-7px;margin:0 7px;-webkit-transform-origin:50% 0;transform-origin:50% 0}.tippy-popper[x-placement^=top] .tippy-backdrop{-webkit-transform-origin:0 100%;transform-origin:0 100%}.tippy-popper[x-placement^=top] .tippy-backdrop[data-state=visible]{-webkit-transform:scale(5.5) translate(-50%,25%);transform:scale(5.5) translate(-50%,25%);opacity:1}.tippy-popper[x-placement^=top] .tippy-backdrop[data-state=hidden]{-webkit-transform:scale(1) translate(-50%,25%);transform:scale(1) translate(-50%,25%);opacity:0}.tippy-popper[x-placement^=top] [data-animation=shift-toward][data-state=visible]{opacity:1;-webkit-transform:translateY(-10px);transform:translateY(-10px)}.tippy-popper[x-placement^=top] [data-animation=shift-toward][data-state=hidden]{opacity:0;-webkit-transform:translateY(-20px);transform:translateY(-20px)}.tippy-popper[x-placement^=top] [data-animation=perspective]{-webkit-transform-origin:bottom;transform-origin:bottom}.tippy-popper[x-placement^=top] [data-animation=perspective][data-state=visible]{opacity:1;-webkit-transform:translateY(-10px) rotateX(0);transform:translateY(-10px) rotateX(0)}.tippy-popper[x-placement^=top] [data-animation=perspective][data-state=hidden]{opacity:0;-webkit-transform:translateY(0) rotateX(90deg);transform:translateY(0) rotateX(90deg)}.tippy-popper[x-placement^=top] [data-animation=fade][data-state=visible]{opacity:1;-webkit-transform:translateY(-10px);transform:translateY(-10px)}.tippy-popper[x-placement^=top] [data-animation=fade][data-state=hidden]{opacity:0;-webkit-transform:translateY(-10px);transform:translateY(-10px)}.tippy-popper[x-placement^=top] [data-animation=shift-away][data-state=visible]{opacity:1;-webkit-transform:translateY(-10px);transform:translateY(-10px)}.tippy-popper[x-placement^=top] [data-animation=shift-away][data-state=hidden]{opacity:0;-webkit-transform:translateY(0);transform:translateY(0)}.tippy-popper[x-placement^=top] [data-animation=scale][data-state=visible]{opacity:1;-webkit-transform:translateY(-10px) scale(1);transform:translateY(-10px) scale(1)}.tippy-popper[x-placement^=top] [data-animation=scale][data-state=hidden]{opacity:0;-webkit-transform:translateY(0) scale(0);transform:translateY(0) scale(0)}.tippy-popper[x-placement^=bottom] .tippy-backdrop{border-radius:0 0 30% 30%}.tippy-popper[x-placement^=bottom] .tippy-roundarrow{top:-8px;margin:0 6px;-webkit-transform-origin:50% 100%;transform-origin:50% 100%}.tippy-popper[x-placement^=bottom] .tippy-roundarrow svg{position:absolute;left:0;-webkit-transform:rotate(0);transform:rotate(0)}.tippy-popper[x-placement^=bottom] .tippy-arrow{border-bottom:7px solid #333;border-right:7px solid transparent;border-left:7px solid transparent;top:-7px;margin:0 7px;-webkit-transform-origin:50% 100%;transform-origin:50% 100%}.tippy-popper[x-placement^=bottom] .tippy-backdrop{-webkit-transform-origin:0 -100%;transform-origin:0 -100%}.tippy-popper[x-placement^=bottom] .tippy-backdrop[data-state=visible]{-webkit-transform:scale(5.5) translate(-50%,-125%);transform:scale(5.5) translate(-50%,-125%);opacity:1}.tippy-popper[x-placement^=bottom] .tippy-backdrop[data-state=hidden]{-webkit-transform:scale(1) translate(-50%,-125%);transform:scale(1) translate(-50%,-125%);opacity:0}.tippy-popper[x-placement^=bottom] [data-animation=shift-toward][data-state=visible]{opacity:1;-webkit-transform:translateY(10px);transform:translateY(10px)}.tippy-popper[x-placement^=bottom] [data-animation=shift-toward][data-state=hidden]{opacity:0;-webkit-transform:translateY(20px);transform:translateY(20px)}.tippy-popper[x-placement^=bottom] [data-animation=perspective]{-webkit-transform-origin:top;transform-origin:top}.tippy-popper[x-placement^=bottom] [data-animation=perspective][data-state=visible]{opacity:1;-webkit-transform:translateY(10px) rotateX(0);transform:translateY(10px) rotateX(0)}.tippy-popper[x-placement^=bottom] [data-animation=perspective][data-state=hidden]{opacity:0;-webkit-transform:translateY(0) rotateX(-90deg);transform:translateY(0) rotateX(-90deg)}.tippy-popper[x-placement^=bottom] [data-animation=fade][data-state=visible]{opacity:1;-webkit-transform:translateY(10px);transform:translateY(10px)}.tippy-popper[x-placement^=bottom] [data-animation=fade][data-state=hidden]{opacity:0;-webkit-transform:translateY(10px);transform:translateY(10px)}.tippy-popper[x-placement^=bottom] [data-animation=shift-away][data-state=visible]{opacity:1;-webkit-transform:translateY(10px);transform:translateY(10px)}.tippy-popper[x-placement^=bottom] [data-animation=shift-away][data-state=hidden]{opacity:0;-webkit-transform:translateY(0);transform:translateY(0)}.tippy-popper[x-placement^=bottom] [data-animation=scale][data-state=visible]{opacity:1;-webkit-transform:translateY(10px) scale(1);transform:translateY(10px) scale(1)}.tippy-popper[x-placement^=bottom] [data-animation=scale][data-state=hidden]{opacity:0;-webkit-transform:translateY(0) scale(0);transform:translateY(0) scale(0)}.tippy-popper[x-placement^=left] .tippy-backdrop{border-radius:30% 0 0 30%}.tippy-popper[x-placement^=left] .tippy-roundarrow{right:-16px;margin:4px 0;-webkit-transform-origin:33.33333333% 50%;transform-origin:33.33333333% 50%}.tippy-popper[x-placement^=left] .tippy-roundarrow svg{position:absolute;left:0;-webkit-transform:rotate(90deg);transform:rotate(90deg)}.tippy-popper[x-placement^=left] .tippy-arrow{border-left:7px solid #333;border-top:7px solid transparent;border-bottom:7px solid transparent;right:-7px;margin:4px 0;-webkit-transform-origin:0 50%;transform-origin:0 50%}.tippy-popper[x-placement^=left] .tippy-backdrop{-webkit-transform-origin:100% 0;transform-origin:100% 0}.tippy-popper[x-placement^=left] .tippy-backdrop[data-state=visible]{-webkit-transform:scale(5.5) translate(33%,-50%);transform:scale(5.5) translate(33%,-50%);opacity:1}.tippy-popper[x-placement^=left] .tippy-backdrop[data-state=hidden]{-webkit-transform:scale(1.5) translate(33%,-50%);transform:scale(1.5) translate(33%,-50%);opacity:0}.tippy-popper[x-placement^=left] [data-animation=shift-toward][data-state=visible]{opacity:1;-webkit-transform:translateX(-10px);transform:translateX(-10px)}.tippy-popper[x-placement^=left] [data-animation=shift-toward][data-state=hidden]{opacity:0;-webkit-transform:translateX(-20px);transform:translateX(-20px)}.tippy-popper[x-placement^=left] [data-animation=perspective]{-webkit-transform-origin:right;transform-origin:right}.tippy-popper[x-placement^=left] [data-animation=perspective][data-state=visible]{opacity:1;-webkit-transform:translateX(-10px) rotateY(0);transform:translateX(-10px) rotateY(0)}.tippy-popper[x-placement^=left] [data-animation=perspective][data-state=hidden]{opacity:0;-webkit-transform:translateX(0) rotateY(-90deg);transform:translateX(0) rotateY(-90deg)}.tippy-popper[x-placement^=left] [data-animation=fade][data-state=visible]{opacity:1;-webkit-transform:translateX(-10px);transform:translateX(-10px)}.tippy-popper[x-placement^=left] [data-animation=fade][data-state=hidden]{opacity:0;-webkit-transform:translateX(-10px);transform:translateX(-10px)}.tippy-popper[x-placement^=left] [data-animation=shift-away][data-state=visible]{opacity:1;-webkit-transform:translateX(-10px);transform:translateX(-10px)}.tippy-popper[x-placement^=left] [data-animation=shift-away][data-state=hidden]{opacity:0;-webkit-transform:translateX(0);transform:translateX(0)}.tippy-popper[x-placement^=left] [data-animation=scale][data-state=visible]{opacity:1;-webkit-transform:translateX(-10px) scale(1);transform:translateX(-10px) scale(1)}.tippy-popper[x-placement^=left] [data-animation=scale][data-state=hidden]{opacity:0;-webkit-transform:translateX(0) scale(0);transform:translateX(0) scale(0)}.tippy-popper[x-placement^=right] .tippy-backdrop{border-radius:0 30% 30% 0}.tippy-popper[x-placement^=right] .tippy-roundarrow{left:-16px;margin:4px 0;-webkit-transform-origin:66.66666666% 50%;transform-origin:66.66666666% 50%}.tippy-popper[x-placement^=right] .tippy-roundarrow svg{position:absolute;left:0;-webkit-transform:rotate(-90deg);transform:rotate(-90deg)}.tippy-popper[x-placement^=right] .tippy-arrow{border-right:7px solid #333;border-top:7px solid transparent;border-bottom:7px solid transparent;left:-7px;margin:4px 0;-webkit-transform-origin:100% 50%;transform-origin:100% 50%}.tippy-popper[x-placement^=right] .tippy-backdrop{-webkit-transform-origin:-100% 0;transform-origin:-100% 0}.tippy-popper[x-placement^=right] .tippy-backdrop[data-state=visible]{-webkit-transform:scale(5.5) translate(-133%,-50%);transform:scale(5.5) translate(-133%,-50%);opacity:1}.tippy-popper[x-placement^=right] .tippy-backdrop[data-state=hidden]{-webkit-transform:scale(1.5) translate(-133%,-50%);transform:scale(1.5) translate(-133%,-50%);opacity:0}.tippy-popper[x-placement^=right] [data-animation=shift-toward][data-state=visible]{opacity:1;-webkit-transform:translateX(10px);transform:translateX(10px)}.tippy-popper[x-placement^=right] [data-animation=shift-toward][data-state=hidden]{opacity:0;-webkit-transform:translateX(20px);transform:translateX(20px)}.tippy-popper[x-placement^=right] [data-animation=perspective]{-webkit-transform-origin:left;transform-origin:left}.tippy-popper[x-placement^=right] [data-animation=perspective][data-state=visible]{opacity:1;-webkit-transform:translateX(10px) rotateY(0);transform:translateX(10px) rotateY(0)}.tippy-popper[x-placement^=right] [data-animation=perspective][data-state=hidden]{opacity:0;-webkit-transform:translateX(0) rotateY(90deg);transform:translateX(0) rotateY(90deg)}.tippy-popper[x-placement^=right] [data-animation=fade][data-state=visible]{opacity:1;-webkit-transform:translateX(10px);transform:translateX(10px)}.tippy-popper[x-placement^=right] [data-animation=fade][data-state=hidden]{opacity:0;-webkit-transform:translateX(10px);transform:translateX(10px)}.tippy-popper[x-placement^=right] [data-animation=shift-away][data-state=visible]{opacity:1;-webkit-transform:translateX(10px);transform:translateX(10px)}.tippy-popper[x-placement^=right] [data-animation=shift-away][data-state=hidden]{opacity:0;-webkit-transform:translateX(0);transform:translateX(0)}.tippy-popper[x-placement^=right] [data-animation=scale][data-state=visible]{opacity:1;-webkit-transform:translateX(10px) scale(1);transform:translateX(10px) scale(1)}.tippy-popper[x-placement^=right] [data-animation=scale][data-state=hidden]{opacity:0;-webkit-transform:translateX(0) scale(0);transform:translateX(0) scale(0)}.tippy-tooltip{position:relative;color:#fff;border-radius:4px;font-size:.9rem;padding:.3rem .6rem;text-align:center;will-change:transform;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;background-color:#333}.tippy-tooltip[data-size=small]{padding:.2rem .4rem;font-size:.75rem}.tippy-tooltip[data-size=large]{padding:.4rem .8rem;font-size:1rem}.tippy-tooltip[data-animatefill]{overflow:hidden;background-color:transparent}.tippy-tooltip[data-animatefill] .tippy-content{-webkit-transition:-webkit-clip-path cubic-bezier(.46,.1,.52,.98);transition:-webkit-clip-path cubic-bezier(.46,.1,.52,.98);transition:clip-path cubic-bezier(.46,.1,.52,.98);transition:clip-path cubic-bezier(.46,.1,.52,.98),-webkit-clip-path cubic-bezier(.46,.1,.52,.98)}.tippy-tooltip[data-interactive]{pointer-events:auto}.tippy-tooltip[data-inertia][data-state=visible]{-webkit-transition-timing-function:cubic-bezier(.53,2,.36,.85);transition-timing-function:cubic-bezier(.53,2,.36,.85)}.tippy-tooltip[data-inertia][data-state=hidden]{-webkit-transition-timing-function:ease;transition-timing-function:ease}.tippy-arrow,.tippy-roundarrow{position:absolute;width:0;height:0}.tippy-roundarrow{width:24px;height:8px;fill:#333;pointer-events:none}.tippy-roundarrow path{pointer-events:auto}.tippy-backdrop{position:absolute;will-change:transform;background-color:#333;border-radius:50%;width:26%;left:50%;top:50%;z-index:-1;-webkit-transition:all cubic-bezier(.46,.1,.52,.98);transition:all cubic-bezier(.46,.1,.52,.98);-webkit-backface-visibility:hidden;backface-visibility:hidden}.tippy-backdrop:after{content:"";float:left;padding-top:100%}body:not(.tippy-touch) .tippy-tooltip[data-animatefill][data-state=visible] .tippy-content{-webkit-clip-path:ellipse(100% 100% at 50% 50%);clip-path:ellipse(100% 100% at 50% 50%)}body:not(.tippy-touch) .tippy-tooltip[data-animatefill][data-state=hidden] .tippy-content{-webkit-clip-path:ellipse(5% 50% at 50% 50%);clip-path:ellipse(5% 50% at 50% 50%)}body:not(.tippy-touch) .tippy-popper[x-placement=right] .tippy-tooltip[data-animatefill][data-state=visible] .tippy-content{-webkit-clip-path:ellipse(135% 100% at 0 50%);clip-path:ellipse(135% 100% at 0 50%)}body:not(.tippy-touch) .tippy-popper[x-placement=right] .tippy-tooltip[data-animatefill][data-state=hidden] .tippy-content{-webkit-clip-path:ellipse(25% 100% at 0 50%);clip-path:ellipse(25% 100% at 0 50%)}body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-animatefill][data-state=visible] .tippy-content{-webkit-clip-path:ellipse(135% 100% at 100% 50%);clip-path:ellipse(135% 100% at 100% 50%)}body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-animatefill][data-state=hidden] .tippy-content{-webkit-clip-path:ellipse(25% 100% at 100% 50%);clip-path:ellipse(25% 100% at 100% 50%)}@media (max-width:360px){.tippy-popper{max-width:96%;max-width:calc(100% - 20px)}}</style>
+  <meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="IE=11">
+<meta name="description" content="Daruma Software The Quality Management Software">
+<meta name="keywords" content="daruma, daruma software, quality management software">
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+<meta name="author" content="TiQal S.A.S">
+<meta name="google" content="notranslate">
+<meta name="robots" content="noindex">
+  <title>PRUEBA DE ALARMAS Y DISPAROS POR PROTECCIONES MECANICAS DE UN TRANSFORMADOR DE POTENCIA [Ver. 4 // Rev. 04 // FV. 2022-07-27]</title>
+
+  <link rel="apple-touch-icon" href="https://daruma.servicios.emcali.com.co/apple-touch-icon.png">
+  <!-- CSS STYLESHEETS -->
+                                      <link rel="stylesheet" type="text/css" media="all" href="PRUEBA%20DE%20ALARMAS%20Y%20DISPAROS%20POR%20PROTECCIONES%20MECANICAS%20DE%20UN%20TRANSFORMADOR%20DE%20POTENCIA%20[Ver.%204%20__%20Rev.%2004%20__%20FV.%202022-07-27]_files/normalize.css">
+<link rel="stylesheet" type="text/css" media="screen" href="PRUEBA%20DE%20ALARMAS%20Y%20DISPAROS%20POR%20PROTECCIONES%20MECANICAS%20DE%20UN%20TRANSFORMADOR%20DE%20POTENCIA%20[Ver.%204%20__%20Rev.%2004%20__%20FV.%202022-07-27]_files/plugin.min.css">
+<link rel="stylesheet" type="text/css" media="all" href="PRUEBA%20DE%20ALARMAS%20Y%20DISPAROS%20POR%20PROTECCIONES%20MECANICAS%20DE%20UN%20TRANSFORMADOR%20DE%20POTENCIA%20[Ver.%204%20__%20Rev.%2004%20__%20FV.%202022-07-27]_files/report.min.css">
+<link rel="stylesheet" type="text/css" media="all" href="PRUEBA%20DE%20ALARMAS%20Y%20DISPAROS%20POR%20PROTECCIONES%20MECANICAS%20DE%20UN%20TRANSFORMADOR%20DE%20POTENCIA%20[Ver.%204%20__%20Rev.%2004%20__%20FV.%202022-07-27]_files/reports_layout.min.css">
+<link rel="stylesheet" type="text/css" media="screen" href="PRUEBA%20DE%20ALARMAS%20Y%20DISPAROS%20POR%20PROTECCIONES%20MECANICAS%20DE%20UN%20TRANSFORMADOR%20DE%20POTENCIA%20[Ver.%204%20__%20Rev.%2004%20__%20FV.%202022-07-27]_files/report-layout-ds.min.css">
+<link rel="stylesheet" type="text/css" media="screen" href="PRUEBA%20DE%20ALARMAS%20Y%20DISPAROS%20POR%20PROTECCIONES%20MECANICAS%20DE%20UN%20TRANSFORMADOR%20DE%20POTENCIA%20[Ver.%204%20__%20Rev.%2004%20__%20FV.%202022-07-27]_files/skin-blue.min.css">
+<link rel="stylesheet" type="text/css" media="screen" href="PRUEBA%20DE%20ALARMAS%20Y%20DISPAROS%20POR%20PROTECCIONES%20MECANICAS%20DE%20UN%20TRANSFORMADOR%20DE%20POTENCIA%20[Ver.%204%20__%20Rev.%2004%20__%20FV.%202022-07-27]_files/jpdf.css">
+<link rel="stylesheet" type="text/css" media="screen" href="PRUEBA%20DE%20ALARMAS%20Y%20DISPAROS%20POR%20PROTECCIONES%20MECANICAS%20DE%20UN%20TRANSFORMADOR%20DE%20POTENCIA%20[Ver.%204%20__%20Rev.%2004%20__%20FV.%202022-07-27]_files/new_document_layout.min.css">
+<link rel="stylesheet" type="text/css" media="all" href="PRUEBA%20DE%20ALARMAS%20Y%20DISPAROS%20POR%20PROTECCIONES%20MECANICAS%20DE%20UN%20TRANSFORMADOR%20DE%20POTENCIA%20[Ver.%204%20__%20Rev.%2004%20__%20FV.%202022-07-27]_files/app.min.css">
+<link rel="stylesheet" type="text/css" media="all" href="PRUEBA%20DE%20ALARMAS%20Y%20DISPAROS%20POR%20PROTECCIONES%20MECANICAS%20DE%20UN%20TRANSFORMADOR%20DE%20POTENCIA%20[Ver.%204%20__%20Rev.%2004%20__%20FV.%202022-07-27]_files/content.css">
+<link rel="stylesheet" type="text/css" media="screen" href="PRUEBA%20DE%20ALARMAS%20Y%20DISPAROS%20POR%20PROTECCIONES%20MECANICAS%20DE%20UN%20TRANSFORMADOR%20DE%20POTENCIA%20[Ver.%204%20__%20Rev.%2004%20__%20FV.%202022-07-27]_files/sweetalert.css">
+<link rel="stylesheet" type="text/css" media="screen" href="PRUEBA%20DE%20ALARMAS%20Y%20DISPAROS%20POR%20PROTECCIONES%20MECANICAS%20DE%20UN%20TRANSFORMADOR%20DE%20POTENCIA%20[Ver.%204%20__%20Rev.%2004%20__%20FV.%202022-07-27]_files/toastr.min.css">
+<link rel="stylesheet" type="text/css" media="screen" href="PRUEBA%20DE%20ALARMAS%20Y%20DISPAROS%20POR%20PROTECCIONES%20MECANICAS%20DE%20UN%20TRANSFORMADOR%20DE%20POTENCIA%20[Ver.%204%20__%20Rev.%2004%20__%20FV.%202022-07-27]_files/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" media="all" href="PRUEBA%20DE%20ALARMAS%20Y%20DISPAROS%20POR%20PROTECCIONES%20MECANICAS%20DE%20UN%20TRANSFORMADOR%20DE%20POTENCIA%20[Ver.%204%20__%20Rev.%2004%20__%20FV.%202022-07-27]_files/document_view.css">
+<link rel="stylesheet" type="text/css" media="screen, print" href="PRUEBA%20DE%20ALARMAS%20Y%20DISPAROS%20POR%20PROTECCIONES%20MECANICAS%20DE%20UN%20TRANSFORMADOR%20DE%20POTENCIA%20[Ver.%204%20__%20Rev.%2004%20__%20FV.%202022-07-27]_files/ionicons.min.css">
+
+  <script type="text/javascript">
+/*jshint eqeqeq:false */
+(function (window) {
+  'use strict';
+
+  /**
+   * Creates a new Ui instance.
+   *
+   * @constructor
+   */
+  function I18N(catalogue) {
+    this.catalogue = catalogue || JSON.parse('{"Select":"Seleccionar","Links":"Links","Are you sure?":"Esta usted seguro?","You must at least select one item.":"Usted deber\u00eda seleccionar al menos un \u00edtem para esta acci\u00f3n.","Smart-code helper":"Asistente de C\u00f3digos Inteligentes","Tools":"Herramientas","Loading...":"Cargando...","Submitting":"Guardando...","Width":"Ancho","Height":"Alto","update":"Modificar","Stroke Style":"Color de l\u00ednea","Fill Style":"Color de relleno","Line Width":"Ancho de l\u00ednea","Left":"Izquierda ","Center":"Centro","Right":"Derecha","Filemanager":"Administrador de archivos","bar":"Gr\u00e1fico de barras","bar-h":"Gr\u00e1fico de barras horizontal","bar-stack":"Gr\u00e1fico de barras apilado","bar-h-stack ":"Gr\u00e1fico de barras apilado horizontal","bar-stack-h":"Gr\u00e1fico de barras apilado horizontal","line":"Gr\u00e1fico de lineas","area":"Gr\u00e1fico de \u00e1reas","pie":"Gr\u00e1fico tortas","scatter":"Gr\u00e1fico de puntos","Table insertion wizard":"Asistente de tablas de datos","Chart insertion wizard":"Asistente de Gr\u00e1ficos","Report query template":"Plantilla de b\u00fasqueda","Chart types":"Tipo de gr\u00e1fico","Chart colors":"Colores de series","Dimensions":"Dimensiones","Horizontal axis":"Eje horizontal","Vertical axis":"Ejes verticales","Size automatic":"Tama\u00f1o autom\u00e1tico","automatic":"autom\u00e1tico","edit":"Editar","Close modal":"Cerrar","Save modal":"Guardar","Save and add modal":"Guardar y crear otro","Warning":"Advertencia","Error":"Error","Success":"\u00c9xito","Info":"Informaci\u00f3n","Warning!":"Advertencia!","Error!":"Error!","Success!":"\u00c9xito!","Info!":"Informaci\u00f3n!","You will be logged off in":"Su sesi\u00f3n cerrara en","seconds due to inactivity.":"segundos por inactividad.","Sign off":"Cerrar sesi\u00f3n","Stay connected":"Mantenerse conectado","Yes, delete it!":"S\u00ed, borrarlo!","Cancel":"Cancelar","You will not be able to recover this record!":"\u00a1No podr\u00e1s recuperar este registro!","Are you sure to close Daruma?":"Esta usted seguro de cerrar Daruma?","Yes, Close!":"S\u00ed, Cerrar!","Edit tab \\\"%%tab%%\\\" of report query \\\"%%name%%\\\"":"Editar pesta\u00f1a \\\"%%tab%%\\\" de la b\u00fasqueda \\\"%%name%%\\\"","Delete":"Eliminar","You have finished all your task":"Has terminado tus tareas","Would you like to finish this action?":"\u00bfDeseas finalizar esta acci\u00f3n?","Yes":"Si","Format":"Formato","Count fields":"Columnas de conteo","Combine fields":"Combine fields","true":"Si","false":"No","of":"de","Image Map":"\u00c1reas activas","Number of actions!":"N\u00famero de acciones","How many actions will you add?":"\u00bfCu\u00e1ntas acciones agregar\u00e1?","Write a value":"Escribe un valor","Accept":"Aceptar","Information":"Informaci\u00f3n","It seems you are missing %%opt%% questions of %%tot%%, but it could affect the final result.  Are you sure you want to continue with it?":"Parece que est\u00e1 omitiendo %%opt%% preguntas opcionales de %%tot%% en total, lo cual podr\u00eda afectar el resultado final de la encuesta.  \u00bfSeguro desea continuar? (Aceptar para continuar.  Cancelar para revisar las preguntas)","The report query information was saved successfully.":"La plantilla de b\u00fasqueda se ha guardado exitosamente","Drop files here to upload":"Arrastra los archivos aqu\u00ed para subirlos","Send Survey!":"\u00a1Encuesta enviada!","Are you sure you want to delete this item?":"Esta usted seguro de eliminar este \u00edtem?","Are you sure you want to create this item?":"\u00bfEst\u00e1 seguro que desea crear este \u00edtem?","Remove file":"Eliminar archivo","Cancel upload":"Cancelar carga","Are you sure you want to cancel this upload?":"\u00bfEst\u00e1 seguro de cancelar la carga del archivo?","Restored draft, if you want to delete it":"Borrador restaurado, si lo desea borrar","Click here":"Click aqu\u00ed","Click to collapse":"Clic para colapsar","Click to expand":"Clic para expandir","Save":"Guardar","New":"Nuevo","An unsaved draft with information in it has been found":"Se encontr\u00f3 un borrador con informaci\u00f3n digitada anteriormente en el formulario, que no ha sido guardado en el sistema","Would you like to restore it":"\u00bfDesea restaurar el borrador?","Offline":"Desconectado","Online":"En linea","Click to show comments":"Clic para ver todos los comentarios","Click to show suggestions":"Clic para ver todas las sugerencias","Add comment":"Agregar comentario","Add suggestion":"Agregar sugerencia","The comment was saved successfully.":"El comentario se ha guardado exitosamente.","The suggestion was saved successfully.":"La sugerencia se ha guardado exitosamente.","The item has not been saved due to some errors.":"El \u00edtem no ha sido guardado debido a alguna restricci\u00f3n.","Comment":"Comentario","Hide":"Ocultar","Click here to see the changes":"Clic aqu\u00ed para ver\/ocultar los cambios","save":"Guardar","Click to hide suggestions":"Clic para ocultar todas las sugerencias","Click to hide comments":"Clic para ocultar todos los comentarios","Reject":"Rechazar","Reload content":"Recargar contenido","Reload template":"Recargar plantilla","Are you sure you want to reject this changes?":"\u00bfSeguro que quieres rechazar estos cambios?","This action will reject changes that you have not saved. Are you sure you want to continue?":"Esta acci\u00f3n descartar\u00e1 los cambios que no hayas guardado. \u00bfEst\u00e1s seguro de continuar?","No changes have been made to the document.":"No se han realizado cambios en el documento.","Sync with process":"Sincronizar con caracterizaci\u00f3n","Sync with product":"Sincronizar con el producto","Sync with audit":"Sincronizar con la auditor\u00eda","risk.label.assistant":"Plantilla para evaluaci\u00f3n de controles","How many founds will you add?":"\u00bfCu\u00e1ntos hallazgos desea agregar?","This %%module%% have a coincidence of %%percentage%% %. Also have %%coincidences%% greater than defined threshold. Do you want to continue register?":"Este %%module%% presenta una coincidencia del %%percentage%% %. Adem\u00e1s se presentan %%coincidences%% coincidencias m\u00e1s, superiores al umbral definido. \u00bfQuiere continuar con el registro?","profile":"Perfil","client":"Cliente","supplier":"Proveedor","Search":"Buscar","The item has not been deleted due to some errors.":"El \u00edtem no ha sido eliminado debido a alguna restricci\u00f3n.","The file was successfully uploaded.":"El archivo fue exitosamente cargado.","The number of folios entered (%%foliosr%%) does not correspond to the number of folios counted in the attached files (%%foliosc%%). Do you wish to continue?":"El n\u00famero de folios registrado (%%foliosr%%) no corresponde al n\u00famero de folios contabilizados en los archivos adjuntos (%%foliosc%%). \u00bfDesea continuar?","You must wait until the information is updated to save the form":"Antes de guardar el formulario, usted debe esperar hasta que se actualice la informaci\u00f3n","Show non-associated measures":"Mostrar medidas no asociadas","Hide non-associated measures":"Ocultar medidas no asociadas","The action plan must have at least one associated action.":"El plan de acci\u00f3n debe tener al menos una acci\u00f3n asociada","It is necessary to create an action plan before continuing with the treatment of the event.":"Se requiere crear un plan de acci\u00f3n antes de continuar con el tratamiento del evento.","expander.title.read_more":"Leer m\u00e1s","expander.title.read_less":"Leer menos","Action not allowed into this module":"Acci\u00f3n no permitida en este m\u00f3dulo","The opportunity is in Closed state":"La oportunidad est\u00e1 en estado cerrado","Can not change the responsible for closed records.":"Can not change the responsible for closed records.","Deleting this record means stop viewing the reference in the committee and the minutes. Are you sure?":"Eliminar este registro implica dejar de visualizar la referencia en el comit\u00e9 y las actas. Est\u00e1 usted seguro?","You are about to clone the indicator. Are you sure?":"Esta a punto de crear un nuevo indicador con base en el indicador actual. \u00bfEst\u00e1 usted seguro?","This action will create an action plan with their respective actions, based on the active proposed actions of the risk.":"Esta acci\u00f3n crear\u00e1 un plan de acci\u00f3n con sus respectivas acciones, \u00e9stas basadas en las acciones propuestas activas del riesgo.","This action will create an action plan with their respective actions, based on the active contingency actions of the risk.":"Esta acci\u00f3n crear\u00e1 un plan de acci\u00f3n con sus respectivas acciones, \u00e9stas basadas en las acciones de contingencia activas del riesgo.","Risk Cause":"Causas","Causes - Vulnerabilities":"Causas - Vulnerabilidades","Save and back":"Guardar y regresar","Warning: When the meeting team is inactivated, the minutes in execution will go to the Completed status, the scheduled meetings will change to the Canceled status and the unexecuted tasks will remain in the Canceled state.":"Advertencia: Al inactivar el comit\u00e9 las actas en ejecuci\u00f3n pasar\u00e1n a estado Finalizado, las reuniones programadas cambiar\u00e1n a estado Cancelado y las tareas sin ejecutar quedar\u00e1n en estado Cerrado.","improvement_tools.title.fishboneAssistant":"Causa-Efecto","month":"mes","week":"semana","day":"d\u00eda","hour":"hora","At least one number":"Al menos un n\u00famero","structure.submodules.tq_diagram.title.diagram_list":"Diagramas","structure.submodules.tq_diagram.title.diagram_list_tooltip":"Listado de Diagramas","risk_message_not_enough_active_controls":"No es posible realizar esta acci\u00f3n","Select a record":"Seleccione un registro","No results found":"No se encontraron resultados","Please, enter to %%n%% character(s)":"Por favor, introduzca %%n%% car\u00e1cter(es)","Please, delete to %%n%% character(s)":"Por favor, elimine %%n%% car\u00e1cter(es)","You can only select %%limit%% element(s)":"S\u00f3lo puede seleccionar %%limit%% elemento(s)","Loading more results...":"Cargando m\u00e1s resultados...","Searching...":"Buscando...","Select all":"Seleccionar Todos","Remove selection":"Quitar Selecci\u00f3n","Deselect all":"Deseleccionar todos","Invert":"Invertir","Type here to start your search...":"Escriba aqu\u00ed para iniciar la b\u00fasqueda...","This criteria has already been modified":"Este criterio ha sido modificado","To get the last evaluation click on Refresh criteria":"Para obtener el \u00faltimo criterio, haga clic en Recargar criterio","Do you want to reload the criteria? Unsaved changes will be lost":"\u00bfDesea recargar el criterio? Se perder\u00e1n los cambios sin guardar","Overwrite":"Sobrescribir","Reload":"Recargar","Nothing Entered, Please try again":"No digit\u00f3 ning\u00fan n\u00famero. Por favor intente nuevamente","forms.delivery.notified":"Los formularios han sido notificados","bcp.title.rpo":"RPO","bcp.title.rto":"RTO","bcp.title.wrt":"WRT","bcp.title.mtd":"MTD","Controlled":"Controlled","unControlled":"unControlled","NumberofDaysAvailable":"Cantidad de d\u00edas disponibles para dar respuesta a un tramite o servicio.","improvement_tools.title.brainstormingAssistant":"Lluvia de ideas","improvement_tools.title.treeAssistant":"Diagrama de \u00e1rbol","improvement_tools.title.paretoAssistant":"Pareto","Data":"Dato","Percentage":"Porcentaje","Accumulated":"Acumulado","audit.post_validators.eval_conclusion_alert_confirm":"\u00bfEsta seguro que desea concluir la auditor\u00eda?, despu\u00e9s de que concluya la auditor\u00eda esta no podr\u00e1 ser modificada","It is not possible to add an advance to the action":"No es posible agregar un avance a la acci\u00f3n","The action is expired, then advances cannot be recorded. To do it, request an adjustment in action.":"La acci\u00f3n est\u00e1 vencida, por lo tanto no es posible registrar avances. Para hacerlo, solicite un ajuste en acci\u00f3n.","It is understood":"Entendido","Request adjustment":"Solicitar ajuste","Are you sure to save without an attachment?":"\u00bfEsta seguro de guardar sin adjuntar un archivo?","Event not found":"Incidente no encontrado","Some changes have been made into team members, Do you wish to update those changes into planned meetings?":"Se han realizado algunos cambios en los miembros del comit\u00e9. \u00bfDesea actualizar estos cambios en las reuniones programadas?","indicator_periods.exit_without_saving":"\u00bfDesea guardar las configuraciones realizadas, antes de salir a la siguiente configuraci\u00f3n? Si no los guarda, perder\u00e1 la configuraci\u00f3n no guardada","The %%filename%% file will be created in the background. Once finished, it will be sent to download queue.":"El archivo %%filename%% est\u00e1 siendo procesado. Una vez finalizado, podr\u00e1 acceder a \u00e9l desde la interfaz de descargas.","The file is ready to download":"El archivo est\u00e1 listo para descargar","Click here to download":"Clic aqu\u00ed para descargar","Created ago":"Creado hace","framework.task.attend_corporate_task":"La tarea se encuentra en una instancia diferente a la actual, \u00bfdesea salir de la instancia actual para atender la tarea?","components.title.change_instance":"Cambiar de organizaci\u00f3n","components.title.confirm_instance_change":"\u00bfDesea moverse a Daruma en %%tenant%%?","components.title.change_of_instance":"Cambiando a la instancia %%tenant%%","indicator_goal.alert_goals":"La modificaci\u00f3n de valores realizada, afectar\u00e1 las mediciones que se realicen a partir de esta fecha, pero no afectar\u00e1 los valores ya alimentados","Are you sure you want to delete the list? This could contain tasks that will be deleted.":"\u00bfEst\u00e1 seguro de que desea eliminar la lista? Esta podr\u00eda contener tareas que se eliminar\u00e1n.","List deleted successfully":"Lista eliminada correctamente","This found has already been modified":"El hallazgo ha sido modificado","To get the last information click on refresh found":"Para obtener la informaci\u00f3n m\u00e1s reciente haga clic en el bot\u00f3n refrescar hallazgo","Are you sure to delete it?":"\u00bfEst\u00e1 usted seguro de borrar el elemento?","The action plan is not effective":"El plan de acci\u00f3n no fue efectivo.","It must be taken into account that the opportunity for improvement must be prioritized again.":"Tener en cuenta que la oportunidad de mejora deber\u00e1 volver a priorizarse.","Keep in mind that you will have to carry out the risk analysis again.":"Tener en cuenta que deber\u00e1 realizar nuevamente el an\u00e1lisis del riesgo.","AI":"IA","document.editor.ai_features":"Contenido por IA","document.editor.ai_generating":"Se est\u00e1 generando el contenido autom\u00e1ticamente, esto puede tardar algunos segundos...","document.editor.ai_timeout":"El servicio de generaci\u00f3n de contenido est\u00e1 experimentando retrasos y ha tomado m\u00e1s tiempo de lo previsto para responder","tqtextminder.title.introduction":"Introducci\u00f3n","tqtextminder.title.summary":"Resumen","tqtextminder.title.objectives":"Objetivos","tqtextminder.title.keywords":"Palabras clave","tqtextminder.title.conclusions":"Conclusiones","apiq.tiny_profile_assistant.title":"Usuarios","apiq.tiny_profile_assistant.description":"Asistente para la selecci\u00f3n de usuarios","apiq.tiny_profile_assistant.window_title":"Asistente de selecci\u00f3n de usuarios","Connection error detected. Please reload the page to continue.":"Error de conexi\u00f3n detectado. Por favor, recargue la p\u00e1gina para continuar.","document.editor.image_format_not_allowed":"extensi\u00f3n de imagen inv\u00e1lida","actionplan.alert.The weights have been processed. Reload to see the results":"Los pesos fueron procesados. Recarga para ver los resultados.","actionplan.alert.An error occurred while processing the weights. Please try again or check the logs":"Ocurri\u00f3 un error procesando los pesos. Reintenta o revisa los logs."}');
+  }
+
+  I18N.prototype.translate = function(text, params) {
+    params = params || {};
+    var translation = this.catalogue[text] ? this.catalogue[text] : text;
+
+    $.each(params, function(index, value) {
+      translation = translation.replace(index, value);
+    });
+
+    return translation;
+  };
+
+  I18N.prototype.__ = function(text, params) {
+    params = params || {};
+    return this.translate(text, params);
+  };
+
+  function Config() {
+    return JSON.parse('{"product":"ds","absolute_url":"https:\/\/daruma.servicios.emcali.com.co\/app.php\/staff","relative_url":"\/app.php\/staff","session_status":true,"session_timeout":7200,"diagram_in_process":true,"diagram_in_document":false,"enable_comments":true,"enable_suggestions":true,"use_flash_filemanager":false,"disable_comments":false,"grid_rows":5,"grid_columns":3,"exclude_fields":".exclude, .blurred, #tq_task_end_date, #filter-form, #tq_task_id, #tq_task_responsible_id, #tq_task_sources_list, #document_base_id, #document_base_DocumentBuildSection_id, #header-title-slot, #content-header-slot, #document_base_DocumentBuildSection_content, #content-filter-slot, #meeting_team_id, input[id*=\\\"s2id_autogen\\\"], #ha_team_id, #sf_guard, [name*=_csrf_token]","exclude_forms":".exclude, .sf_admin_filter_form, .task-inline, .filter-form, #process_document_html, [data-exclude]","time_out":30,"user":"ebe354f38c58c4f7cc095086bb6c21fe1fcd90b5","cipher":true,"sisyphus_awake":true,"time_out_connect":60,"tooltip_options":{"maxWidth":"500px"},"offline_enable":false,"cache_version":"1bf79a21","tiny_plugin":"","should-descolorize-sidebar-items":true,"audit_type_parametrizable_fields":["strategies_list","strategy_elements_list","strategy_objectives_list","reference_code_id"],"precision":2,"thousands_sep":".","dec_point":",","risk_evaluate_mode":"standard","risk_impact_id":2,"risk_probability_id":1,"enable_source_code":false,"enable_special_chars":true,"correlation":{"1":{"model":1,"widget":[2,4]},"2":{"model":0,"widget":[5,6,7]},"3":{"model":1,"widget":[1,3]},"4":{"model":0,"widget":[8]}},"data_sources_schema":{"db":{"schema":{"dsn":{"type":"string","title":"data_source.label.dsn","required":false,"data":{"depsOn":"source_type","depsOn-type":"hide","depsOn-values":"db"}},"user":{"type":"string","title":"data_source.label.user","required":false,"data":{"depsOn":"source_type","depsOn-type":"hide","depsOn-values":"db"}},"password":{"type":"string","title":"data_source.label.password","required":false,"data":{"depsOn":"source_type","depsOn-type":"hide","depsOn-values":"db"}},"query":{"type":"string","title":"data_source.label.query","required":false,"data":{"depsOn":"source_type","depsOn-type":"hide","depsOn-values":"db"}}},"form":[{"key":"dsn"},{"key":"user"},{"key":"password"},{"key":"query","type":"textarea"}]},"api_rest_http":{"schema":{"url":{"type":"string","title":"data_source.label.url","required":false,"data":{"depsOn":"source_type","depsOn-type":"hide","depsOn-values":"api_rest_http"}},"authentication":{"type":"string","title":"data_source.label.authentication","required":false,"enum":["none","basic","oauth2"],"data":{"depsOn":"source_type","depsOn-type":"hide","depsOn-values":"api_rest_http"}},"basic_user":{"type":"string","title":"data_source.label.basic_user","required":false,"data":{"depsOn":"authentication","depsOn-type":"hide","depsOn-values":"basic"}},"basic_password":{"type":"string","title":"data_source.label.basic_password","required":false,"data":{"depsOn":"authentication","depsOn-type":"hide","depsOn-values":"basic"}},"client_id":{"type":"string","title":"data_source.label.client_id","required":false,"data":{"depsOn":"authentication","depsOn-type":"hide","depsOn-values":"oauth2"}},"client_secret":{"type":"string","title":"data_source.label.client_secret","required":false,"data":{"depsOn":"authentication","depsOn-type":"hide","depsOn-values":"oauth2"}},"access_token_url":{"type":"string","title":"data_source.label.access_token_url","required":false,"data":{"depsOn":"authentication","depsOn-type":"hide","depsOn-values":"oauth2"}}},"form":[{"key":"url"},{"key":"authentication","titleMap":{"none":"Ninguna","basic":"B\u00e1sica","oauth2":"OAuth 2"}},{"key":"basic_user"},{"key":"basic_password"},{"key":"client_id"},{"key":"client_secret"},{"key":"access_token_url"}]}},"improvement_tools":{"toolbarFishbone":"5w2h 5w 5m fishboneAssistant","i18n":{"5M":"5Ms"}},"enable_diagram_list":true,"datatables_language":{"sProcessing":"Procesando...","sLengthMenu":"Registros por p\u00e1gina: _MENU_","sZeroRecords":"No se encontraron resultados","sEmptyTable":"Ning\u00fan dato disponible en esta tabla","sInfo":"_START_-_END_ de _TOTAL_ registros (p. _PAGE_\/_PAGES_)","sInfoEmpty":"0-0 de 0 registros (p. 0\/0)","sInfoFiltered":"(filtrado de un total de _MAX_ registros)","sInfoPostFix":"","sSearch":"Buscar:","sUrl":"","sInfoThousands":",","sLoadingRecords":"Cargando...","oPaginate":{"sFirst":"&laquo;","sLast":"&raquo;","sNext":"&rsaquo;","sPrevious":"&lsaquo;"},"oAria":{"sSortAscending":": Activar para ordenar la columna de manera ascendente","sSortDescending":": Activar para ordenar la columna de manera descendente"}},"time_check_pending_downloads":300000,"recipient_type_email_list":"Anonymous","patient_history_api":{"enable":false,"client_id":"","client_secret":"","url_token":"","url_data":"","grant_type":"client_credentials","scope":"default"},"he_inline_form_reload_time_in_milliseconds":300000,"comp_audit_parameterizable_fields":["location","notes","objective","scope","branches_list","units_list","resource_fields"],"comp_audit_resource_parameterizable_fields":["project_list","equipment_list","resource_id"],"forms_answer_type_numeric":1,"subtype_prefilter":true,"product_structure":false,"behaviour_ccb":false,"disable_manual_feed":false,"time_line_range":false,"enable_attachment_tiny_validation":false,"word_bank":[],"risk_configurable_fields":[],"idle_session_timeout":7400,"is_content_parsing_active":false,"activity_user_interval_in_seconds":60,"activity_steps_before_to_report":1,"enabled_activity_user_record":true,"download_queue_interval_in_seconds":180,"enabled_download_queue":true,"toastr_message_timeout":60000,"enable_spellchecker":false,"report_enable_download_excel_component":true,"report_enable_download_pdf_component":true,"daruma_spellchecker_url":"https:\/\/spellchecker.darumasoftware.com","diagnostic_enable_excel":true,"document_tqtextminder_enable":false,"toolbar_patient_safety":"profileAssistant","document_enable_download_pdf_component":true,"document_enable_download_word_component":true,"document_enable_orientation_view":true,"snc_record_allow_section_deletion":true,"fontsize_formats":"8pt 9pt 10pt 11pt 12pt 14pt 16pt 18pt 20pt 22pt 24pt 26pt 28pt 36pt 48pt 72pt","subcategory_prefilter":true,"subclassification_prefilter":true}');
+  }
+
+  window.paceOptions = {
+    ajax: {
+      trackMethods: ['GET', 'POST'],
+      ignoreURLs: [
+        /keepalive/,
+        /data_widget/,
+        /sfMoxiemanager/,
+        /contents\/list/,
+        /amount_tasks/,
+        /changeState/,
+        /newInline/,
+        /getComments\?id=(.)*&only_count=true/,
+        /getSuggestions\?id=(.)*&only_count=true/,
+        /getRawTablePreview/,
+        /document\/sortList/,
+        /model_tracing/,
+        /validateIfTypeRequireTracking/,
+        /user\/new\/activity/,
+        /download\/queue\/user/
+      ]
+    },
+    restartOnPushState: false
+  };
+
+  // Export to window
+  window.Daruma = window.Daruma || {};
+  window.Daruma.I18N = I18N;
+  window.Daruma.Config = Config;
+})(window);
+</script>                                                <script type="text/javascript" src="PRUEBA%20DE%20ALARMAS%20Y%20DISPAROS%20POR%20PROTECCIONES%20MECANICAS%20DE%20UN%20TRANSFORMADOR%20DE%20POTENCIA%20[Ver.%204%20__%20Rev.%2004%20__%20FV.%202022-07-27]_files/plugin.min.js"></script>
+<script type="text/javascript" src="PRUEBA%20DE%20ALARMAS%20Y%20DISPAROS%20POR%20PROTECCIONES%20MECANICAS%20DE%20UN%20TRANSFORMADOR%20DE%20POTENCIA%20[Ver.%204%20__%20Rev.%2004%20__%20FV.%202022-07-27]_files/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="PRUEBA%20DE%20ALARMAS%20Y%20DISPAROS%20POR%20PROTECCIONES%20MECANICAS%20DE%20UN%20TRANSFORMADOR%20DE%20POTENCIA%20[Ver.%204%20__%20Rev.%2004%20__%20FV.%202022-07-27]_files/disable-jquery-migrate-warnings.js"></script>
+<script type="text/javascript" src="PRUEBA%20DE%20ALARMAS%20Y%20DISPAROS%20POR%20PROTECCIONES%20MECANICAS%20DE%20UN%20TRANSFORMADOR%20DE%20POTENCIA%20[Ver.%204%20__%20Rev.%2004%20__%20FV.%202022-07-27]_files/jquery-migrate-3.3.1.js"></script>
+<script type="text/javascript" src="PRUEBA%20DE%20ALARMAS%20Y%20DISPAROS%20POR%20PROTECCIONES%20MECANICAS%20DE%20UN%20TRANSFORMADOR%20DE%20POTENCIA%20[Ver.%204%20__%20Rev.%2004%20__%20FV.%202022-07-27]_files/sweetalert.min.js"></script>
+<script type="text/javascript" src="PRUEBA%20DE%20ALARMAS%20Y%20DISPAROS%20POR%20PROTECCIONES%20MECANICAS%20DE%20UN%20TRANSFORMADOR%20DE%20POTENCIA%20[Ver.%204%20__%20Rev.%2004%20__%20FV.%202022-07-27]_files/jquery-ui-1.13.2.min.js"></script>
+<script type="text/javascript" src="PRUEBA%20DE%20ALARMAS%20Y%20DISPAROS%20POR%20PROTECCIONES%20MECANICAS%20DE%20UN%20TRANSFORMADOR%20DE%20POTENCIA%20[Ver.%204%20__%20Rev.%2004%20__%20FV.%202022-07-27]_files/jquery.form.js"></script>
+<script type="text/javascript" src="PRUEBA%20DE%20ALARMAS%20Y%20DISPAROS%20POR%20PROTECCIONES%20MECANICAS%20DE%20UN%20TRANSFORMADOR%20DE%20POTENCIA%20[Ver.%204%20__%20Rev.%2004%20__%20FV.%202022-07-27]_files/jquery.tinyscrollbar.min.js"></script>
+<script type="text/javascript" src="PRUEBA%20DE%20ALARMAS%20Y%20DISPAROS%20POR%20PROTECCIONES%20MECANICAS%20DE%20UN%20TRANSFORMADOR%20DE%20POTENCIA%20[Ver.%204%20__%20Rev.%2004%20__%20FV.%202022-07-27]_files/jquery.multiSelect.js"></script>
+<script type="text/javascript" src="PRUEBA%20DE%20ALARMAS%20Y%20DISPAROS%20POR%20PROTECCIONES%20MECANICAS%20DE%20UN%20TRANSFORMADOR%20DE%20POTENCIA%20[Ver.%204%20__%20Rev.%2004%20__%20FV.%202022-07-27]_files/jquery.select2.js"></script>
+<script type="text/javascript" src="PRUEBA%20DE%20ALARMAS%20Y%20DISPAROS%20POR%20PROTECCIONES%20MECANICAS%20DE%20UN%20TRANSFORMADOR%20DE%20POTENCIA%20[Ver.%204%20__%20Rev.%2004%20__%20FV.%202022-07-27]_files/tippy.all.min.js"></script>
+<script type="text/javascript" src="PRUEBA%20DE%20ALARMAS%20Y%20DISPAROS%20POR%20PROTECCIONES%20MECANICAS%20DE%20UN%20TRANSFORMADOR%20DE%20POTENCIA%20[Ver.%204%20__%20Rev.%2004%20__%20FV.%202022-07-27]_files/jquery.fancybox.js"></script>
+<script type="text/javascript" src="PRUEBA%20DE%20ALARMAS%20Y%20DISPAROS%20POR%20PROTECCIONES%20MECANICAS%20DE%20UN%20TRANSFORMADOR%20DE%20POTENCIA%20[Ver.%204%20__%20Rev.%2004%20__%20FV.%202022-07-27]_files/jquery.history.js"></script>
+<script type="text/javascript" src="PRUEBA%20DE%20ALARMAS%20Y%20DISPAROS%20POR%20PROTECCIONES%20MECANICAS%20DE%20UN%20TRANSFORMADOR%20DE%20POTENCIA%20[Ver.%204%20__%20Rev.%2004%20__%20FV.%202022-07-27]_files/bootstrap.min.js"></script>
+<script type="text/javascript" src="PRUEBA%20DE%20ALARMAS%20Y%20DISPAROS%20POR%20PROTECCIONES%20MECANICAS%20DE%20UN%20TRANSFORMADOR%20DE%20POTENCIA%20[Ver.%204%20__%20Rev.%2004%20__%20FV.%202022-07-27]_files/toastr.min.js"></script>
+<script type="text/javascript" src="PRUEBA%20DE%20ALARMAS%20Y%20DISPAROS%20POR%20PROTECCIONES%20MECANICAS%20DE%20UN%20TRANSFORMADOR%20DE%20POTENCIA%20[Ver.%204%20__%20Rev.%2004%20__%20FV.%202022-07-27]_files/jquery.knob.js"></script>
+<script type="text/javascript" src="PRUEBA%20DE%20ALARMAS%20Y%20DISPAROS%20POR%20PROTECCIONES%20MECANICAS%20DE%20UN%20TRANSFORMADOR%20DE%20POTENCIA%20[Ver.%204%20__%20Rev.%2004%20__%20FV.%202022-07-27]_files/jquery.cookie.js"></script>
+<script type="text/javascript" src="PRUEBA%20DE%20ALARMAS%20Y%20DISPAROS%20POR%20PROTECCIONES%20MECANICAS%20DE%20UN%20TRANSFORMADOR%20DE%20POTENCIA%20[Ver.%204%20__%20Rev.%2004%20__%20FV.%202022-07-27]_files/utils.js"></script>
+<script type="text/javascript" src="PRUEBA%20DE%20ALARMAS%20Y%20DISPAROS%20POR%20PROTECCIONES%20MECANICAS%20DE%20UN%20TRANSFORMADOR%20DE%20POTENCIA%20[Ver.%204%20__%20Rev.%2004%20__%20FV.%202022-07-27]_files/core.js"></script>
+<script type="text/javascript" src="PRUEBA%20DE%20ALARMAS%20Y%20DISPAROS%20POR%20PROTECCIONES%20MECANICAS%20DE%20UN%20TRANSFORMADOR%20DE%20POTENCIA%20[Ver.%204%20__%20Rev.%2004%20__%20FV.%202022-07-27]_files/modals.js"></script>
+<script type="text/javascript" src="PRUEBA%20DE%20ALARMAS%20Y%20DISPAROS%20POR%20PROTECCIONES%20MECANICAS%20DE%20UN%20TRANSFORMADOR%20DE%20POTENCIA%20[Ver.%204%20__%20Rev.%2004%20__%20FV.%202022-07-27]_files/report_app.js"></script>
+<script type="text/javascript" src="PRUEBA%20DE%20ALARMAS%20Y%20DISPAROS%20POR%20PROTECCIONES%20MECANICAS%20DE%20UN%20TRANSFORMADOR%20DE%20POTENCIA%20[Ver.%204%20__%20Rev.%2004%20__%20FV.%202022-07-27]_files/app.min.js"></script>
+<script type="text/javascript" src="PRUEBA%20DE%20ALARMAS%20Y%20DISPAROS%20POR%20PROTECCIONES%20MECANICAS%20DE%20UN%20TRANSFORMADOR%20DE%20POTENCIA%20[Ver.%204%20__%20Rev.%2004%20__%20FV.%202022-07-27]_files/documents.js"></script>
+<script type="text/javascript" src="PRUEBA%20DE%20ALARMAS%20Y%20DISPAROS%20POR%20PROTECCIONES%20MECANICAS%20DE%20UN%20TRANSFORMADOR%20DE%20POTENCIA%20[Ver.%204%20__%20Rev.%2004%20__%20FV.%202022-07-27]_files/plugin.min_002.js"></script>
+
+</head>
+<body class="skin-blue" style="cursor: default;">
+<div id="main" role="main" class="document-viewer">
+  <script type="text/javascript" src="PRUEBA%20DE%20ALARMAS%20Y%20DISPAROS%20POR%20PROTECCIONES%20MECANICAS%20DE%20UN%20TRANSFORMADOR%20DE%20POTENCIA%20[Ver.%204%20__%20Rev.%2004%20__%20FV.%202022-07-27]_files/plugin.min.js"></script>
+
+
+<style>
+  .popover-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  .popover-content {
+    display: none;
+    position: absolute;
+    width: 400px;
+    padding: 10px;
+    color: #000;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    right: calc(100% + 20px);
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+
+  .popover-content::before,
+  .popover-content::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    transform: translateY(-50%);
+  }
+
+  .popover-content::before {
+    border-left: 20px solid #999;
+  }
+
+  .popover-content::after {
+    right: -19px;
+    border-left: 19px solid white;
+  }
+
+  .popover-target:hover + .popover-content {
+    display: block;
+  }
+
+  .popover-content-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+</style>
+
+<div id="sidebar" class="scrollable" style="height: 667px; right: -300px;">
+  <div class="arrow" title="Ocultar / Mostrar panel"><span class="arrow_inner" style="background-position: left center;"></span></div>
+  <div class="viewport">
+    <div class="scroll-content" style="top: 0px;">
+      <div class="title clearfix">
+        <h3>Panel de navegación</h3>
+      </div>
+      <div class="document-actions">
+        <a href="javascript:history.back(1)" class="revert-icon" title="Regresar">&nbsp;</a>
+                                <div class="right">
+          <a href="#" title="Disposición vertical" id="document-sheet-vertical" data-orientation="portrait" class="document-sheet-vertical disposition-active"></a>
+          <a href="#" title="Disposición horizontal" id="document-sheet-horizontal" data-orientation="landscape" class="document-sheet-horizontal"></a>
+        </div>
+      </div>
+      <div class="document-options">
+              </div>
+      
+      
+      
+      
+      
+      
+                                                                                                    
+              
+      
+      
+      
+                      </div>
+  </div>
+<div class="scrollbar disable" style="height: 667px;"><div class="track" style="height: 667px;"><div class="thumb" style="top: 0px; height: 667px;"><div class="end"></div></div></div></div></div>
+<div id="document-preview">
+  <div class="document-viewer-wrapper dv-markup clearfix">
+    <div class="document-viewer-outer dv-markup clearfix">
+      <div class="document-viewer dv-markup clearfix" id="document-viewer" style="width: 880px;">
+                          <div class="document-header active">
+  <span id="controlledCopyTitle">Copia Controlada - Documento Vigente</span> <span class="hidden"></span>
+</div>
+                <div class="mceNonEditable" id="6jthNeiDReWU5XoD">
+<table style="width: 100%;" border="1" id="2PAQtshALBqtciTp">
+<tbody id="7aGexk1UNqE2zKav">
+<tr id="1sm9Yxjpij8e6nI0">
+<td style="text-align: center;" rowspan="2" id="aEhga1lhVAz3So9i"><span style="font-family: arial,helvetica,sans-serif; font-size: small;" id="kxaXBxSJRAmmOEae"><img src="PRUEBA%20DE%20ALARMAS%20Y%20DISPAROS%20POR%20PROTECCIONES%20MECANICAS%20DE%20UN%20TRANSFORMADOR%20DE%20POTENCIA%20[Ver.%204%20__%20Rev.%2004%20__%20FV.%202022-07-27]_files/logo2.png" alt="" width="119" height="100" id="4c4ZttXkq3ytCEk4"></span></td>
+<td style="text-align: center;" colspan="3" id="ATSBFIsZnuFwjcDc"><span style="font-family: arial,helvetica,sans-serif; font-size: small;" id="YdCm6UFdhKbBLSMY"><smartcode data-source="titulo" data-attributes="">PRUEBA DE ALARMAS Y DISPAROS POR PROTECCIONES MECANICAS DE UN TRANSFORMADOR DE POTENCIA</smartcode></span></td>
+</tr>
+<tr id="sCSgQ1WjGIiCsXaG">
+<td style="text-align: center;" id="FWWnqMXy3VzHFZBS"><span style="font-family: arial,helvetica,sans-serif; font-size: small;" id="STHu2NTFbMWaFXDf">CODIGO:<smartcode data-source="codigo" data-attributes="">102P09I008</smartcode></span></td>
+<td style="text-align: center;" id="jceCuH6WoM1PsYhp"><span style="font-family: arial,helvetica,sans-serif; font-size: small;" id="wuHUa6Ldzx9bgW3m">VERSION:<smartcode data-source="version" data-attributes="">4</smartcode></span></td>
+<td style="text-align: center;" id="IQQQzmL1OcYMs9ZA"><span style="font-family: arial,helvetica,sans-serif; font-size: small;" id="cpYI7uzVUcoaMi1Q">FECHA:<smartcode data-source="fecha_vigencia" data-attributes="">2022-07-27</smartcode></span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="mceNonEditable" id="lqOxzkkoL6PZRajD">
+<p id="pXDTP3cF677s5SMN"><span style="font-family: arial,helvetica,sans-serif; font-size: small;" id="xur5A5TK6SxIEOwT">1.&nbsp;&nbsp;&nbsp;&nbsp; OBJETIVO</span></p>
+</div>
+<div id="FShCLl1r5AeJv2mK">
+<p id="9gTgDZ6SDc50Nj5M"><span style="font-size: 12pt; font-family: arial, helvetica, sans-serif;" id="W9lippm98xRlwnD3">Proporcionar
+ las instrucciones para realizar la prueba de alarmas y disparos por 
+protecciones mecánicas de un transformador de potencia de una 
+subestación eléctrica</span></p>
+<p id="2sfd1c5gsWuOiOMJ"><span style="font-size: 12pt; font-family: arial, helvetica, sans-serif;" id="MGfFZm9LimXuwNcx">&nbsp;</span></p>
+</div>
+<div class="mceNonEditable" id="VWjSR1kfutfU6NBI">
+<p id="UGMrzXGrAxWIUqrz"><span style="font-family: arial,helvetica,sans-serif; font-size: small;" id="2LYndfE9eq8BAaLq">2.&nbsp;&nbsp;&nbsp;&nbsp; ALCANCE</span></p>
+</div>
+<div id="Kh4LFKxJGMXs2NvZ">
+<p style="text-align: justify;" id="OUJl1JvX8iz2tFJ6"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="HyZTTUuW2oGKAdRB">Este
+ instructivo es de aplicación en las pruebas que hacen parte de los 
+programas de mantenimiento predictivo y mantenimiento preventivo del 
+área funcional de Conexión y Transformación.</span></p>
+<p id="SadL0TDFMBvp75TK"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="pTrcQGlvKf6QSpGE">&nbsp;</span></p>
+</div>
+<div class="mceNonEditable" id="w1fU6XeqazP3WWHW">
+<p id="F7SEc2uIxwFqB5OD"><span style="font-family: arial,helvetica,sans-serif; font-size: small;" id="JjIwdYaDT7uZIk2i">3.&nbsp;&nbsp;&nbsp;&nbsp; IDENTIFICACION DE LA TAREA</span></p>
+</div>
+<div id="a3OQZAnI1fOdLLUc">
+<table style="width: 100%;" border="1" id="b1Va73uP46ykjfTQ">
+<tbody id="0jLST3JO7euDz5lt">
+<tr id="MGxqm1Ddu2vEwneW">
+<td style="text-align: center;" id="0rCKiDoy78ohUECa"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="5r72dFoc00YTKU3s">MACROPROCESO</span></td>
+<td style="text-align: center;" id="Dua0aVjFpmLw1bKc"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="WogykdR31fCd0U3y">PROCESO</span></td>
+<td style="text-align: center;" id="BJBThEfziTNK1pfG"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="I6hWlyioq9dlQZmw">SUBPROCESO</span></td>
+<td style="text-align: center;" id="UUp9VglqBHyvQQwC"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="zxCYVQb5s5f2yA4s">ACTIVIDAD</span></td>
+<td style="text-align: center;" id="TZ4pmpdzEZgZKpPf"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="JqRyKqaklMIRJJUU">PROCEDIMIENTO</span></td>
+</tr>
+<tr id="dHwGsxkoQrGCHm9k">
+<td style="text-align: center;" id="uSX2aGmqzaoPo7Yd"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="RoFuOx5tQxVKW76S">&nbsp;Prestación de Servicios<br id="etiaMAgyvc10skuN">&nbsp;Energéticos</span></td>
+<td style="text-align: center;" id="cMmiLSPNhoD6dc6S"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="gS8iDGy3ktf8FgkH">Operaciones y Disponibilidad <br id="SkdE2Y6HQaY7wrwp">de los Servicios Energéticos</span></td>
+<td style="text-align: center;" id="dSlJ3f8UVlM8kvoY"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="fUYSjN03KWakSu0B">Mantenimiento del Sistema Eléctrico de Enegía</span></td>
+<td style="text-align: center;" id="aG8QNz55h9HmETdk"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="6IpkYKAkH3tmIydA">Ejecutar el Mantenimiento del Sistema Eléctrico de Enegíal</span></td>
+<td style="text-align: center;" id="mdSWoVDbWFPZpcVx"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="bB2UNLOdHjxLhsj2">Ejecutar el Mantenimiento Predictivo, Preventivo y Correctivo de Conexión y Transformación</span></td>
+</tr>
+</tbody>
+</table>
+<p id="T7Z3AfMOvIYV8lqQ"><span style="font-size: 12pt; font-family: arial, helvetica, sans-serif;" id="1JJg2iEJmSNpynGo">Fuente: Modelo de Operación por Procesos de EMCALI EICE ESP.</span></p>
+<p id="2LFIeRdxUW0pQVmE"><span style="font-size: 12pt; font-family: arial, helvetica, sans-serif;" id="RQKq4vM4VRDWKnOf">&nbsp;</span></p>
+</div>
+<div class="mceNonEditable" id="d0i9DOP7hVCzK9Hu">
+<p id="jTtfylm5ZvLwe6Jr"><span style="font-family: arial,helvetica,sans-serif; font-size: small;" id="T9RoaJf7thiwaZaQ">4.&nbsp;&nbsp;&nbsp;&nbsp; DEFINICIONES</span></p>
+</div>
+<div id="Wlk3GlMddRETBl1d">
+<p style="text-align: justify;" id="vURZHB6FUweZM5lI"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="JCb5n94WrfKFyRaH">&nbsp;</span></p>
+<p style="text-align: justify;" id="rGjrEb28NvuL4nO1"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="vcMW0E68b3XBX44M">4.1. ELEMENTOS DE PROTECCIÓN PERSONAL (EPP)</span></p>
+<p style="text-align: justify;" id="yc6UXya7PyvfDttj"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="FChCL1PXoFRspusS">Dispositivo
+ que sirve como barrera entre un peligro y alguna parte del cuerpo de 
+una persona. (Fuente: GTC 45 Segunda actualización)</span></p>
+<p style="text-align: justify;" id="iJIvwWuUGenUj35z"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="bKlqSHjQl9d9QcnD">&nbsp;</span></p>
+<p style="text-align: justify;" id="8D7HUXQSSBMXyfSU"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="5DOqMShkRN6pD7wc">4.2. MATRIZ DE PELIGROS</span></p>
+<p style="text-align: justify;" id="ZeWyLTHt71vSOOOQ"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="yqf3qLkGgPkwNR5p">Registro
+ donde se establece periódicamente la Información sobre los peligros y 
+la evaluación de los riesgos presentes en el desarrollo de cualquier 
+actividad realizada por los trabajadores, en un espacio determinado. 
+(Fuente: Departamento de Bienestar Laboral, GTC 45 Segunda 
+actualización).</span></p>
+<p style="text-align: justify;" id="SLQEygu5DiC2qRTw"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="aC3TFpEddVWLGQZ1">&nbsp;</span></p>
+<p style="text-align: justify;" id="zBQtRr13vmj0AHdc"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="2avUPEgEvGRtHuHJ">4.3. PLAN DE EMERGENCIA</span></p>
+<p style="text-align: justify;" id="7tJ2OpcUDpaUt4Jr"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="9lF2h9qVHg6uWQ3v"><span id="WdnoKgeaJUyx2t1O">El Plan de Emergencia y Contingencias es el instrumento principal que define las políticas,</span><span id="pazUwEF0cEhSnqSm">los
+ sistemas de organización y los procedimientos generales aplicables para
+ enfrentar de manera oportuna, eficiente y eficaz, las situaciones de 
+calamidad, desastre o emergencia, en sus distintas fases, con el fin de 
+mitigar o reducir los efectos negativos o lesivos de las situaciones que
+ se presenten en la organización. (Fuente: Guía para Elaborar planes de 
+emergencia y contingencia DPAE)</span></span></p>
+<p style="text-align: justify;" id="iqcI80HxqZWgZhAe"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="imlfS9ecS0ODxydW">&nbsp;</span></p>
+<p style="text-align: justify;" id="yZDTdLeQYTyqeBEX"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="ZyyJ1PLoao2ara89">4.4. PRUEBA DE ALARMAS Y PROTECCIONES MECÁNICAS Y ELÉCTRICAS DE UN TRANSFORMADOR DE POTENCIA</span></p>
+<p style="text-align: justify;" id="JtKjONxFA0EK3x15"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="tN903N7WRfteRdAj">Es
+ una prueba que permite confirmar la correcta operación de las alarmas y
+ las protecciones propias de un transformador, tales como: alarmas y/o 
+disparo por temperatura de aceite y/o devanados, alarma y/o disparo por 
+bajo nivel de aceite, alarma y/o disparo por relé bucsholtz, alarma y/o 
+disparo por válvula de sobrepresión, alarma y/o disparo por protecciones
+ eléctricas, etc. (Fuente: Area de Mantenimiento UENE)</span></p>
+<p style="text-align: justify;" id="ktLZFFDYtw0qBw5z"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="1olwFEPqrNqBKPeh">&nbsp;</span></p>
+<p style="text-align: justify;" id="mku6IoxqTj2wpJMd"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="j2eW5eXFJdB2ar2t">4.5. SUBESTACIÓN ELECTRICA</span></p>
+<p style="text-align: justify;" id="lEGsbZaNLWMQ8JHP"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="Fb6JiNcDSVAWEgk4">Conjunto
+ único de instalaciones, equipos eléctricos y obras complementarias, 
+destinadas a la transferencia de energía eléctrica, mediante la 
+transformación de potencia. (Fuente: Area de Mantenimiento UENE)</span></p>
+<p style="text-align: justify;" id="vLIxJvoUzpA3QE5r"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="uFLMW1Yg8yRVwCtz">&nbsp;</span></p>
+<p style="text-align: justify;" id="8MeSrF42txYH0DEL"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="CVHmG1hYnnEPoA11">4.6. TRANSFORMADOR</span></p>
+<p style="text-align: justify;" id="fS8bskFQgD58Ku5Y"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="MCQflck6sGEDEXRy">Se
+ denomina como transformador a un aparato electromagnético estático 
+destinado para transformar un sistema, primario, de corriente alterna en
+ otro, secundario, con la misma frecuencia, pero con otras 
+características, en particular, tensión y corriente distintas.</span></p>
+<p style="text-align: justify;" id="h6PIApWkUbKygmEb"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="3o03vkbg7EDpLaQ9">Por regla general el transformador consta de:</span></p>
+<p style="text-align: justify;" id="palJbCMpRYRHBbpa"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="dcGzAuoECffj7o0D">Núcleo
+ armado con chapas de acero.Dos o varios devanados acoplados 
+electromagnéticamente.El devanado conectado a la red de tensión más alta
+ denomina devanado de alta tensión; y el devanado acoplado a la red de 
+tensión mas baja se denomina devanado de baja tensión.</span></p>
+<p style="text-align: justify;" id="5aV5rDh7wAajxjYl"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="sVx3vTW1YZD5qW2m">(Fuente: Area de Mantenimiento UENE)</span></p>
+<p style="text-align: justify;" id="41b0EWBRyMwvGbzU"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="x36o6qNtralTAIKZ">&nbsp;</span></p>
+</div>
+<div class="mceNonEditable" id="fGxe80xUg1OBt9Qr">
+<p id="Y3AnrYLfL97PQAA3"><span style="font-family: arial,helvetica,sans-serif; font-size: small;" id="ZHlWehhnIPAvVV5f">5.&nbsp;&nbsp;&nbsp;&nbsp; GENERALIDADES</span></p>
+</div>
+<div id="YC7ZVot0dQ0mmhUn">
+<p style="text-align: justify;" id="sfzpJtCAWWhm93yM"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="iQcwQ2EfP5yB4qWc">Es
+ una prueba que permite confirmar la correcta operación de las alarmas y
+ las protecciones propias de un transformador, tales como: alarmas y/o 
+disparo por temperatura de aceite y/o devanados, alarma y/o disparo por 
+bajo nivel de aceite, alarma y/o disparo por relé bucsholtz, alarma y/o 
+disparo por válvula de sobrepresión, alarmas y/o disparo por 
+protecciones eléctricas, etc.</span></p>
+<p id="DLPg8paWpEnCswMW"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="7PnBcoceU718Kw1N">&nbsp;</span></p>
+</div>
+<div class="mceNonEditable" id="xXzZqggAjbdCLK8T">
+<p id="sXldWBouMpDUaxVp"><span style="font-family: arial,helvetica,sans-serif; font-size: small;" id="Zw6P6wuVyvx0RjKO">6.&nbsp;&nbsp;&nbsp;&nbsp; DESCRIPCION</span></p>
+</div>
+<div id="N4RsgyihkUpLatWX">
+<p style="text-align: justify;" id="EEPBmoOFIPi0CiK8"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="NaHpmf4B9HSGWm7U"><br id="bsXTHaGSeISdtPBM">6.1. EQUIPO Y HERRAMIENTA UTILIZADOS</span></p>
+<ul id="TCh8sFPcsFQG6PH3">
+<li style="text-align: justify;" id="F3NmWhGqKjzfhRlO">
+<p id="3ENnpVNTUC8D3Phi"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="GnHvNR9blM0pQ5BU">Elementos
+ de seguridad y protección personal, Guantes dieléctricos, monogafas, 
+botas dieléctricas, Casco de seguridad, Uniforme dotación personal.</span></p>
+</li>
+<li style="text-align: justify;" id="vAq1wutXWyH6WccS">
+<p id="3tPxkZt385PiOF7V"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="4wvAVB8DaOZwHOyA">Caja de herramientas (llaves de boca fija, llave peston, alicate, atornilladores, lija, wipe, etc.)<br id="lDInZCvZGJhegUqV"><br id="tyxst69BKNMEgwfx"></span></p>
+</li>
+</ul>
+<p style="text-align: justify;" id="vCz1opKN4CnFfyKc"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="iEKD4BwGqXyPOBf0">6.2. NORMAS DE SEGURIDAD</span></p>
+<p style="text-align: justify;" id="UEcQNBRQdfbirm0X"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="Gg1krIJnT9L6CYrQ">6.2.1 &nbsp;Identificación de los riesgos asociados a la actividad</span></p>
+<p style="text-align: justify;" id="ulPeJHAkjB1T2f6V"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="OLpzue1A6HtfnMXP"><span id="Y8naH5FBGB1lV9XX">Consulte la Matriz de Priorización del proceso relacionado en el documento 199P01I008G001<smartcode data-source="docs" data-attributes="aW5kZXg9IjUzNzYiIGxpbms9InRydWUiIA=="><span class="document_obsolete_link" data-id="7646" data-name="MATRICES DE PRIORIZACION DE RIESGOS DE EMCALI EICE E.S.P."><span class="query_documents" title="199P01I008G001 (Ver. 2 @ 2018-12-26)">MATRICES DE PRIORIZACION DE RIESGOS DE EMCALI EICE E.S.P.</span><span class="label label-danger">Obsoleto</span></span></smartcode></span></span></p>
+<p style="text-align: justify;" id="jjfTbdk9cNanKVkC"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="o6p74BO9PyX2G1H2"><span id="juUDlbL3CwJz0ARb">&nbsp;</span></span></p>
+<p style="text-align: justify;" id="vGhjsknCIENlPHIK"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="dNYNgnLsLMksIWfR">6.2.2
+ &nbsp;Controles de actividades de alto riesgo (protección contra 
+caídas, espacios confinados, riesgo eléctrico, trabajos en caliente, 
+riesgo químico).</span></p>
+<p style="text-align: justify;" id="4Atb1oGV6L7wgaRF"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="N9DJkWiLpbVYk1Ju">Consulte en el instructivo &nbsp;199P01I004<smartcode data-source="docs" data-attributes="aW5kZXg9IjUwNDgiIGxpbms9InRydWUiIA=="><span class="document_obsolete_link" data-id="8943" data-name="DESARROLLAR ACTIVIDADES DE RIESGO ALTO "><span class="query_documents" title="199P01I004 (Ver. 2 @ 2020-11-18)">DESARROLLAR ACTIVIDADES DE RIESGO ALTO </span><span class="label label-danger">Obsoleto</span></span></smartcode> en los anexos.</span></p>
+<p style="text-align: justify;" id="nLU8Bcuq8sspaLXt"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="rZOjpKGlmZ2V6hfw">&nbsp;</span></p>
+<p style="text-align: justify;" id="jTeaacsQ09HcxcqK"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="2BXtJDDZCdsMGaBP">6.2.3 &nbsp;Elementos de protección personal</span></p>
+<p style="text-align: justify;" id="AeyuCvWpnYjDJZEQ"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="xuUfSKnaNcDjLww2"><span id="VGBDQvbukJa2QQ8e">Consulte la Matriz de Elementos de Protección Personal en el instructivo 199P01I006<smartcode data-source="docs" data-attributes="aW5kZXg9IjUwOTgiIGxpbms9InRydWUiIA=="><span class="document_obsolete_link" data-id="5783" data-name="ENTREGAR ELEMENTOS DE PROTECCION PERSONAL, DOTACION DE ROPA Y CALZADO"><span class="query_documents" title="199P01I006 (Ver. 2 @ 2017-04-26)">ENTREGAR ELEMENTOS DE PROTECCION PERSONAL, DOTACION DE ROPA Y CALZADO</span><span class="label label-danger">Obsoleto</span></span></smartcode> contenido en los anexos.</span></span></p>
+<p style="text-align: justify;" id="SeQCkNUd7YDQCxPy"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="85r2CwrxYXhHl4p5">&nbsp;</span></p>
+<p style="text-align: justify;" id="2ucGoF4VZzDmMGCf"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="S46UCTkdoieS1B26">6.2.4 &nbsp;Prevención, preparación y respuesta ante emergencia</span></p>
+<p style="text-align: justify;" id="90feWSc5q63Ncni8"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="DB1KX6NbPGPbokV1">Consulte el documento 199P01I010G001<smartcode data-source="docs" data-attributes="aW5kZXg9IjUwNjEiIGxpbms9InRydWUiIA=="><span class="document_obsolete_link" data-id="6928" data-name=" PLANES DE EMERGENCIA EMCALI EICE ESP"><span class="query_documents" title="199P01I010G001 (Ver. 3 @ 2018-02-05)"> PLANES DE EMERGENCIA EMCALI EICE ESP</span><span class="label label-danger">Obsoleto</span></span></smartcode>.</span></p>
+<p style="text-align: justify;" id="F77tsU0yMgcokzXV"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="FckgkRBUscKvxNwa">&nbsp;</span></p>
+<p style="text-align: justify;" id="O7y4ggr5cs7TY8Sb"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="F9U7o6oHj2vgHVaK">6.2.5 &nbsp;Cumplimiento legal</span></p>
+<p style="text-align: justify;" id="4b7TDVHd0DCP2JkX"><span style="font-size: 12pt; font-family: arial, helvetica, sans-serif;" id="wJooLXPysYAb9snN">Consulte la Matriz Legal en los anexos del instructivo 198P01I001<smartcode data-source="docs" data-attributes="aW5kZXg9IjUwNjIiIGxpbms9InRydWUiIA=="><span class="document_obsolete_link" data-id="8080" data-name="SEGUIMIENTO AL CUMPLIMIENTO DE REQUISITOS LEGALES EN SEGURIDAD Y SALUD EN EL TRABAJO"><span class="query_documents" title="198P01I001 (Ver. 2 @ 2020-07-07)">SEGUIMIENTO AL CUMPLIMIENTO DE REQUISITOS LEGALES EN SEGURIDAD Y SALUD EN EL TRABAJO</span><span class="label label-danger">Obsoleto</span></span></smartcode>.</span></p>
+<p style="text-align: justify;" id="gRCGUoTCUkKw4JNi"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="f25KRuqhfG9vZV4y">&nbsp;</span></p>
+<p style="text-align: justify;" id="gLtYc1Ku0qhVbx8C"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="HqM0uUbxFDMzMOkD">6.3. DESARROLLO </span></p>
+<p style="text-align: justify;" id="qRdCCoLb4mJxMud3"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="YhzELDnVVsFmv5Xv">Realizar los siguientes pasos antes de iniciar la prueba.</span></p>
+<p style="text-align: justify;" id="iBogWeB4F7EkJ9h2"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="U2sp1fFA6W4GVaqO">1. Comunicarse con despacho y referenciar la ubicación del área donde se va a realizar el trabajo.</span></p>
+<p style="text-align: justify;" id="1hU7ghzLcqFa9tYS"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="18fX8HiFf4rd2h7y">2. Informar también sobre la actividad a realizar.</span></p>
+<p style="text-align: justify;" id="bzc03XPjPidVohpT"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="gHUUtivtlGsxLNOD">3. Solicitar la prevención pertinente y solicitar la maniobra de apertura del transformador por alta y baja con seccionadores.</span></p>
+<p style="text-align: justify;" id="M5GCuzuilto1A1GW"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="rmUgZdE56zsZvtZQ">4. Esperar hasta que despacho autorice la realización de los trabajos.</span></p>
+<p style="text-align: justify;" id="QH1OLSIcsYFsViYZ"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="nmp1Ukf6Siza354n">5. Señalizar y demarcar el área de trabajo con cinta reflectiva y conos.</span></p>
+<p style="text-align: justify;" id="3ZpgyvNZTRpIaz0h"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="O55Djp1Q7QqKJYAk">6. Proteger la parte energizada de los seccionadores.</span></p>
+<p style="text-align: justify;" id="SM1pxyzeHKDTsYdA"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="R3oyjlngNrg810MJ">7. Realizar inspección visual del estado de los interruptor.</span></p>
+<p style="text-align: justify;" id="JwTSo7YWdwnSlND8"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="MOakp7kXJbiEMWCQ">8. Verificación visual de los accesorios del transformador de potencia que estén en buen estado y en correcto funcionamiento.</span></p>
+<p style="text-align: justify;" id="IBaCdEaIgfkBY6Wu"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="gJMrD9apcOA85KhC">9.
+ Ubicar en tablero de alarmas o unidad controladora de bahía, la 
+disponibilidad de una señal acústica y visual para la realización de la 
+prueba.</span></p>
+<p style="text-align: justify;" id="lb1zSrsik5xZNhdn"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="n7rHOgoSQIZ3Db8s">10. CONEXIÓN PARA LA PRUEBA</span></p>
+<p style="text-align: justify;" id="ZaWvbI2Ju14II0ET"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="QRznFlxFP01ggswh">11.
+ La Prueba de alarmas y disparos del transformador se inicia 
+directamente sobre los accesorios o elementos de protección del 
+transformador para la activación de las señales y verificación de 
+operación del mismo.</span></p>
+<p style="text-align: justify;" id="kpjJEI83rNHnK5fs"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="tBYa20c48ZG8a4kH">12. REAIZACION DE LA PRUEBA</span></p>
+<p style="text-align: justify;" id="afsh0pMiFkyXxJfm"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="lltzBKXG5r7OiWaP">13.
+ Esta prueba se realiza directamente en los equipos de protección 
+mecánicas del transformador, para realizarla primero hay que coordinar 
+como se va ejecutar esta verificación.</span></p>
+<p style="text-align: justify;" id="wixaFO4Lu4dVUA9E"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="4XMrwBcft62MrSUh">14. Las protecciones mecánicas son las siguientes:</span></p>
+<p style="text-align: justify;" id="13Fq1emZf0mfvPlD"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="Lz9ktPqOYMvbfacl">TEMPERATURA
+ DE DEVANADOS: en este equipo se verifica el estado de los contactos con
+ los cuales se da arranque y parada de las etapas de ventilación del 
+transformador, como también se hace la alarma y el disparo por alta 
+temperatura de devanados del transformado.TEMPERATURA DE ACEITE: con 
+este equipo se vigila la temperatura del aceite del transformador aquí 
+también se verifica el estado de los contactos que dan la información de
+ la alarma y disparo por alta temperatura del aceite.</span></p>
+<p style="text-align: justify;" id="KDGFhMzVlM8S60Fq"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="1NeUozIFFgii59lk">15.
+ RELÉ DE BUCHHOLZ: este equipo se encuentra en la parte superior del 
+transformador entre el tanque conservador de aceite y la cuba del 
+transformador, en el verificamos los contactos de alarma y disparo. 
+Estos son generados operando directamente en el botón de prueba el cual 
+se debe oprimir hasta la mitad para generar la alarma, luego se oprime 
+completo este botón para generar el disparo.</span></p>
+<p style="text-align: justify;" id="o2sFQMeiHXedIowz"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="LAvUWQUSGNGVjJJ0">16.
+ RELÉ DE FLUJO DEL CAMBIADOR DE TOMAS: esta va ubicado entre la parte 
+superior del cambiador de tomas y el tanque conservador del aceite, para
+ verificar el funcionamiento de este se debe de retirar la tapa superior
+ de este, aquí se encuentran los botones del disparo y reset de este 
+mismo, para comprobarlo se oprime el que da el disparo. Después de 
+realizar esta operación hay que oprime el reset.</span></p>
+<p style="text-align: justify;" id="9ATKP0dOng2Xt11E"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="uto1We6eIgak0FAz">17.
+ VALVULA DE SOBREPRESIÓN DE LA CUBA PRINCIPAL Y DEL CAMBIADOR DE TOMAS: 
+estos instrumentos vigilan la presión interna del transformador, cuando 
+ella se eleva por alguna falla, producen un disparo desenergizando el 
+transformador. La prueba de estos se realiza operando directamente el 
+microsuiche que se encuentra en la parte inferior de estas válvulas, 
+luego hay que resetear este microsuiche para que el disparo no se quede 
+presente.</span></p>
+<p style="text-align: justify;" id="gJhuGepyu3zOBt0u"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="IRPIbnMkCuC78FU2">18.
+ Cuando se realizan estas pruebas se tiene que elaborar un cuadro, en el
+ cual todas estas señales que se mencionaron estén consignadas, para así
+ verificar si ellas producen alarma visual y sonora.</span></p>
+<p style="text-align: justify;" id="oaQuRDE6IBvqmVx7"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="W7144bC0dZrG9Rah">19.
+ También hay que tener en cuenta, cuando se realicen los disparos, que 
+estos energicen el relé 86 de las protecciones mecánicas, que al final 
+es el que genera los disparos sobre los interruptores del transformador,
+ al comprobar esta función del relé se procede a generar un disparo con 
+los interruptores del transformador cerrados, teniendo en cuenta que los
+ seccionadores se encuentren abiertos para así no energizar el 
+transformador, también hay que tener en cuenta que este relé genera 
+bloqueo al cierre de los interruptores, lo cual también hay que 
+comprobarlo.</span></p>
+<p style="text-align: justify;" id="mPMAgJyNVk2dG4ar"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="CYKBXGZJya8PmaPj">20. Diligenciar el formato propio de alarmas y disparos por protecciones propias del transformador.</span></p>
+<p style="text-align: justify;" id="T2SHxMyxF00kkUtg"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="mcCKv0hfnCke6acS">21. Informar a despacho la conclusión de los trabajos y la disponibilidad operativa del equipo.</span></p>
+<p style="text-align: justify;" id="Nok2vp3yUSLuWgNZ"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="vyCU4xTH89JGRUHC">22. Conectar el transformador cuando despacho autorice la maniobra.</span></p>
+<p style="text-align: justify;" id="h8cH8yK32HsjohFD"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="FdzC7qYS0t6SLn4d">23. Esperar hasta la devolución de las maniobras (cierre de seccionadores e interruptores) y confirmar con despacho.</span></p>
+<p style="text-align: justify;" id="bs5bhf5fWngTIkqZ"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="pYl05PHDe3rb7lpH">24. Quitar la señalización del área donde se realizó la prueba.</span></p>
+<p style="text-align: justify;" id="XeARdchAIKw5owAs"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="QuPMBcwkpmSGfrzV">&nbsp;</span></p>
+</div>
+<div class="mceNonEditable" id="uI5GHMhPxp7qUtPD">
+<p id="gM3EIrtmOx3kSQEU"><span style="font-family: arial,helvetica,sans-serif; font-size: small;" id="TdM4iY94qeVLFOZd">7.&nbsp;&nbsp;&nbsp;&nbsp; DOCUMENTOS RELACIONADOS</span></p>
+</div>
+<div id="wEXaMFnvDECepd37">
+<p style="text-align: justify;" id="DfE24fKzlJBOl9lA"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="CQPrwwXJ3Riat3ag"><br id="VsuQsyTJekKOU7E6">7.1. DOCUMENTOS INTERNOS</span></p>
+<p style="text-align: justify;" id="EbBYV0JccfyLcQCz"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="MyECBKeYBcj28Aok">&nbsp;</span></p>
+<ul id="sbBu0D6EY1A9ev0l">
+<li style="text-align: justify;" id="WIKYBw1Ql9C3YTnn"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="BwfVUAEwiddZqg9Y">Ver Normograma/Gestión de Talento Humano/Internas</span></li>
+<li style="text-align: justify;" id="MJy5Q5fv3GyMhffR"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="7uiU3zmrAK3G9wcJ">199P01I008G001<smartcode data-source="docs" data-attributes="aW5kZXg9IjUzNzYiIGxpbms9InRydWUiIA=="><span class="document_obsolete_link" data-id="7646" data-name="MATRICES DE PRIORIZACION DE RIESGOS DE EMCALI EICE E.S.P."><span class="query_documents" title="199P01I008G001 (Ver. 2 @ 2018-12-26)">MATRICES DE PRIORIZACION DE RIESGOS DE EMCALI EICE E.S.P.</span><span class="label label-danger">Obsoleto</span></span></smartcode></span></li>
+<li style="text-align: justify;" id="AFWjlZd7XDMELHgc"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="UEF3auz6m0alcNtm">199P01I004<smartcode data-source="docs" data-attributes="aW5kZXg9IjUwNDgiIGxpbms9InRydWUiIA=="><span class="document_obsolete_link" data-id="8943" data-name="DESARROLLAR ACTIVIDADES DE RIESGO ALTO "><span class="query_documents" title="199P01I004 (Ver. 2 @ 2020-11-18)">DESARROLLAR ACTIVIDADES DE RIESGO ALTO </span><span class="label label-danger">Obsoleto</span></span></smartcode></span></li>
+<li style="text-align: justify;" id="7vZpbkpgOVrJHOYA"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="bXbLD8RQU4auYpcn">199P01I006<smartcode data-source="docs" data-attributes="aW5kZXg9IjUwOTgiIGxpbms9InRydWUiIA=="><span class="document_obsolete_link" data-id="5783" data-name="ENTREGAR ELEMENTOS DE PROTECCION PERSONAL, DOTACION DE ROPA Y CALZADO"><span class="query_documents" title="199P01I006 (Ver. 2 @ 2017-04-26)">ENTREGAR ELEMENTOS DE PROTECCION PERSONAL, DOTACION DE ROPA Y CALZADO</span><span class="label label-danger">Obsoleto</span></span></smartcode></span></li>
+<li style="text-align: justify;" id="koq810LgnskeDJnr"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="ND4xS62COv3fDi0V">199P01I010G001<smartcode data-source="docs" data-attributes="aW5kZXg9IjUwNjEiIGxpbms9InRydWUiIA=="><span class="document_obsolete_link" data-id="6928" data-name=" PLANES DE EMERGENCIA EMCALI EICE ESP"><span class="query_documents" title="199P01I010G001 (Ver. 3 @ 2018-02-05)"> PLANES DE EMERGENCIA EMCALI EICE ESP</span><span class="label label-danger">Obsoleto</span></span></smartcode></span></li>
+<li style="text-align: justify;" id="wCrHVMQSH5AWKRZj"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="F1IQFRSGNSYamiKW">198P01I001<smartcode data-source="docs" data-attributes="aW5kZXg9IjUwNjIiIGxpbms9InRydWUiIA=="><span class="document_obsolete_link" data-id="8080" data-name="SEGUIMIENTO AL CUMPLIMIENTO DE REQUISITOS LEGALES EN SEGURIDAD Y SALUD EN EL TRABAJO"><span class="query_documents" title="198P01I001 (Ver. 2 @ 2020-07-07)">SEGUIMIENTO AL CUMPLIMIENTO DE REQUISITOS LEGALES EN SEGURIDAD Y SALUD EN EL TRABAJO</span><span class="label label-danger">Obsoleto</span></span></smartcode></span></li>
+</ul>
+<p style="text-align: justify;" id="BucTaxHrB219k5NG"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="AyA1L5K9lAxQylDC">&nbsp;</span></p>
+<p style="text-align: justify;" id="Y4xl7q2FC7BJeCsv"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="E7r0MyH2yO5rEfQy">7.2. REGISTROS</span></p>
+<p style="text-align: justify;" id="rxqetbahIBANQfPN"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="RIuBWvIR36Y0oMtG"><br></span></p>
+<p style="text-align: justify;" id="gSuij0P3FOJd2xl3"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="MtgO0e0dnGOZHc29">N/A</span></p>
+<p style="text-align: justify;" id="szfy0h9IqwKC0RCM"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="e4Er2wdzl47c2KYW">7.3. DOCUMENTOS EXTERNOS</span></p>
+<ul id="2UGfog3Ah7WcZnUY">
+<li style="text-align: justify;" id="RqIvR43TqrwTbBfy"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="2lBrhfOQEcbLHrrX">Ver Normograma/Gestión de Talento Humano/Externas</span></li>
+</ul>
+<p style="text-align: justify;" id="1FLNIU89gLmSfNwY"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="IKPQNVMnM2kwhW6G">&nbsp;</span></p>
+</div>
+<div class="mceNonEditable" id="X4SAJfTjR8OIK5PW">
+<p id="73AWM2ecxGJHrcQs"><span style="font-family: arial,helvetica,sans-serif; font-size: small;" id="oEXadLKpYDPA2xtl">8.&nbsp;&nbsp;&nbsp;&nbsp; ANEXOS</span></p>
+</div>
+<div id="6rewP9ze21ADX2OM">
+<ul id="Df6ANo15A6x42aes">
+<li style="text-align: justify;" id="nzbldCGnrxnMrKI4"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="mI9JuatuN1Gu7rpI">N/A</span></li>
+</ul>
+<p id="Wrxfi5f9mdlJvnIV"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="knWjrmMvP2C0i7EF">&nbsp;</span></p>
+</div>
+<div class="mceNonEditable" id="kgyrklaJ7XqtQqJF">
+<p id="yBJ1N3eHO0GQAwj4"><span style="font-family: arial,helvetica,sans-serif; font-size: small;" id="NtZUM5bGH65uVIGp">9.&nbsp;&nbsp;&nbsp;&nbsp; OBSERVACIONES</span></p>
+</div>
+<div id="CwHRtqtwKk0PNrel">
+<p style="text-align: justify;" id="yDaBi6QaUt8PYl9E"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="ypN1lXmk4j4TMgOe">Las personas que participaron en la documentación del presente procedimiento por parte de la UENE de EMCALI fueron:</span></p>
+<p style="text-align: justify;" id="PKD2X63j992P3t6S"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="gCrJNIfn4AQrSENU">Francisco Javier Sánchez Electricista Montador I</span></p>
+<p id="rDy9t2ReCT1pBR28"><span style="font-size: 12pt; font-family: arial, helvetica, sans-serif;" id="FYb8auqyfRIqJDKI"><span id="QXNm6jvVN65KJOnw">&nbsp;</span></span></p>
+<table style="width: 100%;" border="1" id="EfyOhKkq1ceERWYp">
+<tbody id="dGZ6LPafJFuLLRGp">
+<tr id="dGJFyMAcc33AtUIv">
+<td id="uOW1cEi1IgZcUPuw"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="mJCwYbAIHrSuEEdH">Elaborado por:</span></td>
+<td colspan="2" id="7PryEafDrzhXiptN"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="mto6E1Ywg80cjpmg"><smartcode data-source="firma" data-attributes="bW9kbz0iMiIg"><span class="ul query_signature" style="list-style-type: none; padding-left: 5px; text-align: left;"><span class="li" title="@ 2022-07-14 15:44:48">MILTON FABIAN SANDOVAL MERA <br><span style="color:#666666; font-size:10px">521 - ELECTRICISTA II - 521 </span></span></span></smartcode></span></td>
+</tr>
+<tr id="MVUza29WyjKs8VGb">
+<td id="zfzNpIPZCzapbn4b"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="TR8ZYfBTf9pDMRJt">Revisado por:</span></td>
+<td colspan="2" id="BK9Xhw2DJ3hN2WTb"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="u1dmXhdm0hCXYuWq"><smartcode data-source="firma" data-attributes="bW9kbz0iMyIg"><span class="ul query_signature" style="list-style-type: none; padding-left: 5px; text-align: left;"><span class="li" title="@ 2022-07-14 16:15:30">JORGE MAURICIO DONNEYS CAMACHO <br><span style="color:#666666; font-size:10px">521 - INGENIERO DE OPERACION Y MANTENIMIENTO II - 521 </span></span></span></smartcode></span></td>
+</tr>
+<tr id="4g53J8JdfObdegPw">
+<td id="usqKDRZqjrqouLLz"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="3ZTTqbJKgRhozA9m">Aprobado por:</span></td>
+<td colspan="2" id="sO1ORJlmv0cHQVlq"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="UvqKnoIdNpvLjLvZ"><smartcode data-source="firma" data-attributes="bW9kbz0iNSIg"><span class="ul query_signature" style="list-style-type: none; padding-left: 5px; text-align: left;"><span class="li" title="@ 2022-07-27 15:34:45">JAIRO IVAN SOSSA REINA <br><span style="color:#666666; font-size:10px">JEFE DE DEPARTAMENTO </span></span></span></smartcode></span></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="mceNonEditable" id="sfNL3kgXWK9PYrLT">
+<table style="width: 100%;" border="1" id="E5vJq4owNUx8WVIh">
+<tbody id="8nqU1CVRGWDy4VvR">
+<tr id="mVqr0oz1SF5eeAMa">
+<td style="text-align: justify;" id="ZbhmfVPgDSgcLljj"><span style="font-size: x-small;" id="7MXYOt4yQmPh9jkC">Cualquier
+ impresión o copia de los documentos del SGC sin el sello de copia 
+controlada se entiende como documento no controlado y es responsabilidad
+ del funcionario verificar con el área de Gestión de calidad la vigencia
+ de la versión</span></td>
+</tr>
+</tbody>
+</table>
+</div>        <div class="document-footer">ANDERSON JOSE MARIN CORREA @ 2026-07-10, 14:48:59</div>
+      </div>
+                  <div class="dv-sheet sheet1"></div>
+      <div class="dv-sheet sheet2"></div>
+    </div>
+  </div>
+  
+      <script type="text/javascript">
+      $(function () {
+        $(document).bind("contextmenu", function () {
+          return false;
+        });
+        disableSelection(document.body);
+      });
+    </script>
+      <style type="text/css">
+      @media print {
+        body {
+          display: none !important
+        }
+      }
+    </style>
+      <style type="text/css">
+      body, img, a, p, div {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+    </style>
+    <script>
+
+
+    $(function () {
+      if (window.history.length > 1) {
+        $('.revert-icon').addClass('document-go-back')
+      }
+      $('a').click(function (e) {
+        let tmpRegex = new RegExp('.*?\/document\/view\/id\/', 'g');
+        let anchor = this;
+        let match = tmpRegex.exec(anchor.href);
+        if (match !== null) {
+          e.preventDefault();
+
+          let id = anchor.href.match("\/id\/(.*)");
+          if (id != undefined) {
+
+            $.ajax({
+              url: daruma.config.absolute_url + '/document/isObsolete',
+              data: {id: id[1]},
+              success: function (data) {
+                if (data['isObsolete']) {
+                  swal({
+                      title: 'Información del Registro',
+                      text: 'Esta tratando de acceder a un documento en estado obsoleto',
+                      confirmButtonText: 'Notificar al equipo de trabajo',
+                      cancelButtonText: 'Buscar versión vigente',
+                      animation: false,
+                      showConfirmButton: data['isObsolete'],
+                      showCancelButton: data['hasActiveVersion'],
+                      closeOnCancel: true,
+                      closeOnConfirm: false
+                    },
+                    function (isConfirm) {
+                      if (isConfirm) {
+                        $.ajax({
+                          url: daruma.config.absolute_url + '/document/notifyObsoleteDocument',
+                          data: {
+                            id: '11735',
+                            document_name: $(anchor).text()
+                          },
+                          success: function (data) {
+                            swal({
+                              title: 'Notificaciones',
+                              text: 'Enviada',
+                              type: 'success'
+                            });
+                          }
+                        });
+
+                      } else {
+                        window.location.href = data['url']
+                      }
+                    },
+                  );
+                } else {
+                  window.location.href = anchor.href;
+                }
+              }
+            });
+          }
+        }
+      });
+
+      $('div#document-viewer div:not([class])').each(function () {
+        var $div = $(this);
+
+        if ($div.html() === '') {
+          $div.append($('<br>'));
+        }
+      });
+
+      $('div#document-viewer p:not([class])').each(function () {
+        var $p = $(this);
+
+        if ($p.html() === '') {
+          $p.append($('<br>'));
+        }
+      });
+
+      var enableSpanFix = 1
+      if (enableSpanFix) {
+        $('div#document-viewer span:not([class])').each(function () {
+          var $span = $(this);
+
+          if ($span.html() === '') {
+            $span.append($('<br>'));
+          }
+        });
+      }
+
+      $('div#document-viewer p:not([class],[id])').each(function () {
+        var $p = $(this);
+        if ($p.html() === '<br>') {
+          $p.remove();
+        }
+      });
+
+      if(!daruma.config.document_enable_download_pdf_component) {
+        $('#execute-export-pdf').remove();
+      }
+
+      if(!daruma.config.document_enable_download_word_component) {
+        $('#execute-export-word').remove();
+      }
+
+      if (!daruma.config.document_enable_orientation_view) {
+        $('.right').remove();
+      }
+    });
+  </script>
+</div>
+<style type="text/css">
+
+  p { white-space: normal; }
+  p.span { white-space: normal; }
+  td.p.span { white-space: normal; }
+
+  @media print {
+    #sidebar {
+      display: none;
+    }
+    body {
+      width: auto;
+      background: #ffffff;
+    }
+
+    #document-viewer {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    .sheet_section {
+      page-break-inside: avoid
+    }
+  }
+</style>
+
+  <style>
+    #toast-container {
+      display: flex ;
+      justify-content: center ;
+      align-items: flex-start ;
+      position: fixed ;
+      top: 20px ;
+      width: 100% ;
+      pointer-events: none ;
+    }
+
+    #toast-container > div {
+      padding: 15px 15px 15px 50px;
+      width: 400px;
+    }
+  </style>
+
+</div></body></html>

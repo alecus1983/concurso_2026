@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><style type="text/css">.tippy-touch{cursor:pointer!important}.tippy-notransition{-webkit-transition:none!important;transition:none!important}.tippy-popper{max-width:350px;-webkit-perspective:700px;perspective:700px;z-index:9999;outline:0;-webkit-transition-timing-function:cubic-bezier(.165,.84,.44,1);transition-timing-function:cubic-bezier(.165,.84,.44,1);pointer-events:none}.tippy-popper[data-html]{max-width:96%;max-width:calc(100% - 20px)}.tippy-popper[x-placement^=top] .tippy-backdrop{border-radius:40% 40% 0 0}.tippy-popper[x-placement^=top] .tippy-roundarrow{bottom:-8px;margin:0 6px;-webkit-transform-origin:50% 0;transform-origin:50% 0}.tippy-popper[x-placement^=top] .tippy-roundarrow svg{position:absolute;left:0;-webkit-transform:rotate(180deg);transform:rotate(180deg)}.tippy-popper[x-placement^=top] .tippy-arrow{border-top:7px solid #333;border-right:7px solid transparent;border-left:7px solid transparent;bottom:-7px;margin:0 7px;-webkit-transform-origin:50% 0;transform-origin:50% 0}.tippy-popper[x-placement^=top] .tippy-backdrop{-webkit-transform-origin:0 100%;transform-origin:0 100%}.tippy-popper[x-placement^=top] .tippy-backdrop[data-state=visible]{-webkit-transform:scale(5.5) translate(-50%,25%);transform:scale(5.5) translate(-50%,25%);opacity:1}.tippy-popper[x-placement^=top] .tippy-backdrop[data-state=hidden]{-webkit-transform:scale(1) translate(-50%,25%);transform:scale(1) translate(-50%,25%);opacity:0}.tippy-popper[x-placement^=top] [data-animation=shift-toward][data-state=visible]{opacity:1;-webkit-transform:translateY(-10px);transform:translateY(-10px)}.tippy-popper[x-placement^=top] [data-animation=shift-toward][data-state=hidden]{opacity:0;-webkit-transform:translateY(-20px);transform:translateY(-20px)}.tippy-popper[x-placement^=top] [data-animation=perspective]{-webkit-transform-origin:bottom;transform-origin:bottom}.tippy-popper[x-placement^=top] [data-animation=perspective][data-state=visible]{opacity:1;-webkit-transform:translateY(-10px) rotateX(0);transform:translateY(-10px) rotateX(0)}.tippy-popper[x-placement^=top] [data-animation=perspective][data-state=hidden]{opacity:0;-webkit-transform:translateY(0) rotateX(90deg);transform:translateY(0) rotateX(90deg)}.tippy-popper[x-placement^=top] [data-animation=fade][data-state=visible]{opacity:1;-webkit-transform:translateY(-10px);transform:translateY(-10px)}.tippy-popper[x-placement^=top] [data-animation=fade][data-state=hidden]{opacity:0;-webkit-transform:translateY(-10px);transform:translateY(-10px)}.tippy-popper[x-placement^=top] [data-animation=shift-away][data-state=visible]{opacity:1;-webkit-transform:translateY(-10px);transform:translateY(-10px)}.tippy-popper[x-placement^=top] [data-animation=shift-away][data-state=hidden]{opacity:0;-webkit-transform:translateY(0);transform:translateY(0)}.tippy-popper[x-placement^=top] [data-animation=scale][data-state=visible]{opacity:1;-webkit-transform:translateY(-10px) scale(1);transform:translateY(-10px) scale(1)}.tippy-popper[x-placement^=top] [data-animation=scale][data-state=hidden]{opacity:0;-webkit-transform:translateY(0) scale(0);transform:translateY(0) scale(0)}.tippy-popper[x-placement^=bottom] .tippy-backdrop{border-radius:0 0 30% 30%}.tippy-popper[x-placement^=bottom] .tippy-roundarrow{top:-8px;margin:0 6px;-webkit-transform-origin:50% 100%;transform-origin:50% 100%}.tippy-popper[x-placement^=bottom] .tippy-roundarrow svg{position:absolute;left:0;-webkit-transform:rotate(0);transform:rotate(0)}.tippy-popper[x-placement^=bottom] .tippy-arrow{border-bottom:7px solid #333;border-right:7px solid transparent;border-left:7px solid transparent;top:-7px;margin:0 7px;-webkit-transform-origin:50% 100%;transform-origin:50% 100%}.tippy-popper[x-placement^=bottom] .tippy-backdrop{-webkit-transform-origin:0 -100%;transform-origin:0 -100%}.tippy-popper[x-placement^=bottom] .tippy-backdrop[data-state=visible]{-webkit-transform:scale(5.5) translate(-50%,-125%);transform:scale(5.5) translate(-50%,-125%);opacity:1}.tippy-popper[x-placement^=bottom] .tippy-backdrop[data-state=hidden]{-webkit-transform:scale(1) translate(-50%,-125%);transform:scale(1) translate(-50%,-125%);opacity:0}.tippy-popper[x-placement^=bottom] [data-animation=shift-toward][data-state=visible]{opacity:1;-webkit-transform:translateY(10px);transform:translateY(10px)}.tippy-popper[x-placement^=bottom] [data-animation=shift-toward][data-state=hidden]{opacity:0;-webkit-transform:translateY(20px);transform:translateY(20px)}.tippy-popper[x-placement^=bottom] [data-animation=perspective]{-webkit-transform-origin:top;transform-origin:top}.tippy-popper[x-placement^=bottom] [data-animation=perspective][data-state=visible]{opacity:1;-webkit-transform:translateY(10px) rotateX(0);transform:translateY(10px) rotateX(0)}.tippy-popper[x-placement^=bottom] [data-animation=perspective][data-state=hidden]{opacity:0;-webkit-transform:translateY(0) rotateX(-90deg);transform:translateY(0) rotateX(-90deg)}.tippy-popper[x-placement^=bottom] [data-animation=fade][data-state=visible]{opacity:1;-webkit-transform:translateY(10px);transform:translateY(10px)}.tippy-popper[x-placement^=bottom] [data-animation=fade][data-state=hidden]{opacity:0;-webkit-transform:translateY(10px);transform:translateY(10px)}.tippy-popper[x-placement^=bottom] [data-animation=shift-away][data-state=visible]{opacity:1;-webkit-transform:translateY(10px);transform:translateY(10px)}.tippy-popper[x-placement^=bottom] [data-animation=shift-away][data-state=hidden]{opacity:0;-webkit-transform:translateY(0);transform:translateY(0)}.tippy-popper[x-placement^=bottom] [data-animation=scale][data-state=visible]{opacity:1;-webkit-transform:translateY(10px) scale(1);transform:translateY(10px) scale(1)}.tippy-popper[x-placement^=bottom] [data-animation=scale][data-state=hidden]{opacity:0;-webkit-transform:translateY(0) scale(0);transform:translateY(0) scale(0)}.tippy-popper[x-placement^=left] .tippy-backdrop{border-radius:30% 0 0 30%}.tippy-popper[x-placement^=left] .tippy-roundarrow{right:-16px;margin:4px 0;-webkit-transform-origin:33.33333333% 50%;transform-origin:33.33333333% 50%}.tippy-popper[x-placement^=left] .tippy-roundarrow svg{position:absolute;left:0;-webkit-transform:rotate(90deg);transform:rotate(90deg)}.tippy-popper[x-placement^=left] .tippy-arrow{border-left:7px solid #333;border-top:7px solid transparent;border-bottom:7px solid transparent;right:-7px;margin:4px 0;-webkit-transform-origin:0 50%;transform-origin:0 50%}.tippy-popper[x-placement^=left] .tippy-backdrop{-webkit-transform-origin:100% 0;transform-origin:100% 0}.tippy-popper[x-placement^=left] .tippy-backdrop[data-state=visible]{-webkit-transform:scale(5.5) translate(33%,-50%);transform:scale(5.5) translate(33%,-50%);opacity:1}.tippy-popper[x-placement^=left] .tippy-backdrop[data-state=hidden]{-webkit-transform:scale(1.5) translate(33%,-50%);transform:scale(1.5) translate(33%,-50%);opacity:0}.tippy-popper[x-placement^=left] [data-animation=shift-toward][data-state=visible]{opacity:1;-webkit-transform:translateX(-10px);transform:translateX(-10px)}.tippy-popper[x-placement^=left] [data-animation=shift-toward][data-state=hidden]{opacity:0;-webkit-transform:translateX(-20px);transform:translateX(-20px)}.tippy-popper[x-placement^=left] [data-animation=perspective]{-webkit-transform-origin:right;transform-origin:right}.tippy-popper[x-placement^=left] [data-animation=perspective][data-state=visible]{opacity:1;-webkit-transform:translateX(-10px) rotateY(0);transform:translateX(-10px) rotateY(0)}.tippy-popper[x-placement^=left] [data-animation=perspective][data-state=hidden]{opacity:0;-webkit-transform:translateX(0) rotateY(-90deg);transform:translateX(0) rotateY(-90deg)}.tippy-popper[x-placement^=left] [data-animation=fade][data-state=visible]{opacity:1;-webkit-transform:translateX(-10px);transform:translateX(-10px)}.tippy-popper[x-placement^=left] [data-animation=fade][data-state=hidden]{opacity:0;-webkit-transform:translateX(-10px);transform:translateX(-10px)}.tippy-popper[x-placement^=left] [data-animation=shift-away][data-state=visible]{opacity:1;-webkit-transform:translateX(-10px);transform:translateX(-10px)}.tippy-popper[x-placement^=left] [data-animation=shift-away][data-state=hidden]{opacity:0;-webkit-transform:translateX(0);transform:translateX(0)}.tippy-popper[x-placement^=left] [data-animation=scale][data-state=visible]{opacity:1;-webkit-transform:translateX(-10px) scale(1);transform:translateX(-10px) scale(1)}.tippy-popper[x-placement^=left] [data-animation=scale][data-state=hidden]{opacity:0;-webkit-transform:translateX(0) scale(0);transform:translateX(0) scale(0)}.tippy-popper[x-placement^=right] .tippy-backdrop{border-radius:0 30% 30% 0}.tippy-popper[x-placement^=right] .tippy-roundarrow{left:-16px;margin:4px 0;-webkit-transform-origin:66.66666666% 50%;transform-origin:66.66666666% 50%}.tippy-popper[x-placement^=right] .tippy-roundarrow svg{position:absolute;left:0;-webkit-transform:rotate(-90deg);transform:rotate(-90deg)}.tippy-popper[x-placement^=right] .tippy-arrow{border-right:7px solid #333;border-top:7px solid transparent;border-bottom:7px solid transparent;left:-7px;margin:4px 0;-webkit-transform-origin:100% 50%;transform-origin:100% 50%}.tippy-popper[x-placement^=right] .tippy-backdrop{-webkit-transform-origin:-100% 0;transform-origin:-100% 0}.tippy-popper[x-placement^=right] .tippy-backdrop[data-state=visible]{-webkit-transform:scale(5.5) translate(-133%,-50%);transform:scale(5.5) translate(-133%,-50%);opacity:1}.tippy-popper[x-placement^=right] .tippy-backdrop[data-state=hidden]{-webkit-transform:scale(1.5) translate(-133%,-50%);transform:scale(1.5) translate(-133%,-50%);opacity:0}.tippy-popper[x-placement^=right] [data-animation=shift-toward][data-state=visible]{opacity:1;-webkit-transform:translateX(10px);transform:translateX(10px)}.tippy-popper[x-placement^=right] [data-animation=shift-toward][data-state=hidden]{opacity:0;-webkit-transform:translateX(20px);transform:translateX(20px)}.tippy-popper[x-placement^=right] [data-animation=perspective]{-webkit-transform-origin:left;transform-origin:left}.tippy-popper[x-placement^=right] [data-animation=perspective][data-state=visible]{opacity:1;-webkit-transform:translateX(10px) rotateY(0);transform:translateX(10px) rotateY(0)}.tippy-popper[x-placement^=right] [data-animation=perspective][data-state=hidden]{opacity:0;-webkit-transform:translateX(0) rotateY(90deg);transform:translateX(0) rotateY(90deg)}.tippy-popper[x-placement^=right] [data-animation=fade][data-state=visible]{opacity:1;-webkit-transform:translateX(10px);transform:translateX(10px)}.tippy-popper[x-placement^=right] [data-animation=fade][data-state=hidden]{opacity:0;-webkit-transform:translateX(10px);transform:translateX(10px)}.tippy-popper[x-placement^=right] [data-animation=shift-away][data-state=visible]{opacity:1;-webkit-transform:translateX(10px);transform:translateX(10px)}.tippy-popper[x-placement^=right] [data-animation=shift-away][data-state=hidden]{opacity:0;-webkit-transform:translateX(0);transform:translateX(0)}.tippy-popper[x-placement^=right] [data-animation=scale][data-state=visible]{opacity:1;-webkit-transform:translateX(10px) scale(1);transform:translateX(10px) scale(1)}.tippy-popper[x-placement^=right] [data-animation=scale][data-state=hidden]{opacity:0;-webkit-transform:translateX(0) scale(0);transform:translateX(0) scale(0)}.tippy-tooltip{position:relative;color:#fff;border-radius:4px;font-size:.9rem;padding:.3rem .6rem;text-align:center;will-change:transform;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;background-color:#333}.tippy-tooltip[data-size=small]{padding:.2rem .4rem;font-size:.75rem}.tippy-tooltip[data-size=large]{padding:.4rem .8rem;font-size:1rem}.tippy-tooltip[data-animatefill]{overflow:hidden;background-color:transparent}.tippy-tooltip[data-animatefill] .tippy-content{-webkit-transition:-webkit-clip-path cubic-bezier(.46,.1,.52,.98);transition:-webkit-clip-path cubic-bezier(.46,.1,.52,.98);transition:clip-path cubic-bezier(.46,.1,.52,.98);transition:clip-path cubic-bezier(.46,.1,.52,.98),-webkit-clip-path cubic-bezier(.46,.1,.52,.98)}.tippy-tooltip[data-interactive]{pointer-events:auto}.tippy-tooltip[data-inertia][data-state=visible]{-webkit-transition-timing-function:cubic-bezier(.53,2,.36,.85);transition-timing-function:cubic-bezier(.53,2,.36,.85)}.tippy-tooltip[data-inertia][data-state=hidden]{-webkit-transition-timing-function:ease;transition-timing-function:ease}.tippy-arrow,.tippy-roundarrow{position:absolute;width:0;height:0}.tippy-roundarrow{width:24px;height:8px;fill:#333;pointer-events:none}.tippy-roundarrow path{pointer-events:auto}.tippy-backdrop{position:absolute;will-change:transform;background-color:#333;border-radius:50%;width:26%;left:50%;top:50%;z-index:-1;-webkit-transition:all cubic-bezier(.46,.1,.52,.98);transition:all cubic-bezier(.46,.1,.52,.98);-webkit-backface-visibility:hidden;backface-visibility:hidden}.tippy-backdrop:after{content:"";float:left;padding-top:100%}body:not(.tippy-touch) .tippy-tooltip[data-animatefill][data-state=visible] .tippy-content{-webkit-clip-path:ellipse(100% 100% at 50% 50%);clip-path:ellipse(100% 100% at 50% 50%)}body:not(.tippy-touch) .tippy-tooltip[data-animatefill][data-state=hidden] .tippy-content{-webkit-clip-path:ellipse(5% 50% at 50% 50%);clip-path:ellipse(5% 50% at 50% 50%)}body:not(.tippy-touch) .tippy-popper[x-placement=right] .tippy-tooltip[data-animatefill][data-state=visible] .tippy-content{-webkit-clip-path:ellipse(135% 100% at 0 50%);clip-path:ellipse(135% 100% at 0 50%)}body:not(.tippy-touch) .tippy-popper[x-placement=right] .tippy-tooltip[data-animatefill][data-state=hidden] .tippy-content{-webkit-clip-path:ellipse(25% 100% at 0 50%);clip-path:ellipse(25% 100% at 0 50%)}body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-animatefill][data-state=visible] .tippy-content{-webkit-clip-path:ellipse(135% 100% at 100% 50%);clip-path:ellipse(135% 100% at 100% 50%)}body:not(.tippy-touch) .tippy-popper[x-placement=left] .tippy-tooltip[data-animatefill][data-state=hidden] .tippy-content{-webkit-clip-path:ellipse(25% 100% at 100% 50%);clip-path:ellipse(25% 100% at 100% 50%)}@media (max-width:360px){.tippy-popper{max-width:96%;max-width:calc(100% - 20px)}}</style>
+  <meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="IE=11">
+<meta name="description" content="Daruma Software The Quality Management Software">
+<meta name="keywords" content="daruma, daruma software, quality management software">
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+<meta name="author" content="TiQal S.A.S">
+<meta name="google" content="notranslate">
+<meta name="robots" content="noindex">
+  <title>REALIZAR AJUSTES DE PROTECCIONES ELECTRICAS [Ver. 1 // Rev. 01 // FV. 2017-07-31]</title>
+
+  <link rel="apple-touch-icon" href="https://daruma.servicios.emcali.com.co/apple-touch-icon.png">
+  <!-- CSS STYLESHEETS -->
+                                      <link rel="stylesheet" type="text/css" media="all" href="REALIZAR%20AJUSTES%20DE%20PROTECCIONES%20ELECTRICAS%20[Ver.%201%20__%20Rev.%2001%20__%20FV.%202017-07-31]_files/normalize.css">
+<link rel="stylesheet" type="text/css" media="screen" href="REALIZAR%20AJUSTES%20DE%20PROTECCIONES%20ELECTRICAS%20[Ver.%201%20__%20Rev.%2001%20__%20FV.%202017-07-31]_files/plugin.min.css">
+<link rel="stylesheet" type="text/css" media="all" href="REALIZAR%20AJUSTES%20DE%20PROTECCIONES%20ELECTRICAS%20[Ver.%201%20__%20Rev.%2001%20__%20FV.%202017-07-31]_files/report.min.css">
+<link rel="stylesheet" type="text/css" media="all" href="REALIZAR%20AJUSTES%20DE%20PROTECCIONES%20ELECTRICAS%20[Ver.%201%20__%20Rev.%2001%20__%20FV.%202017-07-31]_files/reports_layout.min.css">
+<link rel="stylesheet" type="text/css" media="screen" href="REALIZAR%20AJUSTES%20DE%20PROTECCIONES%20ELECTRICAS%20[Ver.%201%20__%20Rev.%2001%20__%20FV.%202017-07-31]_files/report-layout-ds.min.css">
+<link rel="stylesheet" type="text/css" media="screen" href="REALIZAR%20AJUSTES%20DE%20PROTECCIONES%20ELECTRICAS%20[Ver.%201%20__%20Rev.%2001%20__%20FV.%202017-07-31]_files/skin-blue.min.css">
+<link rel="stylesheet" type="text/css" media="screen" href="REALIZAR%20AJUSTES%20DE%20PROTECCIONES%20ELECTRICAS%20[Ver.%201%20__%20Rev.%2001%20__%20FV.%202017-07-31]_files/jpdf.css">
+<link rel="stylesheet" type="text/css" media="screen" href="REALIZAR%20AJUSTES%20DE%20PROTECCIONES%20ELECTRICAS%20[Ver.%201%20__%20Rev.%2001%20__%20FV.%202017-07-31]_files/new_document_layout.min.css">
+<link rel="stylesheet" type="text/css" media="all" href="REALIZAR%20AJUSTES%20DE%20PROTECCIONES%20ELECTRICAS%20[Ver.%201%20__%20Rev.%2001%20__%20FV.%202017-07-31]_files/app.min.css">
+<link rel="stylesheet" type="text/css" media="all" href="REALIZAR%20AJUSTES%20DE%20PROTECCIONES%20ELECTRICAS%20[Ver.%201%20__%20Rev.%2001%20__%20FV.%202017-07-31]_files/content.css">
+<link rel="stylesheet" type="text/css" media="screen" href="REALIZAR%20AJUSTES%20DE%20PROTECCIONES%20ELECTRICAS%20[Ver.%201%20__%20Rev.%2001%20__%20FV.%202017-07-31]_files/sweetalert.css">
+<link rel="stylesheet" type="text/css" media="screen" href="REALIZAR%20AJUSTES%20DE%20PROTECCIONES%20ELECTRICAS%20[Ver.%201%20__%20Rev.%2001%20__%20FV.%202017-07-31]_files/toastr.min.css">
+<link rel="stylesheet" type="text/css" media="screen" href="REALIZAR%20AJUSTES%20DE%20PROTECCIONES%20ELECTRICAS%20[Ver.%201%20__%20Rev.%2001%20__%20FV.%202017-07-31]_files/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" media="all" href="REALIZAR%20AJUSTES%20DE%20PROTECCIONES%20ELECTRICAS%20[Ver.%201%20__%20Rev.%2001%20__%20FV.%202017-07-31]_files/document_view.css">
+<link rel="stylesheet" type="text/css" media="screen, print" href="REALIZAR%20AJUSTES%20DE%20PROTECCIONES%20ELECTRICAS%20[Ver.%201%20__%20Rev.%2001%20__%20FV.%202017-07-31]_files/ionicons.min.css">
+
+  <script type="text/javascript">
+/*jshint eqeqeq:false */
+(function (window) {
+  'use strict';
+
+  /**
+   * Creates a new Ui instance.
+   *
+   * @constructor
+   */
+  function I18N(catalogue) {
+    this.catalogue = catalogue || JSON.parse('{"Select":"Seleccionar","Links":"Links","Are you sure?":"Esta usted seguro?","You must at least select one item.":"Usted deber\u00eda seleccionar al menos un \u00edtem para esta acci\u00f3n.","Smart-code helper":"Asistente de C\u00f3digos Inteligentes","Tools":"Herramientas","Loading...":"Cargando...","Submitting":"Guardando...","Width":"Ancho","Height":"Alto","update":"Modificar","Stroke Style":"Color de l\u00ednea","Fill Style":"Color de relleno","Line Width":"Ancho de l\u00ednea","Left":"Izquierda ","Center":"Centro","Right":"Derecha","Filemanager":"Administrador de archivos","bar":"Gr\u00e1fico de barras","bar-h":"Gr\u00e1fico de barras horizontal","bar-stack":"Gr\u00e1fico de barras apilado","bar-h-stack ":"Gr\u00e1fico de barras apilado horizontal","bar-stack-h":"Gr\u00e1fico de barras apilado horizontal","line":"Gr\u00e1fico de lineas","area":"Gr\u00e1fico de \u00e1reas","pie":"Gr\u00e1fico tortas","scatter":"Gr\u00e1fico de puntos","Table insertion wizard":"Asistente de tablas de datos","Chart insertion wizard":"Asistente de Gr\u00e1ficos","Report query template":"Plantilla de b\u00fasqueda","Chart types":"Tipo de gr\u00e1fico","Chart colors":"Colores de series","Dimensions":"Dimensiones","Horizontal axis":"Eje horizontal","Vertical axis":"Ejes verticales","Size automatic":"Tama\u00f1o autom\u00e1tico","automatic":"autom\u00e1tico","edit":"Editar","Close modal":"Cerrar","Save modal":"Guardar","Save and add modal":"Guardar y crear otro","Warning":"Advertencia","Error":"Error","Success":"\u00c9xito","Info":"Informaci\u00f3n","Warning!":"Advertencia!","Error!":"Error!","Success!":"\u00c9xito!","Info!":"Informaci\u00f3n!","You will be logged off in":"Su sesi\u00f3n cerrara en","seconds due to inactivity.":"segundos por inactividad.","Sign off":"Cerrar sesi\u00f3n","Stay connected":"Mantenerse conectado","Yes, delete it!":"S\u00ed, borrarlo!","Cancel":"Cancelar","You will not be able to recover this record!":"\u00a1No podr\u00e1s recuperar este registro!","Are you sure to close Daruma?":"Esta usted seguro de cerrar Daruma?","Yes, Close!":"S\u00ed, Cerrar!","Edit tab \\\"%%tab%%\\\" of report query \\\"%%name%%\\\"":"Editar pesta\u00f1a \\\"%%tab%%\\\" de la b\u00fasqueda \\\"%%name%%\\\"","Delete":"Eliminar","You have finished all your task":"Has terminado tus tareas","Would you like to finish this action?":"\u00bfDeseas finalizar esta acci\u00f3n?","Yes":"Si","Format":"Formato","Count fields":"Columnas de conteo","Combine fields":"Combine fields","true":"Si","false":"No","of":"de","Image Map":"\u00c1reas activas","Number of actions!":"N\u00famero de acciones","How many actions will you add?":"\u00bfCu\u00e1ntas acciones agregar\u00e1?","Write a value":"Escribe un valor","Accept":"Aceptar","Information":"Informaci\u00f3n","It seems you are missing %%opt%% questions of %%tot%%, but it could affect the final result.  Are you sure you want to continue with it?":"Parece que est\u00e1 omitiendo %%opt%% preguntas opcionales de %%tot%% en total, lo cual podr\u00eda afectar el resultado final de la encuesta.  \u00bfSeguro desea continuar? (Aceptar para continuar.  Cancelar para revisar las preguntas)","The report query information was saved successfully.":"La plantilla de b\u00fasqueda se ha guardado exitosamente","Drop files here to upload":"Arrastra los archivos aqu\u00ed para subirlos","Send Survey!":"\u00a1Encuesta enviada!","Are you sure you want to delete this item?":"Esta usted seguro de eliminar este \u00edtem?","Are you sure you want to create this item?":"\u00bfEst\u00e1 seguro que desea crear este \u00edtem?","Remove file":"Eliminar archivo","Cancel upload":"Cancelar carga","Are you sure you want to cancel this upload?":"\u00bfEst\u00e1 seguro de cancelar la carga del archivo?","Restored draft, if you want to delete it":"Borrador restaurado, si lo desea borrar","Click here":"Click aqu\u00ed","Click to collapse":"Clic para colapsar","Click to expand":"Clic para expandir","Save":"Guardar","New":"Nuevo","An unsaved draft with information in it has been found":"Se encontr\u00f3 un borrador con informaci\u00f3n digitada anteriormente en el formulario, que no ha sido guardado en el sistema","Would you like to restore it":"\u00bfDesea restaurar el borrador?","Offline":"Desconectado","Online":"En linea","Click to show comments":"Clic para ver todos los comentarios","Click to show suggestions":"Clic para ver todas las sugerencias","Add comment":"Agregar comentario","Add suggestion":"Agregar sugerencia","The comment was saved successfully.":"El comentario se ha guardado exitosamente.","The suggestion was saved successfully.":"La sugerencia se ha guardado exitosamente.","The item has not been saved due to some errors.":"El \u00edtem no ha sido guardado debido a alguna restricci\u00f3n.","Comment":"Comentario","Hide":"Ocultar","Click here to see the changes":"Clic aqu\u00ed para ver\/ocultar los cambios","save":"Guardar","Click to hide suggestions":"Clic para ocultar todas las sugerencias","Click to hide comments":"Clic para ocultar todos los comentarios","Reject":"Rechazar","Reload content":"Recargar contenido","Reload template":"Recargar plantilla","Are you sure you want to reject this changes?":"\u00bfSeguro que quieres rechazar estos cambios?","This action will reject changes that you have not saved. Are you sure you want to continue?":"Esta acci\u00f3n descartar\u00e1 los cambios que no hayas guardado. \u00bfEst\u00e1s seguro de continuar?","No changes have been made to the document.":"No se han realizado cambios en el documento.","Sync with process":"Sincronizar con caracterizaci\u00f3n","Sync with product":"Sincronizar con el producto","Sync with audit":"Sincronizar con la auditor\u00eda","risk.label.assistant":"Plantilla para evaluaci\u00f3n de controles","How many founds will you add?":"\u00bfCu\u00e1ntos hallazgos desea agregar?","This %%module%% have a coincidence of %%percentage%% %. Also have %%coincidences%% greater than defined threshold. Do you want to continue register?":"Este %%module%% presenta una coincidencia del %%percentage%% %. Adem\u00e1s se presentan %%coincidences%% coincidencias m\u00e1s, superiores al umbral definido. \u00bfQuiere continuar con el registro?","profile":"Perfil","client":"Cliente","supplier":"Proveedor","Search":"Buscar","The item has not been deleted due to some errors.":"El \u00edtem no ha sido eliminado debido a alguna restricci\u00f3n.","The file was successfully uploaded.":"El archivo fue exitosamente cargado.","The number of folios entered (%%foliosr%%) does not correspond to the number of folios counted in the attached files (%%foliosc%%). Do you wish to continue?":"El n\u00famero de folios registrado (%%foliosr%%) no corresponde al n\u00famero de folios contabilizados en los archivos adjuntos (%%foliosc%%). \u00bfDesea continuar?","You must wait until the information is updated to save the form":"Antes de guardar el formulario, usted debe esperar hasta que se actualice la informaci\u00f3n","Show non-associated measures":"Mostrar medidas no asociadas","Hide non-associated measures":"Ocultar medidas no asociadas","The action plan must have at least one associated action.":"El plan de acci\u00f3n debe tener al menos una acci\u00f3n asociada","It is necessary to create an action plan before continuing with the treatment of the event.":"Se requiere crear un plan de acci\u00f3n antes de continuar con el tratamiento del evento.","expander.title.read_more":"Leer m\u00e1s","expander.title.read_less":"Leer menos","Action not allowed into this module":"Acci\u00f3n no permitida en este m\u00f3dulo","The opportunity is in Closed state":"La oportunidad est\u00e1 en estado cerrado","Can not change the responsible for closed records.":"Can not change the responsible for closed records.","Deleting this record means stop viewing the reference in the committee and the minutes. Are you sure?":"Eliminar este registro implica dejar de visualizar la referencia en el comit\u00e9 y las actas. Est\u00e1 usted seguro?","You are about to clone the indicator. Are you sure?":"Esta a punto de crear un nuevo indicador con base en el indicador actual. \u00bfEst\u00e1 usted seguro?","This action will create an action plan with their respective actions, based on the active proposed actions of the risk.":"Esta acci\u00f3n crear\u00e1 un plan de acci\u00f3n con sus respectivas acciones, \u00e9stas basadas en las acciones propuestas activas del riesgo.","This action will create an action plan with their respective actions, based on the active contingency actions of the risk.":"Esta acci\u00f3n crear\u00e1 un plan de acci\u00f3n con sus respectivas acciones, \u00e9stas basadas en las acciones de contingencia activas del riesgo.","Risk Cause":"Causas","Causes - Vulnerabilities":"Causas - Vulnerabilidades","Save and back":"Guardar y regresar","Warning: When the meeting team is inactivated, the minutes in execution will go to the Completed status, the scheduled meetings will change to the Canceled status and the unexecuted tasks will remain in the Canceled state.":"Advertencia: Al inactivar el comit\u00e9 las actas en ejecuci\u00f3n pasar\u00e1n a estado Finalizado, las reuniones programadas cambiar\u00e1n a estado Cancelado y las tareas sin ejecutar quedar\u00e1n en estado Cerrado.","improvement_tools.title.fishboneAssistant":"Causa-Efecto","month":"mes","week":"semana","day":"d\u00eda","hour":"hora","At least one number":"Al menos un n\u00famero","structure.submodules.tq_diagram.title.diagram_list":"Diagramas","structure.submodules.tq_diagram.title.diagram_list_tooltip":"Listado de Diagramas","risk_message_not_enough_active_controls":"No es posible realizar esta acci\u00f3n","Select a record":"Seleccione un registro","No results found":"No se encontraron resultados","Please, enter to %%n%% character(s)":"Por favor, introduzca %%n%% car\u00e1cter(es)","Please, delete to %%n%% character(s)":"Por favor, elimine %%n%% car\u00e1cter(es)","You can only select %%limit%% element(s)":"S\u00f3lo puede seleccionar %%limit%% elemento(s)","Loading more results...":"Cargando m\u00e1s resultados...","Searching...":"Buscando...","Select all":"Seleccionar Todos","Remove selection":"Quitar Selecci\u00f3n","Deselect all":"Deseleccionar todos","Invert":"Invertir","Type here to start your search...":"Escriba aqu\u00ed para iniciar la b\u00fasqueda...","This criteria has already been modified":"Este criterio ha sido modificado","To get the last evaluation click on Refresh criteria":"Para obtener el \u00faltimo criterio, haga clic en Recargar criterio","Do you want to reload the criteria? Unsaved changes will be lost":"\u00bfDesea recargar el criterio? Se perder\u00e1n los cambios sin guardar","Overwrite":"Sobrescribir","Reload":"Recargar","Nothing Entered, Please try again":"No digit\u00f3 ning\u00fan n\u00famero. Por favor intente nuevamente","forms.delivery.notified":"Los formularios han sido notificados","bcp.title.rpo":"RPO","bcp.title.rto":"RTO","bcp.title.wrt":"WRT","bcp.title.mtd":"MTD","Controlled":"Controlled","unControlled":"unControlled","NumberofDaysAvailable":"Cantidad de d\u00edas disponibles para dar respuesta a un tramite o servicio.","improvement_tools.title.brainstormingAssistant":"Lluvia de ideas","improvement_tools.title.treeAssistant":"Diagrama de \u00e1rbol","improvement_tools.title.paretoAssistant":"Pareto","Data":"Dato","Percentage":"Porcentaje","Accumulated":"Acumulado","audit.post_validators.eval_conclusion_alert_confirm":"\u00bfEsta seguro que desea concluir la auditor\u00eda?, despu\u00e9s de que concluya la auditor\u00eda esta no podr\u00e1 ser modificada","It is not possible to add an advance to the action":"No es posible agregar un avance a la acci\u00f3n","The action is expired, then advances cannot be recorded. To do it, request an adjustment in action.":"La acci\u00f3n est\u00e1 vencida, por lo tanto no es posible registrar avances. Para hacerlo, solicite un ajuste en acci\u00f3n.","It is understood":"Entendido","Request adjustment":"Solicitar ajuste","Are you sure to save without an attachment?":"\u00bfEsta seguro de guardar sin adjuntar un archivo?","Event not found":"Incidente no encontrado","Some changes have been made into team members, Do you wish to update those changes into planned meetings?":"Se han realizado algunos cambios en los miembros del comit\u00e9. \u00bfDesea actualizar estos cambios en las reuniones programadas?","indicator_periods.exit_without_saving":"\u00bfDesea guardar las configuraciones realizadas, antes de salir a la siguiente configuraci\u00f3n? Si no los guarda, perder\u00e1 la configuraci\u00f3n no guardada","The %%filename%% file will be created in the background. Once finished, it will be sent to download queue.":"El archivo %%filename%% est\u00e1 siendo procesado. Una vez finalizado, podr\u00e1 acceder a \u00e9l desde la interfaz de descargas.","The file is ready to download":"El archivo est\u00e1 listo para descargar","Click here to download":"Clic aqu\u00ed para descargar","Created ago":"Creado hace","framework.task.attend_corporate_task":"La tarea se encuentra en una instancia diferente a la actual, \u00bfdesea salir de la instancia actual para atender la tarea?","components.title.change_instance":"Cambiar de organizaci\u00f3n","components.title.confirm_instance_change":"\u00bfDesea moverse a Daruma en %%tenant%%?","components.title.change_of_instance":"Cambiando a la instancia %%tenant%%","indicator_goal.alert_goals":"La modificaci\u00f3n de valores realizada, afectar\u00e1 las mediciones que se realicen a partir de esta fecha, pero no afectar\u00e1 los valores ya alimentados","Are you sure you want to delete the list? This could contain tasks that will be deleted.":"\u00bfEst\u00e1 seguro de que desea eliminar la lista? Esta podr\u00eda contener tareas que se eliminar\u00e1n.","List deleted successfully":"Lista eliminada correctamente","This found has already been modified":"El hallazgo ha sido modificado","To get the last information click on refresh found":"Para obtener la informaci\u00f3n m\u00e1s reciente haga clic en el bot\u00f3n refrescar hallazgo","Are you sure to delete it?":"\u00bfEst\u00e1 usted seguro de borrar el elemento?","The action plan is not effective":"El plan de acci\u00f3n no fue efectivo.","It must be taken into account that the opportunity for improvement must be prioritized again.":"Tener en cuenta que la oportunidad de mejora deber\u00e1 volver a priorizarse.","Keep in mind that you will have to carry out the risk analysis again.":"Tener en cuenta que deber\u00e1 realizar nuevamente el an\u00e1lisis del riesgo.","AI":"IA","document.editor.ai_features":"Contenido por IA","document.editor.ai_generating":"Se est\u00e1 generando el contenido autom\u00e1ticamente, esto puede tardar algunos segundos...","document.editor.ai_timeout":"El servicio de generaci\u00f3n de contenido est\u00e1 experimentando retrasos y ha tomado m\u00e1s tiempo de lo previsto para responder","tqtextminder.title.introduction":"Introducci\u00f3n","tqtextminder.title.summary":"Resumen","tqtextminder.title.objectives":"Objetivos","tqtextminder.title.keywords":"Palabras clave","tqtextminder.title.conclusions":"Conclusiones","apiq.tiny_profile_assistant.title":"Usuarios","apiq.tiny_profile_assistant.description":"Asistente para la selecci\u00f3n de usuarios","apiq.tiny_profile_assistant.window_title":"Asistente de selecci\u00f3n de usuarios","Connection error detected. Please reload the page to continue.":"Error de conexi\u00f3n detectado. Por favor, recargue la p\u00e1gina para continuar.","document.editor.image_format_not_allowed":"extensi\u00f3n de imagen inv\u00e1lida","actionplan.alert.The weights have been processed. Reload to see the results":"Los pesos fueron procesados. Recarga para ver los resultados.","actionplan.alert.An error occurred while processing the weights. Please try again or check the logs":"Ocurri\u00f3 un error procesando los pesos. Reintenta o revisa los logs."}');
+  }
+
+  I18N.prototype.translate = function(text, params) {
+    params = params || {};
+    var translation = this.catalogue[text] ? this.catalogue[text] : text;
+
+    $.each(params, function(index, value) {
+      translation = translation.replace(index, value);
+    });
+
+    return translation;
+  };
+
+  I18N.prototype.__ = function(text, params) {
+    params = params || {};
+    return this.translate(text, params);
+  };
+
+  function Config() {
+    return JSON.parse('{"product":"ds","absolute_url":"https:\/\/daruma.servicios.emcali.com.co\/app.php\/staff","relative_url":"\/app.php\/staff","session_status":true,"session_timeout":7200,"diagram_in_process":true,"diagram_in_document":false,"enable_comments":true,"enable_suggestions":true,"use_flash_filemanager":false,"disable_comments":false,"grid_rows":5,"grid_columns":3,"exclude_fields":".exclude, .blurred, #tq_task_end_date, #filter-form, #tq_task_id, #tq_task_responsible_id, #tq_task_sources_list, #document_base_id, #document_base_DocumentBuildSection_id, #header-title-slot, #content-header-slot, #document_base_DocumentBuildSection_content, #content-filter-slot, #meeting_team_id, input[id*=\\\"s2id_autogen\\\"], #ha_team_id, #sf_guard, [name*=_csrf_token]","exclude_forms":".exclude, .sf_admin_filter_form, .task-inline, .filter-form, #process_document_html, [data-exclude]","time_out":30,"user":"ebe354f38c58c4f7cc095086bb6c21fe1fcd90b5","cipher":true,"sisyphus_awake":true,"time_out_connect":60,"tooltip_options":{"maxWidth":"500px"},"offline_enable":false,"cache_version":"1bf79a21","tiny_plugin":"","should-descolorize-sidebar-items":true,"audit_type_parametrizable_fields":["strategies_list","strategy_elements_list","strategy_objectives_list","reference_code_id"],"precision":2,"thousands_sep":".","dec_point":",","risk_evaluate_mode":"standard","risk_impact_id":2,"risk_probability_id":1,"enable_source_code":false,"enable_special_chars":true,"correlation":{"1":{"model":1,"widget":[2,4]},"2":{"model":0,"widget":[5,6,7]},"3":{"model":1,"widget":[1,3]},"4":{"model":0,"widget":[8]}},"data_sources_schema":{"db":{"schema":{"dsn":{"type":"string","title":"data_source.label.dsn","required":false,"data":{"depsOn":"source_type","depsOn-type":"hide","depsOn-values":"db"}},"user":{"type":"string","title":"data_source.label.user","required":false,"data":{"depsOn":"source_type","depsOn-type":"hide","depsOn-values":"db"}},"password":{"type":"string","title":"data_source.label.password","required":false,"data":{"depsOn":"source_type","depsOn-type":"hide","depsOn-values":"db"}},"query":{"type":"string","title":"data_source.label.query","required":false,"data":{"depsOn":"source_type","depsOn-type":"hide","depsOn-values":"db"}}},"form":[{"key":"dsn"},{"key":"user"},{"key":"password"},{"key":"query","type":"textarea"}]},"api_rest_http":{"schema":{"url":{"type":"string","title":"data_source.label.url","required":false,"data":{"depsOn":"source_type","depsOn-type":"hide","depsOn-values":"api_rest_http"}},"authentication":{"type":"string","title":"data_source.label.authentication","required":false,"enum":["none","basic","oauth2"],"data":{"depsOn":"source_type","depsOn-type":"hide","depsOn-values":"api_rest_http"}},"basic_user":{"type":"string","title":"data_source.label.basic_user","required":false,"data":{"depsOn":"authentication","depsOn-type":"hide","depsOn-values":"basic"}},"basic_password":{"type":"string","title":"data_source.label.basic_password","required":false,"data":{"depsOn":"authentication","depsOn-type":"hide","depsOn-values":"basic"}},"client_id":{"type":"string","title":"data_source.label.client_id","required":false,"data":{"depsOn":"authentication","depsOn-type":"hide","depsOn-values":"oauth2"}},"client_secret":{"type":"string","title":"data_source.label.client_secret","required":false,"data":{"depsOn":"authentication","depsOn-type":"hide","depsOn-values":"oauth2"}},"access_token_url":{"type":"string","title":"data_source.label.access_token_url","required":false,"data":{"depsOn":"authentication","depsOn-type":"hide","depsOn-values":"oauth2"}}},"form":[{"key":"url"},{"key":"authentication","titleMap":{"none":"Ninguna","basic":"B\u00e1sica","oauth2":"OAuth 2"}},{"key":"basic_user"},{"key":"basic_password"},{"key":"client_id"},{"key":"client_secret"},{"key":"access_token_url"}]}},"improvement_tools":{"toolbarFishbone":"5w2h 5w 5m fishboneAssistant","i18n":{"5M":"5Ms"}},"enable_diagram_list":true,"datatables_language":{"sProcessing":"Procesando...","sLengthMenu":"Registros por p\u00e1gina: _MENU_","sZeroRecords":"No se encontraron resultados","sEmptyTable":"Ning\u00fan dato disponible en esta tabla","sInfo":"_START_-_END_ de _TOTAL_ registros (p. _PAGE_\/_PAGES_)","sInfoEmpty":"0-0 de 0 registros (p. 0\/0)","sInfoFiltered":"(filtrado de un total de _MAX_ registros)","sInfoPostFix":"","sSearch":"Buscar:","sUrl":"","sInfoThousands":",","sLoadingRecords":"Cargando...","oPaginate":{"sFirst":"&laquo;","sLast":"&raquo;","sNext":"&rsaquo;","sPrevious":"&lsaquo;"},"oAria":{"sSortAscending":": Activar para ordenar la columna de manera ascendente","sSortDescending":": Activar para ordenar la columna de manera descendente"}},"time_check_pending_downloads":300000,"recipient_type_email_list":"Anonymous","patient_history_api":{"enable":false,"client_id":"","client_secret":"","url_token":"","url_data":"","grant_type":"client_credentials","scope":"default"},"he_inline_form_reload_time_in_milliseconds":300000,"comp_audit_parameterizable_fields":["location","notes","objective","scope","branches_list","units_list","resource_fields"],"comp_audit_resource_parameterizable_fields":["project_list","equipment_list","resource_id"],"forms_answer_type_numeric":1,"subtype_prefilter":true,"product_structure":false,"behaviour_ccb":false,"disable_manual_feed":false,"time_line_range":false,"enable_attachment_tiny_validation":false,"word_bank":[],"risk_configurable_fields":[],"idle_session_timeout":7400,"is_content_parsing_active":false,"activity_user_interval_in_seconds":60,"activity_steps_before_to_report":1,"enabled_activity_user_record":true,"download_queue_interval_in_seconds":180,"enabled_download_queue":true,"toastr_message_timeout":60000,"enable_spellchecker":false,"report_enable_download_excel_component":true,"report_enable_download_pdf_component":true,"daruma_spellchecker_url":"https:\/\/spellchecker.darumasoftware.com","diagnostic_enable_excel":true,"document_tqtextminder_enable":false,"toolbar_patient_safety":"profileAssistant","document_enable_download_pdf_component":true,"document_enable_download_word_component":true,"document_enable_orientation_view":true,"snc_record_allow_section_deletion":true,"fontsize_formats":"8pt 9pt 10pt 11pt 12pt 14pt 16pt 18pt 20pt 22pt 24pt 26pt 28pt 36pt 48pt 72pt","subcategory_prefilter":true,"subclassification_prefilter":true}');
+  }
+
+  window.paceOptions = {
+    ajax: {
+      trackMethods: ['GET', 'POST'],
+      ignoreURLs: [
+        /keepalive/,
+        /data_widget/,
+        /sfMoxiemanager/,
+        /contents\/list/,
+        /amount_tasks/,
+        /changeState/,
+        /newInline/,
+        /getComments\?id=(.)*&only_count=true/,
+        /getSuggestions\?id=(.)*&only_count=true/,
+        /getRawTablePreview/,
+        /document\/sortList/,
+        /model_tracing/,
+        /validateIfTypeRequireTracking/,
+        /user\/new\/activity/,
+        /download\/queue\/user/
+      ]
+    },
+    restartOnPushState: false
+  };
+
+  // Export to window
+  window.Daruma = window.Daruma || {};
+  window.Daruma.I18N = I18N;
+  window.Daruma.Config = Config;
+})(window);
+</script>                                                <script type="text/javascript" src="REALIZAR%20AJUSTES%20DE%20PROTECCIONES%20ELECTRICAS%20[Ver.%201%20__%20Rev.%2001%20__%20FV.%202017-07-31]_files/plugin.min.js"></script>
+<script type="text/javascript" src="REALIZAR%20AJUSTES%20DE%20PROTECCIONES%20ELECTRICAS%20[Ver.%201%20__%20Rev.%2001%20__%20FV.%202017-07-31]_files/jquery-3.6.0.min.js"></script>
+<script type="text/javascript" src="REALIZAR%20AJUSTES%20DE%20PROTECCIONES%20ELECTRICAS%20[Ver.%201%20__%20Rev.%2001%20__%20FV.%202017-07-31]_files/disable-jquery-migrate-warnings.js"></script>
+<script type="text/javascript" src="REALIZAR%20AJUSTES%20DE%20PROTECCIONES%20ELECTRICAS%20[Ver.%201%20__%20Rev.%2001%20__%20FV.%202017-07-31]_files/jquery-migrate-3.3.1.js"></script>
+<script type="text/javascript" src="REALIZAR%20AJUSTES%20DE%20PROTECCIONES%20ELECTRICAS%20[Ver.%201%20__%20Rev.%2001%20__%20FV.%202017-07-31]_files/sweetalert.min.js"></script>
+<script type="text/javascript" src="REALIZAR%20AJUSTES%20DE%20PROTECCIONES%20ELECTRICAS%20[Ver.%201%20__%20Rev.%2001%20__%20FV.%202017-07-31]_files/jquery-ui-1.13.2.min.js"></script>
+<script type="text/javascript" src="REALIZAR%20AJUSTES%20DE%20PROTECCIONES%20ELECTRICAS%20[Ver.%201%20__%20Rev.%2001%20__%20FV.%202017-07-31]_files/jquery.form.js"></script>
+<script type="text/javascript" src="REALIZAR%20AJUSTES%20DE%20PROTECCIONES%20ELECTRICAS%20[Ver.%201%20__%20Rev.%2001%20__%20FV.%202017-07-31]_files/jquery.tinyscrollbar.min.js"></script>
+<script type="text/javascript" src="REALIZAR%20AJUSTES%20DE%20PROTECCIONES%20ELECTRICAS%20[Ver.%201%20__%20Rev.%2001%20__%20FV.%202017-07-31]_files/jquery.multiSelect.js"></script>
+<script type="text/javascript" src="REALIZAR%20AJUSTES%20DE%20PROTECCIONES%20ELECTRICAS%20[Ver.%201%20__%20Rev.%2001%20__%20FV.%202017-07-31]_files/jquery.select2.js"></script>
+<script type="text/javascript" src="REALIZAR%20AJUSTES%20DE%20PROTECCIONES%20ELECTRICAS%20[Ver.%201%20__%20Rev.%2001%20__%20FV.%202017-07-31]_files/tippy.all.min.js"></script>
+<script type="text/javascript" src="REALIZAR%20AJUSTES%20DE%20PROTECCIONES%20ELECTRICAS%20[Ver.%201%20__%20Rev.%2001%20__%20FV.%202017-07-31]_files/jquery.fancybox.js"></script>
+<script type="text/javascript" src="REALIZAR%20AJUSTES%20DE%20PROTECCIONES%20ELECTRICAS%20[Ver.%201%20__%20Rev.%2001%20__%20FV.%202017-07-31]_files/jquery.history.js"></script>
+<script type="text/javascript" src="REALIZAR%20AJUSTES%20DE%20PROTECCIONES%20ELECTRICAS%20[Ver.%201%20__%20Rev.%2001%20__%20FV.%202017-07-31]_files/bootstrap.min.js"></script>
+<script type="text/javascript" src="REALIZAR%20AJUSTES%20DE%20PROTECCIONES%20ELECTRICAS%20[Ver.%201%20__%20Rev.%2001%20__%20FV.%202017-07-31]_files/toastr.min.js"></script>
+<script type="text/javascript" src="REALIZAR%20AJUSTES%20DE%20PROTECCIONES%20ELECTRICAS%20[Ver.%201%20__%20Rev.%2001%20__%20FV.%202017-07-31]_files/jquery.knob.js"></script>
+<script type="text/javascript" src="REALIZAR%20AJUSTES%20DE%20PROTECCIONES%20ELECTRICAS%20[Ver.%201%20__%20Rev.%2001%20__%20FV.%202017-07-31]_files/jquery.cookie.js"></script>
+<script type="text/javascript" src="REALIZAR%20AJUSTES%20DE%20PROTECCIONES%20ELECTRICAS%20[Ver.%201%20__%20Rev.%2001%20__%20FV.%202017-07-31]_files/utils.js"></script>
+<script type="text/javascript" src="REALIZAR%20AJUSTES%20DE%20PROTECCIONES%20ELECTRICAS%20[Ver.%201%20__%20Rev.%2001%20__%20FV.%202017-07-31]_files/core.js"></script>
+<script type="text/javascript" src="REALIZAR%20AJUSTES%20DE%20PROTECCIONES%20ELECTRICAS%20[Ver.%201%20__%20Rev.%2001%20__%20FV.%202017-07-31]_files/modals.js"></script>
+<script type="text/javascript" src="REALIZAR%20AJUSTES%20DE%20PROTECCIONES%20ELECTRICAS%20[Ver.%201%20__%20Rev.%2001%20__%20FV.%202017-07-31]_files/report_app.js"></script>
+<script type="text/javascript" src="REALIZAR%20AJUSTES%20DE%20PROTECCIONES%20ELECTRICAS%20[Ver.%201%20__%20Rev.%2001%20__%20FV.%202017-07-31]_files/app.min.js"></script>
+<script type="text/javascript" src="REALIZAR%20AJUSTES%20DE%20PROTECCIONES%20ELECTRICAS%20[Ver.%201%20__%20Rev.%2001%20__%20FV.%202017-07-31]_files/documents.js"></script>
+<script type="text/javascript" src="REALIZAR%20AJUSTES%20DE%20PROTECCIONES%20ELECTRICAS%20[Ver.%201%20__%20Rev.%2001%20__%20FV.%202017-07-31]_files/plugin.min_002.js"></script>
+
+</head>
+<body class="skin-blue" style="cursor: default;">
+<div id="main" role="main" class="document-viewer">
+  <script type="text/javascript" src="REALIZAR%20AJUSTES%20DE%20PROTECCIONES%20ELECTRICAS%20[Ver.%201%20__%20Rev.%2001%20__%20FV.%202017-07-31]_files/plugin.min.js"></script>
+
+
+<style>
+  .popover-container {
+    position: relative;
+    display: inline-block;
+  }
+
+  .popover-content {
+    display: none;
+    position: absolute;
+    width: 400px;
+    padding: 10px;
+    color: #000;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    right: calc(100% + 20px);
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+
+  .popover-content::before,
+  .popover-content::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -20px;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    transform: translateY(-50%);
+  }
+
+  .popover-content::before {
+    border-left: 20px solid #999;
+  }
+
+  .popover-content::after {
+    right: -19px;
+    border-left: 19px solid white;
+  }
+
+  .popover-target:hover + .popover-content {
+    display: block;
+  }
+
+  .popover-content-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+</style>
+
+<div id="sidebar" class="scrollable" style="height: 667px; right: -300px;">
+  <div class="arrow" title="Ocultar / Mostrar panel"><span class="arrow_inner" style="background-position: left center;"></span></div>
+  <div class="viewport">
+    <div class="scroll-content" style="top: 0px;">
+      <div class="title clearfix">
+        <h3>Panel de navegación</h3>
+      </div>
+      <div class="document-actions">
+        <a href="javascript:history.back(1)" class="revert-icon" title="Regresar">&nbsp;</a>
+                                <div class="right">
+          <a href="#" title="Disposición vertical" id="document-sheet-vertical" data-orientation="portrait" class="document-sheet-vertical disposition-active"></a>
+          <a href="#" title="Disposición horizontal" id="document-sheet-horizontal" data-orientation="landscape" class="document-sheet-horizontal"></a>
+        </div>
+      </div>
+      <div class="document-options">
+              </div>
+      
+      
+      
+      
+      
+      
+                                                                                  
+              
+      
+      
+      
+                      </div>
+  </div>
+<div class="scrollbar disable" style="height: 667px;"><div class="track" style="height: 667px;"><div class="thumb" style="top: 0px; height: 667px;"><div class="end"></div></div></div></div></div>
+<div id="document-preview">
+  <div class="document-viewer-wrapper dv-markup clearfix">
+    <div class="document-viewer-outer dv-markup clearfix">
+      <div class="document-viewer dv-markup clearfix" id="document-viewer" style="width: 880px;">
+                          <div class="document-header active">
+  <span id="controlledCopyTitle">Copia Controlada - Documento Vigente</span> <span class="hidden"></span>
+</div>
+                <div class="mceNonEditable" id="qqmuyipLzWki9mYh"><table style="width: 100%;" border="1" id="hYdjmAiXXQFG1QyY"><tbody id="g3qMrJ5U7PUUjjMp"><tr id="QonfMUCGPyCU8AHa"><td style="text-align: center;" rowspan="2" id="ufw2YKkZxAAoRaNC"><span style="font-family: arial,helvetica,sans-serif; font-size: small;" id="ylUTqA0M1txK2cdH"><img src="REALIZAR%20AJUSTES%20DE%20PROTECCIONES%20ELECTRICAS%20[Ver.%201%20__%20Rev.%2001%20__%20FV.%202017-07-31]_files/logo2.png" alt="" width="119" height="100" id="ZEiacrGYkYYPO4Lc"></span></td><td style="text-align: center;" colspan="3" id="vfiMlu7jBCsqXbTT"><span style="font-family: arial,helvetica,sans-serif; font-size: small;" id="MUqfwnzhsMLSoRgC"><smartcode data-source="titulo" data-attributes="">REALIZAR AJUSTES DE PROTECCIONES ELECTRICAS</smartcode></span></td></tr><tr id="YHLdTV3Z5WQip5mF"><td style="text-align: center;" id="1MbcnmCBJsarpmTh"><span style="font-family: arial,helvetica,sans-serif; font-size: small;" id="WpBa8Ib34Qk2sOcD">CODIGO:<smartcode data-source="codigo" data-attributes="">102P10I002</smartcode></span></td><td style="text-align: center;" id="izc95ZKT7jHNIKuw"><span style="font-family: arial,helvetica,sans-serif; font-size: small;" id="Iqar3kP7mFzE5nnS">VERSION:<smartcode data-source="version" data-attributes="">1</smartcode></span></td><td style="text-align: center;" id="LyIhfTk5yoZccuta"><span style="font-family: arial,helvetica,sans-serif; font-size: small;" id="dLSeKtqG6I27eXRF">FECHA:<smartcode data-source="fecha_vigencia" data-attributes="">2017-07-31</smartcode></span></td></tr></tbody></table></div><div class="mceNonEditable" id="sUlomp55JPpwwr7S"><p id="CYXds84CvIYhM7BG"><span style="font-family: arial,helvetica,sans-serif; font-size: small;" id="l1ZVaBKi38DSl5k1">1.&nbsp;&nbsp;&nbsp;&nbsp; OBJETIVO</span></p></div><div id="XajjUBPoSz0xEszz"><p style="text-align: justify;" id="vNdbVUMpufvYqSsy"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="LYPEDwBs8Hb0Dvia">Especificar
+ los pasos para realizar los ajustes de las protecciones eléctricas que 
+se encuentran instaladas en las diferentes subestaciones eléctricas de 
+EMCALI EICE.</span></p><p style="text-align: justify;" id="nbmvStXFeBrevBvB"><span style="font-size: small;" id="Tq3m18d71mL9z8kz"><span style="font-family: Arial;" id="CYxDJIlohycCgXLZ">&nbsp;</span></span></p></div><div class="mceNonEditable" id="HNOYAgU4yUjHAGn9"><p id="GrfRk3U9r7BcdUQO"><span style="font-family: arial,helvetica,sans-serif; font-size: small;" id="Ol8q5Cn4vjiufjAJ">2.&nbsp;&nbsp;&nbsp;&nbsp; ALCANCE</span></p></div><div id="ROgfPCTqQY1ibJq9"><p style="text-align: justify;" id="EYHlv3XqIFQ5jRAL"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="rmjSi0g7pP4wOR8u">Este
+ instructivo cubre las actividades para ajustar los datos de las 
+variables de las protecciones eléctricas hasta que se verifica que esta 
+información se encuentre correctamente cargada en los relés. Interviene 
+el Departamento de Operación y el Departamento de Mantenimiento.</span></p><p style="text-align: justify;" id="pIXMO3VWXvnxNF0N"><span style="font-size: small;" id="KFn6RhyheHTK3VJk"><span style="font-family: Arial;" id="NFhi6yYNP5rPQ7v7">&nbsp;</span></span></p></div><div class="mceNonEditable" id="qT3tRRB0OUIAuJPC"><p id="Kp4bRrXxH8E9l6py"><span style="font-family: arial,helvetica,sans-serif; font-size: small;" id="zzdvpFTqR4TfRsL4">3.&nbsp;&nbsp;&nbsp;&nbsp; IDENTIFICACION DE LA TAREA</span></p></div><div id="NPGBDOWflRYRPmPY"><table style="width: 100%;" border="1" id="15ss0YFafFuG1bcg"><tbody id="NjANq10ipqa96Mq3"><tr id="Ah6lWFh9Ruk41hP1"><td style="text-align: center;" id="buBvCkmnZDhMm1uW"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="GzoN5iWLYtvNihLT">MACROPROCESO</span></td><td style="text-align: center;" id="ycl3SK5uhaLXbDf5"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="i95odgxK2N53M5FA">PROCESO</span></td><td style="text-align: center;" id="EkdpKAGgQgt7po83"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="sgVd0N3G8NmurI0L">SUBPROCESO</span></td><td style="text-align: center;" id="MMsMdwdLBGgUwsQ4"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="NDdE2Hbq8RFFyrcd">ACTIVIDAD</span></td><td style="text-align: center;" id="zl3P8U1iok6175rB"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="thtuQQLVklSDzIb4">PROCEDIMIENTO</span></td></tr><tr id="ZUhCZbkhnLTjVUuE"><td style="text-align: center;" id="ewXvOWJ1h3OaV4en"><p id="8aubq7FOVDkdToh3"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="PF22NfnQbzjf8RQb">Prestación de Servicios Energéticos</span></p></td><td style="text-align: center;" id="skJwgCvfLAbO9NNK"><p id="mBXXFvJsMaiYH4CI"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="XsYSJcW7YMj23DWI">&nbsp;Operaciones y Disponibilidad de los&nbsp;</span><span style="font-family: arial, helvetica, sans-serif; font-size: 16px;" id="FfRH0v7q30Us1B1g">Servicios Energéticos</span></p></td><td style="text-align: center;" id="wr7jCsuzEzk98Qtg"><p id="qcAy3gta8QvyZ8sE"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="4PFZ6eVCSEvT8LkU">&nbsp;Mantenimiento</span></p></td><td style="text-align: center;" id="DVrm2llsr5qeVWwf"><p id="mRBD2BEg7wUEOlEE"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="Zh1d4JlfikPZQwId">&nbsp;Ejecutar el Mantenimiento del Sistema de Distribución Local</span></p></td><td style="text-align: center;" id="R08AWbk16HxfYkqJ"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="VJqDdkPaiLD53otn">&nbsp;Coordinar Protecciones</span></td></tr></tbody></table><p id="frMchybrTC6goZgV"><span style="font-size: small; font-family: Arial;" id="wM2NNBgcYqg0YxkF">Fuente: Modelo de Operación por Procesos de EMCALI EICE ESP.</span></p><p id="XAbe5A8FXcwU8ijT"><span style="font-size: small; font-family: Arial;" id="Rtm6RbXXYGtv5Vnn">&nbsp;</span></p></div><div class="mceNonEditable" id="hfpRQaAuX469HMmS"><p id="UQ91QUE5zRHbjhiX"><span style="font-family: arial,helvetica,sans-serif; font-size: small;" id="popuU4BUmMfwFgiv">4.&nbsp;&nbsp;&nbsp;&nbsp; DEFINICIONES</span></p></div><div id="2VMbXGmbXF2Fy5Oy"><p style="text-align: justify;" id="0Z43bX1GoEn6zcTs"><span style="font-family: arial,helvetica,sans-serif; font-size: small;" id="m2GUkREh7UgzC8dc"><br id="Pb2UTjtc7SUjlOjF"><span style="font-size: 12pt;" id="T5vmwCbuXVyCvPcb">4.1. PROTECCIONES O EQUIPOS DE PROTECCIÓN. </span></span></p><p style="text-align: justify;" id="Q0VAa1hh1LVkFc9s"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="KpHaRal6n8T4fc47">Son
+ los equipos que censan condiciones anormales de operación de un sistema
+ eléctrico y envían señal de activación a los equipos de desconexión. 
+(Ej.: relés, Disyuntores, Fusibles). (Fuente: Circular CREG 001 de 
+1999).</span></p><p style="text-align: justify;" id="HGBJZW3F0a9DFPZw"><span style="font-size: 12pt;" id="49grdMUYnBvrvECh">&nbsp;</span></p><p style="text-align: justify;" id="LxWesByon7SQ37Lj"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="R1r5ZORoATFyinv0">4.2. RELEVADORES O RELÉS </span></p><p style="text-align: justify;" id="Wagz2EPpVMHEakXq"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="ctFunDjkd6KFPlX2">Equipo
+ eléctrico que censa corrientes y produce órdenes de disparo 
+temporizadas o instantáneas de acuerdo a los ajustes implementados. 
+(Fuente: Área de Mantenimiento UENE).</span></p><p style="text-align: justify;" id="3FYJ63BNFzWliY5L">&nbsp;</p></div><div class="mceNonEditable" id="UiUHIE4fK2xr7BZ6"><p id="DzBc2pNjk5B4rvN9"><span style="font-family: arial,helvetica,sans-serif; font-size: small;" id="FpOKNZSELjA3qVde">5.&nbsp;&nbsp;&nbsp;&nbsp; GENERALIDADES</span></p></div><div id="DLjjRfjxZrqu3ThK"><p style="text-align: justify;" id="JNr752jOZJvsEEqu"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="jr4H1UMlN4kiY7P7">Este
+ instructivo explica los pasos que se realizan cuando se está ajustando 
+la información de las protecciones eléctricas, como se hace y que 
+herramientas se utilizan para llevar a cabo esta labor.</span></p><p style="text-align: justify;" id="oK5YEdJMOcMKYk9U">&nbsp;</p></div><div class="mceNonEditable" id="igim0Z8Az5Gb3dBT"><p id="zSSCQ3nfwvPfEap6"><span style="font-family: arial,helvetica,sans-serif; font-size: small;" id="XjqioV5xE5R4Zz7f">6.&nbsp;&nbsp;&nbsp;&nbsp; DESCRIPCION</span></p></div><div id="3QEX1DA4VXiLgRtC"><p style="text-align: justify;" id="L2K56cj3lua4r5fp"><span style="font-family: arial,helvetica,sans-serif; font-size: small;" id="wtnmAvlcOF0EzqJ8"><br id="LJi7XTlycB4ZTSva"><span style="font-size: 12pt;" id="XXS8iPAx4coSiRwp">6.1. EQUIPO Y HERRAMIENTA UTILIZADOS</span></span></p><ul id="XIhPUpBztqRjmKVk"><li style="text-align: justify;" id="73oDy9UVFN2WnVcG"><p id="KQ64StL082IBrzVs"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="DLpexep6wxG3PTqL">Computador Portátil.<br id="eYvKtbH6eDyfkvy8"><br id="vZ9a4izwrM2LBbAc"></span></p></li></ul><p style="text-align: justify;" id="gMdYTuSCLQjqzV38"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="r3xXJPlvo114GPp4">6.2. NORMAS DE SEGURIDAD </span></p><ul id="d2zmSuAc4kXChhfc"><li style="text-align: justify;" id="aD7U67mYUWj5JroH"><p id="WeQc0KRrLnE2VQq7"><span style="font-family: arial,helvetica,sans-serif; font-size: small;" id="3L2CE89t2ypWHN5y"><span style="font-size: 12pt;" id="o7gzzXgJ2RYSSs2V">N/A.</span><br id="cX94g1hbdpNF8zME"><br id="NGpvBmlFCM6UsdPE"></span></p></li></ul><p style="text-align: justify;" id="YZdpxAHbemyuM0sJ"><span style="font-family: arial,helvetica,sans-serif; font-size: small;" id="oZpJX2ZnkrnSWvTL">6.3. DESARROLLO </span></p><p style="text-align: justify;" id="H5SQBDNo9v2eqyO6"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="2QhM6SVyS1RFBIm9">1) Dirigirse a la Subestación Eléctrica.</span></p><p style="text-align: justify;" id="SqBNS9K69xT72jAa"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="1UlvQD2wFqNX3rjA">2) Si la Subestación tiene es atendida informar al Operario de Subestaciones sobre las labores que se van a ejecutar.</span></p><p style="text-align: justify;" id="heB4edcreE4tnDei"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="ESshUXewCNT5ikry">3)
+ Reportar a Despacho la actividad que se va a realizar, previniendo con 
+esto si se llegase a presentar alguna situación anómala.</span></p><p style="text-align: justify;" id="vgqhQjlf0ztKJaFc"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="yO8IO0JfYuS05zjT">4)
+ Verificar el estado inicial del relé, físicamente (si esta en buen 
+estado, si esta apagado) y funcionalmente (si está abierto o cerrado).</span></p><p style="text-align: justify;" id="qNCI3EAvfsjp5zsA"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="2pAMsbJdpYXv6HBD">5)
+ Verificar si el circuito sobre el que se va a trabajar está prevenido. 
+Si este es el caso los trabajos no se podrán ejecutar hasta que el 
+circuito se encuentre totalmente libre.</span></p><p style="text-align: justify;" id="SnfCGefhYMKaHLTM"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="Asj8BygCH7nNOAzD">6) En el menú del relé verificar la siguiente información inicial:</span></p><p style="text-align: justify;" id="dDxnCwJkeMQjG55L"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="dlBewwJOEwacbLMT">a) Relación de Transformación de corriente y voltaje,</span></p><p style="text-align: justify;" id="lD6lOFc67W4Y6qpF"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="MUlUPn3JniyMmuk9">b) ajustes de Tap de fase y de tierra,</span></p><p style="text-align: justify;" id="WS2zh336ctR3fv3t"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="ZtsX0Fa8gfYukrsQ">c) Dial de fase y de tierra,</span></p><p style="text-align: justify;" id="mPpDLQM3RZwP4ODA"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="omHVaffVBqLUOQo0">d) ajuste de instantáneo de fase y de tierra,</span></p><p style="text-align: justify;" id="32H5ApI4gJzJSDMS"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="8QYdZ53zYAfAgP7Z">e) Temporizado,</span></p><p style="text-align: justify;" id="92nNlX6h7x98OuOm"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="OTvv5OXyLl8VFRTw">f) Tiempo adicional de temporizado,</span></p><p style="text-align: justify;" id="0ljcx4IxoelvSXFJ"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="ufYDzPsc8nOOlNKH">g) Tipo de curva de funcionamiento.</span></p><p style="text-align: justify;" id="XydEn2y6QKAE6bqB"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="Tt03l3x4FLBkUQUK">h) Hora y fecha mostrada por el equipo (donde aplique).</span></p><p style="text-align: justify;" id="6zkhOuDFx4KKKsFW"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="krHPLwnQrN8cV7pX">7) Encender el computador portátil y ejecutar el software DIGSI.</span></p><p style="text-align: justify;" id="HatG1JuTofUCm3wH"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="l15ZncmdkgDfUweu">8) En este software abrir el archivo que contiene la información del relé del circuito donde se va a realizar el ajuste.</span></p><p style="text-align: justify;" id="zJPb1VTKhMPTdiMD"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="gGHHzRpNOT9BKHiV">9) Comparar esta información con la información tomada en el ítem 6, las cuales deben ser iguales.</span></p><p style="text-align: justify;" id="5nodtghsHo5ofw64"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="l8WbFICQpVMa8St9">10) Se modifican los datos en el software del computador portátil con los nuevos ajustes calculados.</span></p><p style="text-align: justify;" id="3zVTvlBFvzFvqvwU"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="MTxTp6Fc7Cjkr0do">11) Se conecta el computador portátil al puerto serial del relé.</span></p><p style="text-align: justify;" id="GR7inktyExyIHa4F"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="DlF1RGEy6WXoU3YN">12) Se establece comunicación entre el computador y el relé, hasta que queden en línea.</span></p><p style="text-align: justify;" id="i0YXZGyWSp0oWUiE"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="f737w9EbgSWpGqXZ">13) Se cargan los nuevos ajustes al relé, salvando esta información en la protección eléctrica.</span></p><p style="text-align: justify;" id="HlyxK3VizrHYeT9L"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="TtUzZmgyN520hAI5">14) Cuando se están cargando los datos, no se debe manipular la interfaz equipo – usuario.</span></p><p style="text-align: justify;" id="8lcbwdL4LfOBqiI0"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="W8Tn2PDSdkToHXwJ">15)
+ La información grabada en el relé se baja al computador portátil para 
+que confirmar que el software tenga los nuevos ajustes y quede 
+actualizado.</span></p><p style="text-align: justify;" id="ZuQGLLfqA34LICXI"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="xILVgXfpDunAyO89">16) Se desconecta el puerto serial que comunica el relé y el computador portátil.</span></p><p style="text-align: justify;" id="fTSvjHbJlFzWWgTU"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="5gswDLPCewBzpKcc">17)
+ Se verifican manualmente que los nuevos ajustes se encuentren cargados 
+en el relé, chequeando las opciones del menú del dispositivo.</span></p><p style="text-align: justify;" id="WNIyfqneQQTgEsKw"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="LzR7wdoCmuIzo4vX">18) Reportar a despacho el final de las actividades de ajuste de protecciones eléctricas.</span></p><p style="text-align: justify;" id="L2nd3QldlST6rCHT"><span style="font-size: 12pt;" id="9Vbe6lhM7EWXrm2x">&nbsp;</span></p></div><div class="mceNonEditable" id="BvFi896nPba7OW7h"><p id="e3X19HSTvZBchNDT"><span style="font-family: arial,helvetica,sans-serif; font-size: small;" id="0vo6WVVJKUVmIDYM">7.&nbsp;&nbsp;&nbsp;&nbsp; DOCUMENTOS RELACIONADOS</span></p></div><div id="uWQwMRN0JIdbyCXk"><p style="text-align: justify;" id="4buurYn0EUjdktNN"><span style="font-family: arial,helvetica,sans-serif; font-size: small;" id="s8YOCVSSEw6jkPrK"><br id="qZ6FxxVJsioBXwuN"><span style="font-size: 12pt;" id="6ElSeUbZVHqvBq6G">7.1. DOCUMENTOS INTERNOS</span></span></p><ul id="W7ZSnjVlNH03veZJ"><li style="text-align: justify;" id="PevNthE6qjeJReEv"><p id="PcTwTDWHr3vDXa20"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="eogJTnrTcJdRni9Y">N/A.<br id="Pq7P0MaE9MC9ZkGM"><br id="juq1Zbphcih9pXah"></span></p></li></ul><p style="text-align: justify;" id="MXLJK7TQsWLFZ66X"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="DEE7MncWDdJXlfLJ">7.2. REGISTROS</span></p><ul id="cbgBArNP5GZAYEGQ"><li style="text-align: justify;" id="BWcod4yC71uAVrKo"><p id="VyBLaKnH7CKjTCPY"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="7pEl1hXoD5lYRtDZ">N/A<br id="77k49NZMhhwp5Uyh"><br id="xEZTzXTutYYaXTRG"></span></p></li></ul><p style="text-align: justify;" id="DC8fPfNyctQI04HJ"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="4406xHcF25eXHVk6">7.3. DOCUMENTOS EXTERNOS</span></p><ul id="ByzXmrIgJNWePBZT"><li style="text-align: justify;" id="w1C4pL0silt5nNOd"><p id="qaT3KznTYeEsdW9D"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="FXUvPMpiy1uUmIqh">N/A</span></p></li></ul><p style="text-align: justify;" id="Zw8zYgwjwdz8qsRw"><span style="font-size: small;" id="BEjFU5W61t9xiY8X"><span style="font-family: Arial;" id="bvVZzY10Q9WAqVOs">&nbsp;</span></span></p></div><div class="mceNonEditable" id="TiB9kwVTcDfH6dSt"><p id="ts7pW9R6fIPYL2Nz"><span style="font-family: arial,helvetica,sans-serif; font-size: small;" id="CrwHPA9MoVNIy9NH">8.&nbsp;&nbsp;&nbsp;&nbsp; ANEXOS</span></p></div><div id="EBwA66UUvccWHvFX"><ul id="Gp3MpA7N8qp1TB8k"><li style="text-align: justify;" id="NMpTapMjkixCqtEl"><p id="9LDQWkE2ZKWALChO"><span style="font-size: 12pt; font-family: arial, helvetica, sans-serif;" id="7ZLxrV0C2xZsw20B">N/A</span></p></li></ul><p id="wdJnp4ojSdCFaKoZ">&nbsp;</p></div><div class="mceNonEditable" id="WYcTNXuJ5KIcRANi"><p id="AnqSDkdM2xx2H0e2"><span style="font-family: arial,helvetica,sans-serif; font-size: small;" id="6PkIMgFQgThAFftp">9.&nbsp;&nbsp;&nbsp;&nbsp; OBSERVACIONES</span></p></div><div id="MaheJYm6Ir9ypaCA"><p style="text-align: justify;" id="6fB7fA9rqh3TAewW"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="aXgikL44fLygi4ca">Las personas que participaron en la documentación del presente procedimiento por parte de la UENE de EMCALI fueron:</span></p><p style="text-align: justify;" id="hWMhpBnezOvuTZoN"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="J2prPh93RWFG3HJ1">Esteban
+ González 
+Cortés&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ Electricista I</span></p><p style="text-align: justify;" id="720no2e73KDfQdCL"><span style="font-family: arial, helvetica, sans-serif; font-size: 12pt;" id="zOjL6NYSwI19YD4a">Célimo
+ Cobo 
+Castro&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ Electricista I</span>&nbsp;</p><table style="width: 100%;" border="1" id="sYKnilklH7Z0yYZU"><tbody id="2CIWylvMz8GShfwe"><tr id="tYO3oAixe2DdVXnR"><td id="GtEeezB24HN0kyeP">Elaborado por:</td><td colspan="2" id="hhRQ30cDyYIuf1p2"><smartcode data-source="firma" data-attributes="bW9kbz0iMiIg"><span class="ul query_signature" style="list-style-type: none; padding-left: 5px; text-align: left;"><span class="li" title="@ 2017-07-28 13:29:20">FRANK LARRY MOSQUERA CARRILLO <br><span style="color:#666666; font-size:10px">AYUDANTE ADMINISTRATIVO I </span></span></span></smartcode></td></tr><tr id="A1KOFqsxRfBSFK7u"><td id="YRPSWmFC0ZeoSGYH">Revisado por:</td><td colspan="2" id="LPcLjZo0UOq8cygd"><smartcode data-source="firma" data-attributes="bW9kbz0iMyIg"><span class="ul query_signature" style="list-style-type: none; padding-left: 5px; text-align: left;"><span class="li" title="@ 2017-07-31 09:37:10">JAIRO FERNANDO AGUIRRE TRUJILLO <br><span style="color:#666666; font-size:10px">INGENIERO DE OPERACION Y MANTENIMIENTO II </span></span></span></smartcode></td></tr><tr id="NUvFxMeQEeStDqHq"><td id="4japdsFudargEbED">Aprobado por:</td><td colspan="2" id="Ke7tOyvqQrV2bgES"><smartcode data-source="firma" data-attributes="bW9kbz0iNSIg"><span class="ul query_signature" style="list-style-type: none; padding-left: 5px; text-align: left;"><span class="li" title="@ 2017-07-31 09:38:32">LUIS EDUARDO SAAVEDRA CUBILLOS <br><span style="color:#666666; font-size:10px">JEFE DE DEPARTAMENTO </span></span></span></smartcode></td></tr></tbody></table></div><div class="mceNonEditable" id="88yKpfDCpYqJE9oR"><table style="width: 100%;" border="1" id="VbDlt7140sJdBCBs"><tbody id="oGIJVSAbf30rT4i1"><tr id="taoDq8XeXZo4BjLA"><td style="text-align: justify;" id="wGCTwdjTsans1wRQ"><span style="font-size: x-small;" id="9WQrRNQTp8OWvs6B">Cualquier
+ impresión o copia de los documentos del SGC sin el sello de copia 
+controlada se entiende como documento no controlado y es responsabilidad
+ del funcionario verificar con el área de Gestión de calidad la vigencia
+ de la versión</span></td></tr></tbody></table></div>        <div class="document-footer">ANDERSON JOSE MARIN CORREA @ 2026-07-10, 14:49:31</div>
+      </div>
+                  <div class="dv-sheet sheet1"></div>
+      <div class="dv-sheet sheet2"></div>
+    </div>
+  </div>
+  
+      <script type="text/javascript">
+      $(function () {
+        $(document).bind("contextmenu", function () {
+          return false;
+        });
+        disableSelection(document.body);
+      });
+    </script>
+      <style type="text/css">
+      @media print {
+        body {
+          display: none !important
+        }
+      }
+    </style>
+      <style type="text/css">
+      body, img, a, p, div {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+    </style>
+    <script>
+
+
+    $(function () {
+      if (window.history.length > 1) {
+        $('.revert-icon').addClass('document-go-back')
+      }
+      $('a').click(function (e) {
+        let tmpRegex = new RegExp('.*?\/document\/view\/id\/', 'g');
+        let anchor = this;
+        let match = tmpRegex.exec(anchor.href);
+        if (match !== null) {
+          e.preventDefault();
+
+          let id = anchor.href.match("\/id\/(.*)");
+          if (id != undefined) {
+
+            $.ajax({
+              url: daruma.config.absolute_url + '/document/isObsolete',
+              data: {id: id[1]},
+              success: function (data) {
+                if (data['isObsolete']) {
+                  swal({
+                      title: 'Información del Registro',
+                      text: 'Esta tratando de acceder a un documento en estado obsoleto',
+                      confirmButtonText: 'Notificar al equipo de trabajo',
+                      cancelButtonText: 'Buscar versión vigente',
+                      animation: false,
+                      showConfirmButton: data['isObsolete'],
+                      showCancelButton: data['hasActiveVersion'],
+                      closeOnCancel: true,
+                      closeOnConfirm: false
+                    },
+                    function (isConfirm) {
+                      if (isConfirm) {
+                        $.ajax({
+                          url: daruma.config.absolute_url + '/document/notifyObsoleteDocument',
+                          data: {
+                            id: '6462',
+                            document_name: $(anchor).text()
+                          },
+                          success: function (data) {
+                            swal({
+                              title: 'Notificaciones',
+                              text: 'Enviada',
+                              type: 'success'
+                            });
+                          }
+                        });
+
+                      } else {
+                        window.location.href = data['url']
+                      }
+                    },
+                  );
+                } else {
+                  window.location.href = anchor.href;
+                }
+              }
+            });
+          }
+        }
+      });
+
+      $('div#document-viewer div:not([class])').each(function () {
+        var $div = $(this);
+
+        if ($div.html() === '') {
+          $div.append($('<br>'));
+        }
+      });
+
+      $('div#document-viewer p:not([class])').each(function () {
+        var $p = $(this);
+
+        if ($p.html() === '') {
+          $p.append($('<br>'));
+        }
+      });
+
+      var enableSpanFix = 1
+      if (enableSpanFix) {
+        $('div#document-viewer span:not([class])').each(function () {
+          var $span = $(this);
+
+          if ($span.html() === '') {
+            $span.append($('<br>'));
+          }
+        });
+      }
+
+      $('div#document-viewer p:not([class],[id])').each(function () {
+        var $p = $(this);
+        if ($p.html() === '<br>') {
+          $p.remove();
+        }
+      });
+
+      if(!daruma.config.document_enable_download_pdf_component) {
+        $('#execute-export-pdf').remove();
+      }
+
+      if(!daruma.config.document_enable_download_word_component) {
+        $('#execute-export-word').remove();
+      }
+
+      if (!daruma.config.document_enable_orientation_view) {
+        $('.right').remove();
+      }
+    });
+  </script>
+</div>
+<style type="text/css">
+
+  p { white-space: normal; }
+  p.span { white-space: normal; }
+  td.p.span { white-space: normal; }
+
+  @media print {
+    #sidebar {
+      display: none;
+    }
+    body {
+      width: auto;
+      background: #ffffff;
+    }
+
+    #document-viewer {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    .sheet_section {
+      page-break-inside: avoid
+    }
+  }
+</style>
+
+  <style>
+    #toast-container {
+      display: flex ;
+      justify-content: center ;
+      align-items: flex-start ;
+      position: fixed ;
+      top: 20px ;
+      width: 100% ;
+      pointer-events: none ;
+    }
+
+    #toast-container > div {
+      padding: 15px 15px 15px 50px;
+      width: 400px;
+    }
+  </style>
+
+</div></body></html>
