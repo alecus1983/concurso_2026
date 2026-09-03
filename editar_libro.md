@@ -35,4 +35,11 @@ def replace(match, number, file_name, metadata, dictionaries, data, functions, *
     return match.group(0)
 ```
 
-Las expresiones regulares para quitar los capitulos h1 es: ```(<h2[^>]*>)\s\d+\.\d\.\s(.*)(</h2>)```
+La expresión para sustituir los h1 son ``(<h1[^>]*>)Capítulo \d+\.\s(.*)(</h1>)`` y en sustituir \1\2\3.
+
+
+Las expresiones regulares para quitar los capitulos h2 es: ```(<h2[^>]*>)\s\d+\.\d\.\s(.*)(</h2>)```
+y en sustituir colocamos la expresion donde cada item representa lo almacenado entre parentesis \1\2\3
+
+Para sustituir los h3 se obtinenen las lineas con coincidencias a travéz de la expresión regular ``(<h3[^>]*>)\d+\.\d\.\d\.\s(.*)(</h3>)``
+y en sustituir colocamos la expresión \1\2\3
