@@ -1,4 +1,4 @@
-Para editar un libro en calibre, creandole capitulos, secciones y subsecciones, para ello se crea dentro del modulo de buscar (**cntl + F**) ,  seleccionar el modo Funcion regex,  haciendo dos acciones:
+Para editar un libro en formato epub en calibre, creandole capitulos, secciones y subsecciones, se debe ingresar al modo buscar ,  usando  (**cntl + F**)  en la parte inferior de la pantalla ,  dentro del selector del modo seleccionar el modo Funcion regex,  haciendo dos acciones:
 
 1. Creando una expresión regular `(<h[1-3][^>]*>)(.*)(</h[1-3]>)`,  la cual permite buscar todas las llaves h1, h2 y h3 y agrupar el contenido en tres porciones.
 2. Crear una función en python que capture el texto obtenido de esta expresión regular, por ejemplo para el texto capturado `<h1 id="protecciones-eléctricas">PROTECCIONES ELÉCTRICAS</h1>` se agrupan  el texto de entrada  en el código de la siguiente manera para la función numeracion:
@@ -26,7 +26,7 @@ def replace(match, number, file_name, metadata, dictionaries, data, functions, *
     elif tag_open.startswith('<h2'):
         data['h2_count'] += 1
         data['h3_count'] = 0
-        return f"{tag_open} {data['h1_count']}.{data['h2_count']}. {content}{tag_close}"
+        return f"{tag_open}{data['h1_count']}.{data['h2_count']}. {content}{tag_close}"
           
     elif tag_open.startswith('<h3'):
         data['h3_count'] += 1
@@ -35,4 +35,11 @@ def replace(match, number, file_name, metadata, dictionaries, data, functions, *
     return match.group(0)
 ```
 
-Las expresiones regulares para quitar los capitulos h1 es: ```(<h2[^>]*>)\s\d+\.\d\.\s(.*)(</h2>)```
+La expresión para sustituir los h1 son ``(<h1[^>]*>)Capítulo \d+\.\s(.*)(</h1>)`` y en sustituir \1\2\3.
+
+
+Las expresiones regulares para quitar los capitulos h2 es: ```(<h2[^>]*>)\s\d+\.\d\.\s(.*)(</h2>)```
+y en sustituir colocamos la expresion donde cada item representa lo almacenado entre parentesis \1\2\3
+
+Para sustituir los h3 se obtinenen las lineas con coincidencias a travéz de la expresión regular ``(<h3[^>]*>)\d+\.\d\.\d\.\s(.*)(</h3>)``
+y en sustituir colocamos la expresión \1\2\3
